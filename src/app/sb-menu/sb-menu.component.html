@@ -1,0 +1,178 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="false"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'push'"
+    [opened]="false">
+    <div class="menu-header">
+      <div class="swimbird-icon" (click)="navigateToDashboard()" style="cursor: pointer;"></div>
+    </div>
+    <mat-accordion [multi]="true" #accordion="matAccordion">
+      <mat-expansion-panel *ngFor="let item of model" (opened)="panelOpenState = true" (closed)="panelOpenState = false"
+        (expanded)="setExpanded(item.label)">
+        <mat-expansion-panel-header class="topLevelNav">
+          <mat-panel-title>
+            <mat-icon style="color: #747474;" *ngIf="item.icon" class="material-icons">{{ item.icon }}</mat-icon>
+            <span style="font-size: 13px; padding: 3px">{{item.label}}</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div *ngFor="let child of item.items">
+          <span *ngIf="!child.items || child.items.length === 0">
+            <div [routerLink]="child.routerLink" (click)="setActiveListItem(child.label, item.label)"
+              [ngClass]="activeListItem===child.label ? 'mat-child-menu sub-menu-list-items-selected' : 'mat-child-menu'">
+              <span style="font-size: 11px; padding: 3px">{{child.label}}</span>
+            </div>
+          </span>
+          <span *ngIf="child.items && child.items.length > 0">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header class="childLevelNav">
+                <mat-panel-title>
+                  <span style="font-size: 12px; padding: 3px; font-weight: 500;">{{child.label}}</span>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div *ngFor="let subChild of child.items">
+                <!-- <mat-icon style="color: #747474;" *ngIf="subChild.icon" class="material-icons">{{ subChild.icon }}</mat-icon>
+                <span style="font-size: 11px; padding: 3px" [routerLink]="child.routerLink">{{subChild.label}}</span> -->
+                <span *ngIf="!subChild.items || subChild.items.length === 0">
+                  <div [routerLink]="subChild.routerLink" (click)="setActiveListItem(subChild.label, item.label)"
+                    [ngClass]="activeListItem===child.label ? 'mat-child-menu sub-menu-list-items-selected' : 'mat-child-menu'">
+                    <mat-icon style="color: #747474;" *ngIf="subChild.icon" class="material-icons">{{ subChild.icon }}
+                    </mat-icon>
+                    <span style="font-size: 11px; padding: 3px 17px">{{subChild.label}}</span>
+                  </div>
+                </span>
+              </div>
+            </mat-expansion-panel>
+          </span>
+        </div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <div class="swibiLogo" (click)="navigateToDashboard()" style="cursor: pointer;"></div>
+
+      <span *ngIf="!(isHandset$ | async)">
+        <span *ngFor="let item of model" [ngClass]="setPos ? 'set-sbmenu-Pos' : ''">
+          <!-- Handle branch node buttons here -->
+          <button #firstLevelBtnNoChild mat-button
+            [ngClass]="activeItem===item.label ? 'menu-items-style menu-items-selected' : 'menu-items-style'"
+            (click)="setActiveItem(item.label)" routerLinkActive="router-link-active"
+            *ngIf="!item.items || item.items.length === 0">
+            {{item.label}}
+          </button>
+          <button #firstLevelBtn mat-button
+            [ngClass]="activeItem===item.label ? 'menu-items-style menu-items-selected' : 'menu-items-style'"
+            (click)="setActiveItem(item.label)" (mouseover)='menuButtonover(item.items)' routerLinkActive="router-link-active"
+            *ngIf="item.items && item.items.length > 0">
+            {{item.label}}
+          </button>
+
+          <ng-container *ngFor="let child of item.items">
+            <ng-container *ngIf="child.items; then CategoryMenu; else NocategoryMenu"></ng-container>
+          </ng-container>
+
+          <ng-template #CategoryMenu>
+            <div class="mega-menu-list-container setWidth" *ngIf="isVisible">
+              <span *ngFor="let child of item.items">
+                <span *ngIf="child.items && child.items.length > 0">
+                  <div class="nav-column">
+                    <h3>{{child.label}}</h3>
+                    <ul>
+                      <li *ngFor="let subChild of child.items" class="">
+                        <a [routerLink]="subChild.routerLink"
+                          [ngClass]="activeSubListItem===subChild.label ? ' sub-menu-list-items-selected' : ''"
+                          (click)="setSubActiveListItem(subChild.label, child.label, item.label)"
+                          class="subMenuLinks">{{subChild.label}}</a>
+                      </li>
+                    </ul>
+                  </div>
+                </span>
+              </span>
+            </div>
+          </ng-template>
+          <ng-template #NocategoryMenu>
+            <div class="mega-menu-list-container" *ngIf="isVisible">
+              <ul class="mega-menu-ul-style">
+                <li *ngFor="let child of item.items"
+                  [ngClass]="item.items.length > 5 ? 'mega-menu-list-style' : 'mega-menu-list-style no-float'">
+                  <a [routerLink]="child.routerLink"
+                    [ngClass]="activeListItem===child.label ? 'menu-items-style sub-menu-list-items-selected' : 'menu-items-style'"
+                    (click)="setActiveListItem(child.label, item.label)" class="subMenuLinks">
+                    {{child.label}}
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </ng-template>
+
+        </span>
+      </span>
+      <span class="menu-spacer"></span>
+      <span *ngIf="!(isHandset$ | async)" style="display: flex;">
+        <a mat-list-item class="spacer-menus" [matMenuTriggerFor]="currency_dropdown"
+          style="cursor: pointer; margin: 7px 20px auto;color: #696969;">
+          <mat-icon aria-label="Side nav toggle icon" class="spacer-menus-icons">monetization_on</mat-icon>
+          <span style="font-weight: 600;font-size: 17px;vertical-align: super;line-height: 1.3;margin-left: 5px;"
+            class="spacer-menus-content">{{baseCurrency}}</span>
+          <i class="topbar-icon material-icons arrow-btn spacer-menus-icons"
+            style="font-size: 26px;">keyboard_arrow_down</i>
+        </a>
+        <a mat-list-item class="spacer-menus" [matMenuTriggerFor]="userProfile_dropdown"
+          style="cursor: pointer; margin: 7px 0 auto;color: #696969;">
+          <mat-icon aria-label="Side nav toggle icon" class="spacer-menus-icons">account_circle</mat-icon>
+          <i class="topbar-icon material-icons arrow-btn spacer-menus-icons"
+            style="font-size: 26px;">keyboard_arrow_down</i>
+        </a>
+      </span>
+      <button mat-icon-button [matMenuTriggerFor]="profileMenu" *ngIf="(isHandset$ | async)">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #profileMenu="matMenu">
+        <button mat-menu-item [matMenuTriggerFor]="currency_dropdown">
+          <mat-icon style="margin-right: 2px;" color="accent">monetization_on</mat-icon>
+          <span class="">{{baseCurrency}}</span>
+        </button>
+        <button mat-menu-item [matMenuTriggerFor]="userProfile_dropdown">
+          <mat-icon style="margin-right: 2px;" color="accent">account_circle</mat-icon>
+          <span class="topbar-item-name" style="padding-right: 10px;">{{ userName }}</span>
+        </button>
+      </mat-menu>
+
+      <mat-menu #currency_dropdown="matMenu">
+        <button *ngFor="let currencyAndRate of currenciesAndRates" mat-menu-item (click)="onCurrencySelected(currencyAndRate.currency)">
+          <span>{{currencyAndRate.currency}} {{currencyAndRate.basePriceRate.toLocaleString("sv-SE", {
+            style: "decimal",
+            minimumFractionDigits: 5,
+            maximumFractionDigits: 5
+          })}}</span>
+        </button>
+      </mat-menu>
+
+      <mat-menu #userProfile_dropdown="matMenu">
+        <div style="padding: 0px 16px 12px 16px" *ngIf="!(isHandset$ | async)">
+          <span role="menuitem">
+            <p style="display: flex;">
+              <mat-icon class="topbar-icon material-icons arrow-btn">person</mat-icon>
+              <span class="topbar-item-name" style="padding: 2px">{{ userName }}</span>
+            </p>
+          </span>
+          <mat-chip-list role="menuitem">
+            <mat-chip *ngFor="let roles of userRoles" class="topbar_userRoles" title="User Role">{{roles.toLowerCase()}}</mat-chip>
+          </mat-chip-list>
+        </div>
+        <button mat-menu-item (click)="onLogout()">
+          <mat-icon class="material-icons" style="margin-right: 2px;">power_settings_new</mat-icon>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>

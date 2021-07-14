@@ -1,0 +1,53 @@
+@import '~src/styles/abstracts/variables';
+@import '~src/styles/abstracts/mixins';
+
+.table-pie-table .ag-theme-material .ag-cell {
+  padding-right: 5px;
+  padding-left: 0;
+}
+
+.table-pie-table .ag-center-cols-viewport {
+  overflow: visible;
+}
+
+.table-pie-table {
+  .ag-theme-material {
+    .ag-header {
+      border: none;
+    }
+  }
+}
+
+.sb-drilldown-table-label {
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+  &:hover{
+    font-weight: 700;
+  }
+}
+
+@media print {
+  .sb-drilldown-table-label {
+    text-decoration: none;
+  }
+}
+
+.sb-custom-drillup-button {
+  @include intrinsic(width, fit-content);
+}
+
+.sb-table-pie-wrapper {
+  display: flex;
+  @include respond-to('tiny') {
+    flex-direction: column;
+  }
+}
+
+.sb-custom-drillup-button-bar {
+  text-align: right;
+  padding-right: 10%;
+  @include respond-to('tiny') {
+    padding: 10px 0 0 0;
+  }
+}

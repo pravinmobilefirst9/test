@@ -1,0 +1,752 @@
+@import '~src/styles/abstracts/variables';
+@import '~src/styles/abstracts/mixins';
+
+/* Add your customizations of layout here */
+
+body {
+  .layout-wrapper.layout-compact {
+    height: 100%
+  }
+}
+
+@media print {
+  body {
+    .layout-wrapper.layout-compact {
+      height: fit-content;
+    }
+  }
+}
+
+.splash-screen-layout {
+  .splash-screen {
+    background-color: #f4f5f9;
+    background-image: url('src/assets/images/swimbird-back.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  .swimbird-icon {
+    width: 242px;
+    height: 162px;
+    background: url($swimbirdIconPath) top left no-repeat;
+    background-size: contain;
+    display: block;
+  }
+
+  .splash-loader-container {
+    margin-left: -37px;
+    margin-top: -122px;
+  }
+
+  .splash-loader {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    position: absolute !important;
+    left: 50%;
+  }
+}
+
+.dashboard {
+  .colorbox {
+    padding: 0 !important;
+    text-align: center;
+    overflow: hidden;
+    margin-bottom: 0px !important;
+
+    i {
+      font-size: 48px;
+      margin-top: 10px;
+      color: #ffffff;
+    }
+
+    .colorbox-name {
+      font-size: 20px;
+      display: inline-block;
+      width: 100%;
+      margin: 4px 0 10px 0;
+      color: #ffffff;
+    }
+
+    .colorbox-count {
+      color: #ffffff;
+      font-size: 36px;
+    }
+
+    .colorbox-count {
+      font-weight: bold;
+    }
+
+    &.colorbox-1 {
+      background-color: #eec666;
+
+      div:first-child {
+        background-color: #e6ad19;
+      }
+    }
+
+    &.colorbox-2 {
+      background-color: #e5af8a;
+
+      div:first-child {
+        background-color: #d98659;
+      }
+    }
+
+    &.colorbox-3 {
+      background-color: #a05768;
+
+      div:first-child {
+        background-color: #800d3b;
+      }
+    }
+
+    &.colorbox-4 {
+      background-color: #77627c;
+
+      div:first-child {
+        background-color: #5c4c60;
+      }
+    }
+  }
+}
+
+.card {
+  color: $primaryColor;
+  box-shadow: none;
+
+  h2 {
+    margin: 0;
+  }
+
+  margin-bottom: 0;
+}
+
+app-sb-panel> :first-child,
+.ui-tabview {
+  box-shadow: 0px 1px 4px 1px #332b2b47;
+  -webkit-box-shadow: 0px 1px 4px 1px #332b2b47;
+  -moz-box-shadow: 0px 1px 4px 1px #332b2b47;
+  border-radius: 5px;
+
+  @media print {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    border: none;
+  }
+}
+
+.ui-tabview-panels .card {
+  box-shadow: none;
+}
+
+.masthead-content {
+  color: white;
+  margin-left: 20px;
+}
+
+.card {
+  &.card-w-title {
+    padding-bottom: 1em;
+  }
+}
+
+.layout-mask {
+  background-color: $bodyBgColor;
+  opacity: 0.5;
+}
+
+// BEGIN FIX FOR ENABLING PAGE WIDE FOOTER
+// .layout-container .layout-main .layout-content {
+//   padding: 0;
+// }
+// .p-grid {
+//   margin-right: 0.5em;
+//   margin-left: 0.5em;
+//   margin-top: 0.5em;
+// }
+// END FIX FOR ENABLING PAGE WIDE FOOTER
+/* You can add global styles to this file, and also import other style files */
+.landing-wrapper {
+  #header {
+    .header-top {
+      .logo {
+        width: 200px;
+        height: 44px;
+        background: url('../images/applogo.png') top left no-repeat;
+      }
+    }
+  }
+}
+
+@include respond-to('tiny') {
+  .card.card-w-title {
+    padding: 5px;
+    margin-bottom: 0;
+  }
+
+  body .ui-multiselect .ui-multiselect-label-container .ui-multiselect-label {
+    padding: 0px 2px 0px 0px;
+  }
+}
+
+body p-multiselect:not(.ui-inputwrapper-filled) {
+  margin-top: 0.25em;
+
+  & .ui-multiselect-label-container .ui-multiselect-label {
+    visibility: collapse;
+  }
+}
+
+
+.sb-login-body {
+  background-image: url('src/assets/images/swimbird-back.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  .footer {
+    display: none;
+  }
+}
+
+.sb-login-panel {
+  background-image: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.92) 100%);
+  box-shadow: 1px 2px 13px 15px rgba(70, 65, 65, 0.35);
+  border-radius: 35px;
+  min-height: 415px;
+  margin: 100px auto;
+  padding: 25px 0px;
+
+  & .logo {
+    width: 271px;
+    min-height: 47px;
+    background: url($swibiLogoPath) top left no-repeat;
+    background-size: 198px 54px;
+    background-position: 23px 1px;
+    text-align: center;
+  }
+
+  & .ui-inputtext {
+    color: #2B325A;
+    background-image: linear-gradient(to bottom, white, white), linear-gradient(to bottom, #bdbdbd, #bdbdbd);
+
+    & .ui-float-label {
+      color: #2B325A;
+    }
+  }
+
+  & .ui-inputtext:focus {
+    background-size: 0% 1px, 100% 1px;
+  }
+
+  & .md-inputfield {
+    &>label {
+      color: #2B325A;
+    }
+
+    textarea:focus~label,
+    textarea.ui-state-filled~label,
+    input:focus~label,
+    input.ui-state-filled~label,
+    .ui-inputwrapper-focus~label,
+    .ui-inputwrapper-filled~label {
+      color: #2B325A;
+    }
+  }
+
+  & .ui-button {
+    color: #fff;
+    border-color: #5d5f64;
+    border-width: 2px;
+    border-radius: 25px;
+
+    &.sign-in-button {
+      background: #50979c;
+    }
+
+    &:enabled:not(:focus):hover {
+      background: rgba(255, 255, 255, 1);
+      color: #50979c;
+    }
+
+    &:focus {
+      background: white;
+      color: #50979c;
+    }
+
+    &.secondary {
+      background: #d05378;
+
+      &:enabled:not(:focus):hover {
+        background: rgba(255, 255, 255, 1);
+        color: #50979c;
+
+        .ui-button-text {
+          text-decoration: none;
+        }
+      }
+
+      &:focus {
+        background: white;
+      }
+    }
+  }
+
+  .ui-messages {
+    &.ui-messages-error {
+      background-color: #f7dedeb8;
+      color: #e62a10;
+
+      & .ui-messages-icon {
+        color: #e62a10;
+        margin: 0.2em;
+        font-size: 2.5em;
+      }
+
+      & .ui-messages-close {
+        color: $primaryColor;
+        top: 1em;
+      }
+    }
+  }
+}
+
+.layout-container {
+  .layout-breadcrumb ul {
+    margin: 14px
+  }
+
+  .logout-button-ui {
+    border-radius: 50%;
+    margin: 3px;
+
+    .logout-icon:hover {
+      zoom: 1.3;
+    }
+  }
+
+  &.menu-layout-horizontal {
+    .layout-menu {
+      top: 66px;
+
+      ul {
+        &.ultima-menu {
+          &>li {
+            &>a {
+              &:hover {
+
+                // For some reason layout-menu-horizontal is still applied in "collapsed mode"
+                @include respond-to('primeng-menu') {
+                  color: $primaryLightColor;
+                }
+
+                & i {
+
+                  // For some reason layout-menu-horizontal is still applied in "collapsed mode"
+                  @include respond-to('primeng-menu') {
+                    color: $primaryLightColor;
+                  }
+                }
+              }
+
+              &.active-menuitem-routerlink {
+                &:hover {
+
+                  // For some reason layout-menu-horizontal is still applied in "collapsed mode"
+                  @include respond-to('primeng-menu') {
+                    color: white;
+                  }
+
+                  & i {
+
+                    // For some reason layout-menu-horizontal is still applied in "collapsed mode"
+                    @include respond-to('primeng-menu') {
+                      color: white;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .layout-menu {
+    top: 50px;
+    box-shadow: 5px 9px 5px 0px #332b2b52;
+    -webkit-box-shadow: 5px 9px 5px 0px #332b2b52;
+    -moz-box-shadow: 5px 9px 5px 0px #332b2b52;
+  }
+
+  .topbar {
+    height: 55px;
+    background-color: #fff;
+    box-shadow: 2px 1px 3px 3px #332b2b52;
+    -webkit-box-shadow: 2px 1px 3px 3px #332b2b52;
+    -moz-box-shadow: 2px 1px 3px 3px #332b2b52;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    .menu-buttons-harburger {
+      color: $blueGreyHover;
+      font-size: 1.5em;
+      float: left;
+      padding: 0.7em 0.5em;
+      transition-duration: 1.5s;
+      // transition-property: transform;
+    }
+
+    .topbarLogo {
+      width: 200px;
+      min-height: 40px;
+      background: url($swibiLogoPath) top left no-repeat;
+      background-size: 180px 47px;
+      position: absolute;
+      left: 50%;
+      top: 7px;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      z-index: 200;
+    }
+
+    .topbar_userRoles {
+      border: 1px solid #22606c;
+      cursor: default;
+      color: #22606c;
+      font-weight: 500;
+      border-radius: 24px;
+      text-align: center;
+      padding: 7px;
+      margin: 2px 2px;
+      transition-duration: 1.5s;
+      text-transform: capitalize;
+    }
+
+    .topbar-items {
+      margin: -3px;
+      padding: 0;
+    }
+
+    .topbar-left {
+      padding: 1em 0 0 1em;
+      height: 66px;
+      background-color: transparent;
+      box-shadow: none;
+    }
+
+    .topbar-right {
+      padding: 13px;
+      -webkit-box-ordinal-group: 8;
+      -ms-flex-order: 8;
+      order: 8;
+      margin-left: auto;
+      margin-bottom: auto;
+    }
+
+    .topbar-dropdown {
+      top: 41px;
+    }
+
+    .logo {
+      width: 200px;
+      min-height: 40px;
+      background: url($swibiLogoPath) top left no-repeat;
+      background-size: 180px 47px;
+    }
+
+    .swimbird-icon {
+      width: 59px;
+      height: 65px;
+      background: url($swimbirdIconPath) top left no-repeat;
+      background-size: contain;
+      display: block;
+    }
+
+    .topbar-right {
+      #menu-button {
+        color: $primaryLightColor;
+      }
+    }
+
+    .topbar-userinfo {
+      color: $blueGreyHover;
+      font-weight: 300;
+      font-size: 20px;
+      margin-top: -2px;
+    }
+  }
+
+  .layout-rightpanel {
+    top: 66px;
+  }
+
+  .footer {
+    padding: 0;
+
+    .card {
+      margin-bottom: 0;
+    }
+  }
+
+  .layout-main {
+    .layout-content {
+      @include respond-to('tiny') {
+        padding: 10px 7px 7px 7px;
+      }
+    }
+  }
+}
+
+@media print {
+  .sb-widget-header {
+    margin: 4em 1em 1em 0.25em !important;
+  }
+}
+
+.menu-user-header {
+  width: auto;
+  text-align: center;
+
+  .menu-user-icon {
+    color: white !important;
+    font-size: 50px;
+  }
+
+  .menu-user-name {
+    font-weight: 700;
+  }
+
+  .menu-user-roles {
+    font-weight: 500;
+    font-size: 14px;
+  }
+}
+
+.sb-logout-btn {
+  transition: box-shadow 0.4s !important;
+  // box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.13);
+  border: 1px solid #FFFFFF;
+  color: #222b35 !important;
+  border-radius: 50%;
+  width: 38px !important;
+  height: 38px !important;
+  margin-top: -6px;
+
+  &:hover {
+    box-shadow: 1px 2px 13px #cc3939;
+    color: #b94949 !important;
+  }
+}
+
+.sb-standalone-form {
+
+  // how to include these as mixins?
+  //@include shadow-box;
+  //@include ui-shadow-5;
+  & .ui-panel .ui-panel-titlebar {
+    background-image: linear-gradient(to right, $primaryColor, $primaryDarkColor);
+    color: $primaryLightColor;
+    height: 60px;
+    font-size: 2em;
+    font-weight: lighter;
+    display: flex;
+    justify-content: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    & .ui-panel-title {
+      margin-left: 0.5em;
+    }
+  }
+}
+
+body .ui-button.ui-button-icon-only {
+  &.sb-panel-header-button {
+    font-size: 0.8em;
+    background: transparent;
+    color: $primaryLightColor;
+    width: inherit;
+    height: inherit;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  &:enabled:not(:focus):hover {
+    background: transparent;
+  }
+
+  &>.pi {
+    color: $primaryLightColor;
+  }
+}
+
+.sb-topbar-userinfo-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.sb-dashboard-body {
+  background-image: url('src/assets/images/swimbird-back.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.topbar-userinfo {
+  color: $primaryLightColor;
+
+  @include respond-to('tiny') {
+    visibility: hidden;
+  }
+
+  @include respond-to('small') {
+    visibility: hidden;
+  }
+
+  @include respond-to('medium') {
+    visibility: initial;
+  }
+}
+
+body .ui-button {
+  &.sb-form-submit-button {
+    height: 2.7em;
+    background-color: $primaryDarkColor;
+    border: 1px solid $primaryDarkColor;
+    //border-radius: 250px;
+    width: 100px;
+    color: $primaryLightColor;
+    margin-right: 2em;
+    font-weight: bolder;
+
+    &:hover {
+      background-color: $primaryColor;
+    }
+
+    &:enabled:not(:focus):hover {
+      background-color: $primaryColor;
+    }
+  }
+
+  &.sb-form-cancel-button {
+    height: 2.7em;
+    background-color: white;
+    border: 1px solid $primaryDarkColor;
+    //border-radius: 250px;
+    width: 100px;
+    color: $primaryDarkColor;
+    font-weight: bolder;
+
+    &:hover {
+      background-color: $primaryLightColor;
+    }
+
+    &:enabled:not(:focus):hover {
+      background-color: $primaryLightColor;
+    }
+  }
+}
+
+// Remove margins in grid if it's within a panel
+.ui-panel-content {
+  & .p-grid {
+    margin: 0;
+  }
+}
+
+.sb-layout-and-footer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 100%;
+}
+
+.footer {
+  .card.clearfix {
+    margin: 0;
+    background-color: $primaryColor;
+    color: $primaryLightColor;
+    display: flex;
+    justify-content: center;
+    box-shadow: -15px 0px 6px 3px rgba(0, 0, 0, 0.26);
+    -webkit-box-shadow: -15px 0px 6px 3px rgba(0, 0, 0, 0.26);
+    -moz-box-shadow: -15px 0px 6px 3px rgba(0, 0, 0, 0.26);
+  }
+
+  .footer-text-right {
+    display: flex;
+    margin-left: 1em;
+  }
+}
+
+@media print {
+  @page {
+    margin: 0;
+    size: A4 landscape;
+  }
+
+  .topbar,
+  .layout-menu,
+  .layout-breadcrumb,
+  .mat-toolbar,
+  .mat-toolbar-single-row,
+  .mat-toolbar-row,
+  .mat-toolbar.mat-primary {
+    display: none;
+  }
+
+  .layout-container {
+    overflow: visible;
+
+    .layout-rightpanel {
+      box-shadow: none !important;
+      -webkit-box-shadow: none !important;
+      -moz-box-shadow: none !important;
+    }
+
+    .layout-main {
+      padding-top: 0px !important;
+    }
+  }
+
+  .p-col-12,
+  .p-sm-12 {
+    margin: 0;
+    padding: 0 !important;
+  }
+
+  .ui-panel-titlebar {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  body .ui-panel .ui-panel-content {
+    //page-break-after: always !important;
+    break-after: page !important;
+  }
+
+  .sb-footer-wrapper {
+    display: none;
+  }
+}
+
+.ui-tooltip {
+  font-size: 14px;
+  z-index: 1000000000 !important;
+}
+
+.arrow-btn {
+  color: $blueGreyHover !important;
+}

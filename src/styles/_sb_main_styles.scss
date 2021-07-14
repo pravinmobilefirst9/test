@@ -1,0 +1,2186 @@
+@import '~src/styles/abstracts/variables';
+@import '~src/styles/abstracts/mixins';
+@import '~primeng/resources/primeng.min.css';
+
+/* KEPT PRIMENG STYLES IN A COMMON MAIN STYLES FILE - KEEP ALL THE COMMON STYLES IN THIS FILE */
+
+/* Utils */
+.clearfix:after {
+    content: " ";
+    display: block;
+    clear: both;
+}
+
+*[hidden] {
+    display: none;
+}
+
+.card {
+    @include content-shadow();
+    @include border-radius(2px);
+    // background: #ffffff;
+    padding: 1em;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    color: $primaryColor;
+    box-shadow: none;
+
+    &.card-w-title {
+        padding-bottom: 1em;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        font-weight: 400;
+        margin: 1em 0;
+
+        &:first-child {
+            margin-top: .667em;
+        }
+    }
+
+    h2 {
+        font-size: 1.375em;
+        font-weight: 400;
+        margin: 0;
+    }
+
+    h3 {
+        font-size: 1.250em;
+        font-weight: 400;
+    }
+
+    h4 {
+        font-size: 1.125em;
+        font-weight: 400;
+    }
+}
+
+@include respond-to('tiny') {
+    .card.card-w-title {
+        padding: 5px;
+        margin-bottom: 0;
+    }
+
+    body .ui-multiselect .ui-multiselect-label-container .ui-multiselect-label {
+        padding: 0px 2px 0px 0px;
+    }
+}
+
+body p-multiselect:not(.ui-inputwrapper-filled) {
+    margin-top: 0.25em;
+
+    & .ui-multiselect-label-container .ui-multiselect-label {
+        visibility: collapse;
+    }
+}
+
+
+.nopad {
+    padding: 0;
+
+    .ui-panel-content {
+        padding: 0;
+    }
+}
+
+@-webkit-keyframes fadeInDown {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -20px, 0);
+        transform: translate3d(0, -20px, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -20px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@-webkit-keyframes fadeOutUp {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -20px, 0);
+        transform: translate3d(0, -20px, 0);
+    }
+}
+
+@keyframes fadeOutUp {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -20px, 0);
+        transform: translate3d(0, -20px, 0);
+    }
+}
+
+@-webkit-keyframes spin {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(359deg);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+.ui-icon-spin {
+    -webkit-animation-name: spin;
+    animation-name: spin;
+}
+
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+}
+
+.fadeOutUp {
+    -webkit-animation-name: fadeOutUp;
+    animation-name: fadeOutUp;
+}
+
+.ui-shadow-1 {
+    @include multi-shadow(0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24));
+}
+
+.ui-shadow-2 {
+    @include multi-shadow(0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23));
+}
+
+.ui-shadow-3 {
+    @include multi-shadow(0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23));
+}
+
+.ui-shadow-4 {
+    @include multi-shadow(0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22));
+}
+
+.ui-shadow-5 {
+    @include multi-shadow(0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22));
+}
+
+.ui-g {
+    -ms-flex-wrap: wrap;
+
+    &.form-group {
+        >div {
+            padding: $formGroupPadding;
+        }
+    }
+
+    &.form-group-m {
+        >div {
+            padding: $formGroupPadding;
+        }
+    }
+}
+
+/* Ripple */
+/* Ripple Effect Style like Google Material Buttons Effect*/
+.ripplelink {
+    /* display:block; */
+    /*color:#fff;*/
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    z-index: 0;
+}
+
+.ripplelink:hover {
+    /*z-index:1000;*/
+}
+
+.ink {
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 100%;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+}
+
+.ripple-animate {
+    -webkit-animation: ripple 0.65s linear;
+    -moz-animation: ripple 0.65s linear;
+    -ms-animation: ripple 0.65s linear;
+    -o-animation: ripple 0.65s linear;
+    animation: ripple 0.65s linear;
+}
+
+@-webkit-keyframes ripple {
+    100% {
+        opacity: 0;
+        -webkit-transform: scale(2.5);
+    }
+}
+
+@-moz-keyframes ripple {
+    100% {
+        opacity: 0;
+        -moz-transform: scale(2.5);
+    }
+}
+
+@-o-keyframes ripple {
+    100% {
+        opacity: 0;
+        -o-transform: scale(2.5);
+    }
+}
+
+@keyframes ripple {
+    100% {
+        opacity: 0;
+        transform: scale(2.5);
+    }
+}
+
+/* Splash.scss */
+
+.splash-screen {
+    width: 100%;
+    min-height: 100%;
+    background-color: #3F51B5;
+    position: absolute;
+}
+
+.splash-loader-container {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    position: absolute !important;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+}
+
+.splash-loader {
+    animation: rotator $duration linear infinite;
+}
+
+@keyframes rotator {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(270deg);
+    }
+}
+
+.splash-path {
+    stroke-dasharray: $offset;
+    stroke-dashoffset: 0;
+    transform-origin: center;
+    animation:
+        dash $duration ease-in-out infinite,
+        colors ($duration*4) ease-in-out infinite;
+}
+
+@keyframes colors {
+    0% {
+        stroke: #4285F4;
+    }
+
+    25% {
+        stroke: #DE3E35;
+    }
+
+    50% {
+        stroke: #F7C223;
+    }
+
+    75% {
+        stroke: #1B9A59;
+    }
+
+    100% {
+        stroke: #4285F4;
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dashoffset: $offset;
+    }
+
+    50% {
+        stroke-dashoffset: $offset/4;
+        transform: rotate(135deg);
+    }
+
+    100% {
+        stroke-dashoffset: $offset;
+        transform: rotate(450deg);
+    }
+}
+
+/* Dashboard.scss */
+.dashboard {
+
+    .overview {
+        padding: 0 !important;
+        min-height: 140px;
+        position: relative;
+        margin-bottom: 0px !important;
+
+        .overview-content {
+            padding: 16px;
+
+            .overview-title {
+                font-size: 18px;
+            }
+
+            .overview-badge {
+                float: right;
+                color: $textSecondaryColor;
+            }
+
+            .overview-detail {
+                display: block;
+                font-size: 24px;
+                margin-top: 5px;
+            }
+        }
+
+        .overview-footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+
+            img {
+                display: block;
+            }
+        }
+    }
+
+    .colorbox {
+        padding: 0 !important;
+        text-align: center;
+        overflow: hidden;
+        margin-bottom: 0px !important;
+
+        i {
+            font-size: 48px;
+            margin-top: 10px;
+            color: #ffffff;
+        }
+
+        .colorbox-name {
+            font-size: 20px;
+            display: inline-block;
+            width: 100%;
+            margin: 4px 0 10px 0;
+            color: #ffffff;
+        }
+
+        .colorbox-count {
+            color: #ffffff;
+            font-size: 36px;
+        }
+
+        .colorbox-count {
+            font-weight: bold;
+        }
+
+        &.colorbox-1 {
+            background-color: #eec666;
+
+            div:first-child {
+                background-color: #e6ad19;
+            }
+        }
+
+        &.colorbox-2 {
+            background-color: #e5af8a;
+
+            div:first-child {
+                background-color: #d98659;
+            }
+        }
+
+        &.colorbox-3 {
+            background-color: #a05768;
+
+            div:first-child {
+                background-color: #800d3b;
+            }
+        }
+
+        &.colorbox-4 {
+            background-color: #77627c;
+
+            div:first-child {
+                background-color: #5c4c60;
+            }
+        }
+    }
+
+    .task-list {
+        overflow: hidden;
+
+        >.ui-panel {
+            min-height: 340px;
+        }
+
+        .ui-panel-content {
+            padding: 10px 0 !important;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                padding: $inputOptionPadding;
+                border-bottom: 1px solid #dbdbdb;
+
+                &:first-child {
+                    margin-top: 10px;
+                }
+            }
+
+            .ui-chkbox {
+                vertical-align: middle;
+                margin-right: 5px;
+            }
+
+            .task-name {
+                vertical-align: middle;
+            }
+
+            i {
+                color: $textSecondaryColor;
+                float: right;
+            }
+        }
+    }
+
+    .contact-form {
+        overflow: hidden;
+
+        .ui-panel {
+            min-height: 340px;
+        }
+
+        .ui-g-12 {
+            padding: 16px 10px;
+        }
+
+        .ui-button {
+            margin-top: 20px;
+        }
+    }
+
+    .contacts {
+        overflow: hidden;
+
+        >.ui-panel {
+            min-height: 340px;
+        }
+
+        .ui-panel-content {
+            padding: 15px 0 10px 0 !important;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                border-bottom: 1px solid #d8d8d8;
+
+                a {
+                    padding: 9px;
+                    width: 100%;
+                    box-sizing: border-box;
+                    text-decoration: none;
+                    position: relative;
+                    display: block;
+                    @include border-radius(2px);
+                    @include transition(background-color .2s);
+
+                    .name {
+                        position: absolute;
+                        right: 10px;
+                        top: 10px;
+                        font-size: 18px;
+                        color: $textColor;
+                    }
+
+                    .email {
+                        position: absolute;
+                        right: 10px;
+                        top: 30px;
+                        font-size: 14px;
+                        color: $textSecondaryColor;
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                        background-color: #e8e8e8;
+                        ;
+                    }
+                }
+
+                &:last-child {
+                    border: 0;
+                }
+            }
+        }
+    }
+
+    .activity-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            border-bottom: 1px solid #bdbdbd;
+            padding: 15px 0 9px 9px;
+
+            .count {
+                font-size: 24px;
+                color: #ffffff;
+                background-color: #03A9F4;
+                font-weight: bold;
+                display: inline-block;
+                padding: 5px;
+                @include border-radius(2px);
+            }
+
+            &:first-child {
+                border-top: 1px solid #bdbdbd;
+            }
+
+            &:last-child {
+                border: 0;
+            }
+
+            .ui-g-6:first-child {
+                font-size: 18px;
+                padding-left: 0;
+            }
+
+            .ui-g-6:last-child {
+                text-align: right;
+                color: $textSecondaryColor;
+            }
+        }
+    }
+
+    .timeline {
+        height: 100%;
+        box-sizing: border-box;
+
+        >.ui-g {
+            .ui-g-3 {
+                font-size: 14px;
+                position: relative;
+                border-right: 1px solid #bdbdbd;
+
+                i {
+                    background-color: #ffffff;
+                    font-size: 36px;
+                    position: absolute;
+                    top: 0px;
+                    right: -18px;
+                }
+            }
+
+            .ui-g-9 {
+                padding-left: 1.5em;
+
+                .event-owner {}
+
+                .event-text {
+                    color: $textSecondaryColor;
+                    font-size: 14px;
+                    display: block;
+                    padding-bottom: 20px;
+                }
+
+                .event-content {
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    >div {
+        >.ui-panel {
+            @include content-shadow();
+        }
+    }
+}
+
+// this below css is not in use as we have now removed the right and left panels # but adding this css here for avoiding any risk
+.layout-rightpanel,
+.layout-leftpanel {
+    .layout-rightpanel-header {
+        background: url("../assets/images/sidebar-image.jpg") no-repeat;
+        background-size: cover;
+        background-position: bottom;
+        // height: 118px;
+        padding: 20px 10px;
+        @include box-sizing(border-box);
+
+        .weather-day,
+        .weather-date {
+            color: #ffffff;
+            left: 14px;
+            font-size: 18px;
+            // font-weight: 700;
+            padding-bottom: 4px;
+        }
+
+        .menu-user-name {
+            font-weight: 700;
+        }
+
+        .menu-user-roles {
+            font-weight: 500;
+            font-size: 14px;
+        }
+    }
+
+    .layout-rightpanel-content {
+        padding: 14px;
+
+        h1 {
+            font-size: 18px;
+            margin: 0 0 4px 0;
+        }
+
+        h2 {
+            font-size: 16px;
+            margin: 0;
+            color: $textSecondaryColor;
+            font-weight: normal;
+        }
+
+        .weather-today {
+            text-align: center;
+            margin-top: 28px;
+
+            .weather-today-value {
+                font-size: 36px;
+                vertical-align: middle;
+                margin-right: 14px;
+            }
+
+            img {
+                vertical-align: middle;
+            }
+        }
+
+        .weekly-weather {
+            list-style-type: none;
+            margin: 28px 0 0 0;
+            padding: 0;
+
+            li {
+                padding: 8px 14px;
+                border-bottom: 1px solid #d8dae2;
+                position: relative;
+
+                .weekly-weather-value {
+                    position: absolute;
+                    right: 40px;
+                }
+
+                img {
+                    width: 24px;
+                    position: absolute;
+                    right: 0px;
+                    top: 4px;
+                }
+            }
+        }
+    }
+}
+
+
+/* Login.scss */
+
+.login-panel {
+    text-align: center;
+    width: 350px;
+    min-height: 440px;
+    padding: 50px 20px;
+    margin: 100px auto 0 auto;
+
+    .ui-g {
+        .ui-g-12 {
+            padding: 25px 40px;
+
+            .ui-button {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .ui-button {
+        &:hover {
+            background-color: $primaryDarkColor;
+        }
+
+        &:focus {
+            outline: 0 none;
+            background-color: lighten($primaryColor, 10%);
+        }
+
+        &.secondary {
+            &:hover {
+                background-color: $accentDarkColor;
+            }
+
+            &:focus {
+                outline: 0 none;
+                background-color: lighten($accentColor, 10%);
+            }
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    .login-panel {
+        width: 300px;
+
+        .ui-g {
+            .ui-g-12 {
+                padding: 20px 20px;
+            }
+        }
+    }
+}
+
+// _main.scss
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: $fontSize;
+    line-height: $lineHeight;
+    color: $textColor;
+    -webkit-font-smoothing: antialiased;
+    padding: 0;
+    margin: 0;
+    background-color: $bodyBgColor;
+    min-height: 100%;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.layout-mask {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: $bodyBgColor;
+    top: 0;
+    left: 0;
+    z-index: 999999997;
+    @include opacity(.5);
+}
+
+.layout-container {
+
+    .layout-main {
+        padding: 75px 0 0 0;
+
+        .layout-content {
+            padding: 16px;
+
+            @include respond-to('tiny') {
+                padding: 10px 7px 7px 7px;
+            }
+
+        }
+
+        @include transition(margin-left $transitionDuration);
+    }
+
+    .layout-mask {
+        display: none;
+    }
+
+    .layout-breadcrumb {
+        background-color: #ffffff;
+        @include shadow(inset 0 -2px 4px 0 rgba(0, 0, 0, 0.14));
+        min-height: 42px;
+        @include clearfix();
+
+        ul {
+            margin: 14px;
+            padding: 0 0 0 20px;
+            list-style: none;
+            color: $textSecondaryColor;
+            display: inline-block;
+
+            li {
+                display: inline-block;
+                vertical-align: top;
+                color: $textSecondaryColor;
+
+                &:nth-child(even) {
+                    font-size: 20px;
+                }
+
+                &:first-child(even) {
+                    color: $primaryColor;
+                }
+
+                a {
+                    color: $textSecondaryColor;
+                }
+            }
+        }
+
+        .layout-breadcrumb-options {
+            float: right;
+            padding: 0px 20px 0 0;
+            height: 100%;
+
+            a {
+                color: $textSecondaryColor;
+                display: inline-block;
+                width: 42px;
+                height: 42px;
+                line-height: 42px;
+                text-align: center;
+                @include transition(background-color $transitionDuration);
+
+                &:hover {
+                    background-color: $hoverBgColor;
+                }
+
+                i {
+                    line-height: inherit;
+                }
+            }
+        }
+    }
+
+    .footer {
+        padding: 0;
+
+        .footer-text-left {
+            float: left;
+        }
+
+        .footer-text-right {
+            color: $textSecondaryColor;
+            float: right;
+
+            span {
+                vertical-align: middle;
+                display: inline-block;
+            }
+        }
+
+        .card {
+            margin-bottom: 0;
+        }
+
+        .card.clearfix {
+            margin: 0;
+            background-color: $primaryColor;
+            color: $primaryLightColor;
+            display: flex;
+            justify-content: center;
+            box-shadow: -15px 0px 6px 3px rgba(0, 0, 0, 0.26);
+            -webkit-box-shadow: -15px 0px 6px 3px rgba(0, 0, 0, 0.26);
+            -moz-box-shadow: -15px 0px 6px 3px rgba(0, 0, 0, 0.26);
+        }
+
+        .footer-text-right {
+            display: flex;
+            margin-left: 1em;
+        }
+    }
+}
+
+// _compact.scss
+
+body {
+    .layout-wrapper.layout-compact {
+        font-size: $c-fontSize;
+        line-height: $c-lineHeight;
+        height: 100%;
+
+        .layout-container {
+            .layout-breadcrumb {
+                ul {
+                    li {
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+
+        .ui-radiobutton {
+            .ui-radiobutton-box {
+                width: 18px;
+                height: 18px;
+            }
+        }
+
+        .ui-datepicker {
+
+            tbody td a,
+            body .ui-datepicker tbody td span {
+                padding-top: .25em;
+            }
+        }
+    }
+}
+
+.ui-tooltip {
+    font-size: 14px;
+    z-index: 1000000000 !important;
+}
+
+.arrow-btn {
+    color: $blueGreyHover;
+}
+
+// _forms.scss
+
+body {
+    .ui-inputtext {
+        background: $inputBgColor no-repeat;
+        background-image: linear-gradient(to bottom, $primaryColor, $primaryColor), linear-gradient(to bottom, $inputBorderColor, $inputBorderColor);
+        background-size: 0 2px, 100% 1px;
+        background-position: 50% 100%, 50% 100%;
+        transition: background-size 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+        border-width: 0;
+        padding: 2px;
+        font-size: $inputFontSize;
+        @include border-radius(0px);
+
+        &:focus,
+        &.ui-state-focus {
+            border-width: 0;
+            background-size: 100% 2px, 100% 1px;
+            outline: none;
+            padding-bottom: 2px;
+        }
+
+        &:disabled {
+            border-bottom: 1px dotted;
+        }
+
+        &.ui-widget-content {
+            border-width: 1px;
+            background: $inputBgColor;
+            background-image: none;
+        }
+
+        &.ui-state-error {
+            border-color: $inputBorderErrorColor;
+        }
+
+    }
+
+    .ui-inputtext:-webkit-autofill {
+        border-color: $inputAutoFillBorderColor;
+        border-style: solid;
+        border-width: 0px 0px 1px 0px;
+
+        &.ui-state-focus {
+            padding-bottom: 0px;
+        }
+    }
+
+    .ui-widget-header:not(.ui-dataview-header) {
+        .ui-inputtext {
+            background-image: linear-gradient(to bottom, $headerTextColor, $headerTextColor), linear-gradient(to bottom, lighten($primaryColor, 25%), lighten($primaryColor, 25%));
+        }
+    }
+
+    .md-inputfield {
+        display: block;
+        position: relative;
+
+        >label {
+            color: $inputFieldLabelTextColor;
+            font-weight: normal;
+            position: absolute;
+            pointer-events: none;
+            left: 5px;
+            top: 1px;
+            transition: 0.3s ease all;
+            -moz-transition: 0.3s ease all;
+            -webkit-transition: 0.3s ease all;
+        }
+
+        input[placeholder]~label,
+        textarea[placeholder]~label,
+        p-autoComplete[placeholder]~label,
+        p-calendar[placeholder]~label,
+        p-inputMask[placeholder]~label,
+        p-spinner[placeholder]~label,
+        p-dropdown~label,
+        p-multiSelect~label,
+        p-chips~label,
+        textarea:focus~label,
+        textarea.ui-state-filled~label,
+        input:focus~label,
+        input.ui-state-filled~label,
+        .ui-inputwrapper-focus~label,
+        .ui-inputwrapper-filled~label {
+            top: -20px;
+            font-size: 12px;
+            color: $primaryColor;
+        }
+
+        .textarea:-webkit-autofill~label,
+        .input:-webkit-autofill~label {
+            top: -20px;
+            font-size: 12px;
+            color: $primaryColor;
+        }
+
+        p-autoComplete.ng-dirty.ng-invalid~label,
+        p-dropdown.ng-dirty.ng-invalid~label,
+        p-multiSelect.ng-dirty.ng-invalid~label,
+        p-calendar.ng-dirty.ng-invalid~label,
+        p-inputMask.ng-dirty.ng-invalid~label,
+        p-spinner.ng-dirty.ng-invalid~label,
+        p-chips.ng-dirty.ng-invalid~label,
+        textarea.ng-dirty.ng-invalid~label,
+        input.ng-dirty.ng-invalid~label {
+            color: $inputErrorTextColor;
+        }
+
+        .ui-message {
+            position: absolute;
+
+            &.ui-messages-error {
+                background-color: $inputBgColor;
+                border: 0 none;
+                margin: 0px;
+                color: $inputErrorTextColor;
+                font-size: .75em;
+            }
+        }
+    }
+
+    .ui-button,
+    .ui-datepicker-buttonpane>button {
+        overflow: hidden;
+        background-color: $primaryColor;
+        color: $buttonTextColor;
+        font-size: $buttonFontSize;
+        height: 2.25em;
+        padding: 0 1em;
+        border: 0 none;
+        -moz-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+        -webkit-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+        box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+        @include transition(background-color .3s);
+        vertical-align: middle;
+
+        &:enabled:not(:focus):hover {
+            background-color: $primaryDarkColor;
+        }
+
+        &:focus {
+            outline: 0 none;
+            background-color: lighten($primaryColor, 10%);
+        }
+
+        .ui-button-text {
+            padding: 0;
+            line-height: 2.25em;
+        }
+
+        .pi {
+            color: $buttonTextColor;
+        }
+
+        &.ui-button-icon-only {
+            @include border-radius(50%);
+            width: 2.5em;
+            height: 2.5em;
+
+            .pi {
+                margin-left: -.5em;
+            }
+        }
+
+        &.ui-button-text-icon-left {
+            padding-left: 2.5em;
+        }
+
+        &.ui-button-text-icon-right {
+            padding-right: 2.5em;
+        }
+
+        &.secondary,
+        &.ui-secondary-button {
+            background-color: $accentColor;
+            color: $accentTextColor;
+
+            &:enabled:not(:focus):hover {
+                background-color: $accentDarkColor;
+            }
+
+            &:focus {
+                outline: 0 none;
+                background-color: lighten($accentColor, 10%);
+            }
+        }
+
+        &.blue-grey-btn {
+            background-color: $blueGrey;
+
+            &:enabled:not(:focus):hover {
+                background-color: $blueGreyHover;
+            }
+
+            &:focus {
+                outline: 0 none;
+                background-color: lighten($blueGrey, 10%);
+            }
+        }
+
+        &.cyan-btn {
+            background-color: $cyan;
+
+            &:enabled:not(:focus):hover {
+                background-color: $cyanHover;
+            }
+
+            &:focus {
+                outline: 0 none;
+                background-color: lighten($cyan, 4%);
+            }
+        }
+
+        &.teal-btn {
+            background-color: $teal;
+
+            &:enabled:not(:focus):hover {
+                background-color: $tealHover;
+            }
+
+            &:focus {
+                outline: 0 none;
+                background-color: lighten($teal, 10%);
+            }
+        }
+
+        &.red-btn,
+        &.ui-danger-button {
+            background-color: $red;
+
+            &:enabled:not(:focus):hover {
+                background-color: $redHover;
+            }
+
+            &:focus {
+                outline: 0 none;
+                background-color: lighten($red, 10%);
+            }
+        }
+
+        &.green-btn,
+        &.ui-success-button {
+            background-color: $green;
+
+            &:enabled:not(:focus):hover {
+                background-color: $greenHover;
+            }
+
+            &:focus {
+                outline: 0 none;
+                background-color: lighten($green, 10%);
+            }
+        }
+
+        &.deep-orange-btn {
+            background-color: $deepOrange;
+
+            &:enabled:not(:focus):hover {
+                background-color: $deepOrangeHover;
+            }
+
+            &:focus {
+                outline: 0 none;
+                background-color: lighten($deepOrange, 10%);
+            }
+        }
+
+        &.purple-btn {
+            background-color: $purple;
+
+            &:enabled:not(:focus):hover {
+                background-color: $purpleHover;
+            }
+
+            &:focus {
+                outline: 0 none;
+                background-color: lighten($purple, 10%);
+            }
+        }
+
+        &.pink-btn {
+            background-color: $pink;
+
+            &:enabled:not(:focus):hover {
+                background-color: $pinkHover;
+            }
+
+            &:focus {
+                outline: 0 none;
+                background-color: lighten($pink, 10%);
+            }
+        }
+
+        &.amber-btn,
+        &.ui-warning-button {
+            background-color: $amber;
+            color: $textColor;
+
+            &:enabled:not(:focus):hover {
+                background-color: $amberHover;
+            }
+
+            &:focus {
+                outline: 0 none;
+                background-color: lighten($amber, 10%);
+            }
+        }
+
+        &.orange-btn {
+            background-color: $orange;
+
+            &:enabled:not(:focus):hover {
+                background-color: $orangeHover;
+            }
+
+            &:focus {
+                outline: 0 none;
+                background-color: lighten($orange, 10%);
+            }
+        }
+
+        &.brown-btn {
+            background-color: $brown;
+
+            &:enabled:not(:focus):hover {
+                background-color: $brownHover;
+            }
+
+            &:focus {
+                outline: 0 none;
+                background-color: lighten($brown, 10%);
+            }
+        }
+
+        &.indigo-btn {
+            background-color: $indigo;
+
+            &:enabled:not(:focus):hover {
+                background-color: $indigoHover;
+            }
+
+            &:focus {
+                outline: 0 none;
+                background-color: lighten($indigo, 10%);
+            }
+        }
+
+        &.blue-btn,
+        &.ui-info-button {
+            background-color: $blue;
+
+            &:enabled:not(:focus):hover {
+                background-color: $blueHover;
+            }
+
+            &:focus {
+                outline: 0 none;
+                background-color: lighten($blue, 10%);
+            }
+        }
+
+        &.flat {
+            @include no-shadow();
+        }
+    }
+
+    .ui-button.ui-state-default.ui-button-secondary,
+    .ui-buttonset.ui-button-secondary>.ui-button.ui-state-default {
+        color: $textColor;
+        background-color: $secondary;
+
+        .ui-button-icon-left {
+            color: $textSecondaryColor;
+        }
+
+        .ui-button-icon-right {
+            color: $textSecondaryColor;
+        }
+
+        &:enabled:hover {
+            @include hover-element();
+        }
+
+        &:enabled:focus {
+            background-color: darken($secondary, 10%);
+        }
+    }
+
+    .ui-button.ui-state-default.ui-button-info,
+    .ui-buttonset.ui-button-info>.ui-button.ui-state-default {
+        background-color: $blue;
+
+        &:enabled:hover {
+            background-color: $blueHover;
+        }
+
+        &:enabled:focus {
+            outline: 0 none;
+            background-color: lighten($blue, 10%);
+        }
+    }
+
+    .ui-button.ui-state-default.ui-button-success,
+    .ui-buttonset.ui-button-success>.ui-button.ui-state-default {
+        background-color: $green;
+
+        &:enabled:hover {
+            background-color: $greenHover;
+        }
+
+        &:enabled:focus {
+            outline: 0 none;
+            background-color: lighten($green, 10%);
+        }
+    }
+
+    .ui-button.ui-state-default.ui-button-warning,
+    .ui-buttonset.ui-button-warning>.ui-button.ui-state-default {
+        color: $textColor;
+        background-color: $amber;
+
+        &:enabled:hover {
+            background-color: $amberHover;
+        }
+
+        &:enabled:focus {
+            outline: 0 none;
+            background-color: lighten($amber, 10%);
+        }
+    }
+
+    .ui-button.ui-state-default.ui-button-danger,
+    .ui-buttonset.ui-button-danger>.ui-button.ui-state-default {
+        background-color: $red;
+
+        &:enabled:hover {
+            background-color: $redHover;
+        }
+
+        &:enabled:focus {
+            outline: 0 none;
+            background-color: lighten($red, 10%);
+        }
+    }
+
+    .ui-buttonset:not(.ui-button-danger, ui-button-secondary, ui-button-success, ui-button-info, ui-button-warning) {
+        .ui-button {
+            &:not(.ui-state-disabled):not(.ui-state-active):hover {
+                background-color: $primaryDarkColor;
+            }
+
+            &.ui-state-active {
+                background-color: $accentColor;
+                color: $accentTextColor;
+            }
+        }
+
+
+        &.ui-button-danger {
+            &:enabled:not(:focus):hover {
+                background-color: $redHover;
+            }
+
+            &:focus {
+                outline: 0 none;
+                background-color: lighten($red, 10%);
+            }
+        }
+    }
+
+    .ui-splitbutton {
+        @include border-radius($borderRadius + 1);
+        -moz-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+        -webkit-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+        box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
+
+        >.ui-button {
+            @include no-shadow();
+
+            &:active {
+                background-color: lighten($primaryColor, 10%);
+            }
+        }
+
+        .ui-splitbutton-menubutton {
+            height: 2.25em;
+            @include border-radius-left(0);
+            @include border-radius-right($borderRadius);
+        }
+
+        .ui-menu {
+            width: 100%;
+            min-width: 12.5em;
+        }
+    }
+
+    .ui-fluid {
+        .ui-splitbutton {
+            .ui-button:first-child {
+                width: calc(100% - 2em);
+            }
+        }
+    }
+
+    p-checkbox.ng-dirty.ng-invalid .ui-chkbox-box {
+        &.ui-state-active {
+            border-color: $inputBorderErrorColor;
+            background-color: $inputBgColor;
+
+            .ui-chkbox-icon {
+                color: $inputBorderErrorColor;
+            }
+        }
+    }
+
+    .ui-chkbox {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 1.25em;
+        width: 1.25em;
+        height: 1.25em;
+        cursor: default;
+
+        .ui-chkbox-box {
+            border: 2px solid $checkboxBorderColor;
+            width: 1.25em;
+            height: 1.25em;
+            overflow: hidden;
+            @include transition(background-color .3s);
+
+            .ui-chkbox-icon {
+                font-size: 1.25em;
+                margin-left: -2px;
+                margin-top: -2px;
+            }
+
+            &.ui-state-active {
+                border-color: $primaryColor;
+                background-color: $primaryColor;
+            }
+
+            &.ui-state-focus {
+                border-color: $primaryColor;
+                @include content-shadow();
+                @include transition(box-shadow .3s, background-color .3s);
+            }
+        }
+    }
+
+    .ui-chkbox-label {
+        margin-left: $inlineSpacing;
+    }
+
+    .ui-fluid {
+        .ui-autocomplete {
+            &.ui-autocomplete-dd {
+                >.ui-inputtext {
+                    width: 100%;
+                }
+            }
+        }
+
+        .ui-inputgroup {
+            .md-inputfield {
+                .ui-autocomplete {
+                    top: 5px;
+                }
+            }
+        }
+    }
+
+    .ui-dropdown {
+        border-width: 0;
+        background: transparent no-repeat;
+        background-image: linear-gradient(to bottom, $primaryColor, $primaryColor), linear-gradient(to bottom, $inputBorderColor, $inputBorderColor);
+        background-size: 0 2px, 100% 1px;
+        background-position: 50% 100%, 50% 100%;
+        transition: background-size 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+        padding-bottom: 2px;
+        box-sizing: border-box;
+        @include border-radius(0);
+
+        .ui-dropdown-trigger {
+            height: 1.5em;
+            width: 1.5em;
+            margin-top: 0;
+            padding: 0;
+            top: 2px;
+            margin-right: 0;
+
+            .pi {
+                color: $textSecondaryColor;
+            }
+        }
+
+        .ui-dropdown-label {
+            background: none;
+
+            &.ui-inputtext {
+                font: $inputFontSize "Roboto", "Helvetica Neue", sans-serif;
+            }
+        }
+
+        &:not(.ui-state-disabled).ui-state-focus {
+            border-width: 0;
+            background-size: 100% 2px, 100% 1px;
+            padding-bottom: 2px;
+
+            .ui-dropdown-label {
+                padding-bottom: 2px;
+            }
+        }
+    }
+
+    .ui-fileupload {
+        .ui-fileupload-buttonbar {
+            padding: $headerPadding;
+
+            .pi-arrowreturnthick-1-n {
+                @include icon_override('file_upload');
+            }
+
+            .ui-button {
+                background-color: $accentColor;
+
+                &:enabled:hover {
+                    background-color: $accentColor;
+                }
+            }
+        }
+
+        .ui-fileupload-content {
+            .ui-messages-error {
+                .pi {
+                    color: $errorMessageTextColor;
+                }
+            }
+        }
+    }
+
+    .ui-fileupload-choose:not(.ui-state-disabled):hover,
+    .ui-fileupload-choose.ui-state-focus {
+        &.ui-button {
+            background-color: darken($accentColor, 5%);
+        }
+    }
+
+    .ui-fileupload-choose:not(.ui-state-disabled):active {
+        &.ui-button {
+            background-color: darken($accentColor, 10%);
+        }
+    }
+
+    /* InputGroup */
+    .ui-inputgroup {
+        .ui-inputgroup-addon {
+            &.ui-inputgroup-addon-fill {
+                background-color: $inputFieldFillBgColor;
+            }
+
+            border-width: 0 0 1px 0;
+            border-color: $inputBorderColor;
+            color: $textSecondaryColor;
+            padding: 2px 2px 1px 2px;
+            align-self: flex-end;
+
+            >i {
+                @include flex();
+                align-self: flex-end;
+            }
+        }
+
+        .ui-inputtext {
+            align-self: flex-end;
+        }
+
+        .md-inputfield {
+            -webkit-box-flex: 1;
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+            width: 1%;
+            display: inherit;
+
+            label {
+                top: 5px;
+            }
+
+            .ui-inputwrapper-filled~label {
+                top: -20px;
+            }
+
+            .ui-inputwrapper-focus~label {
+                top: -20px;
+            }
+
+            .ui-message {
+                top: 100%;
+            }
+        }
+
+        .ui-chkbox,
+        .ui-radiobutton {
+            margin-bottom: .125em;
+        }
+    }
+
+    .ui-selectbutton {
+        .ui-button {
+            &:not(.ui-state-active):not(.ui-state-disabled):hover {
+                background-color: $primaryDarkColor;
+            }
+
+            &.ui-state-active {
+                background-color: $accentColor;
+                color: $accentTextColor;
+            }
+        }
+    }
+
+    .ui-fluid {
+        .ui-inputgroup {
+            .ui-button-icon-only {
+                width: 1.643em;
+                height: 1.643em;
+                padding: 0;
+
+                .ui-button-icon-left {
+                    margin-left: -.45em;
+                }
+            }
+        }
+    }
+
+    /* Validation */
+    .ui-inputtext.ng-dirty.ng-invalid,
+    p-dropdown.ng-dirty.ng-invalid>.ui-dropdown,
+    p-autocomplete.ng-dirty.ng-invalid>.ui-autocomplete>.ui-inputtext,
+    p-calendar.ng-dirty.ng-invalid>.ui-calendar>.ui-inputtext,
+    p-chips.ng-dirty.ng-invalid>.ui-inputtext,
+    p-inputmask.ng-dirty.ng-invalid>.ui-inputtext,
+    p-inputswitch.ng-dirty.ng-invalid .ui-inputswitch,
+    p-listbox.ng-dirty.ng-invalid .ui-inputtext,
+    p-multiselect.ng-dirty.ng-invalid>.ui-multiselect,
+    p-spinner.ng-dirty.ng-invalid>.ui-inputtext,
+    p-selectbutton.ng-dirty.ng-invalid .ui-button,
+    p-togglebutton.ng-dirty.ng-invalid .ui-button {
+        background-image: linear-gradient(to bottom, $inputBorderErrorColor, $inputBorderErrorColor), linear-gradient(to bottom, $inputBorderErrorColor, $inputBorderErrorColor);
+    }
+}
+
+@media (max-width: 640px) {
+    body {
+        .ui-buttonset {
+            >.ui-button {
+                display: block;
+                @include border-radius(0);
+
+                &:first-child {
+                    @include border-radius-top($borderRadius);
+                }
+
+                &:last-child {
+                    @include border-radius-bottom($borderRadius);
+                }
+            }
+        }
+
+        .ui-splitbutton {
+            >.ui-button {
+                display: inline-block;
+
+                &:first-child {
+                    @include border-radius-top(0);
+                }
+
+                &:last-child {
+                    @include border-radius-bottom(0);
+                }
+            }
+        }
+    }
+}
+
+// _panel.scss
+
+body {
+    .ui-panel {
+        padding: 0;
+
+        .ui-panel-titlebar {
+            border: 0 none;
+            border-bottom: 1px solid $panelHeaderBorderColor;
+            padding: $headerPadding;
+            @include border-radius-top($borderRadius - 1);
+            @include border-radius-bottom(0);
+
+            .ui-panel-title {
+                line-height: 1.5em;
+            }
+
+            .ui-panel-titlebar-icon {
+                position: relative;
+                width: 1.5em;
+                height: 1.5em;
+                color: $panelHeaderIconColor;
+                margin: 0;
+                @include transition(background-color .3s);
+                @include border-radius(50%);
+
+                &:hover {
+                    background-color: $primaryLightColor;
+                }
+            }
+        }
+
+        .ui-panel-content {
+            height: 100%;
+            box-sizing: border-box;
+            padding: $contentPadding;
+        }
+
+        .ui-panel-footer {
+            padding: $headerPadding;
+            border: 0 none;
+            border-top: 1px solid $dividerColor;
+            margin: 0;
+        }
+    }
+}
+
+// _message.scss
+
+body {
+
+    /* Messages */
+    .ui-messages {
+        padding: $headerPadding;
+
+        ul {
+            display: inline-block;
+            margin-left: 0;
+        }
+
+        &.ui-messages-info {
+            background-color: $infoMessageBgColor;
+            border-color: $infoMessageBorderColor;
+            color: $infoMessageTextColor;
+        }
+
+        &.ui-messages-warn {
+            background-color: $warnMessageBgColor;
+            border-color: $warnMessageBorderColor;
+            color: $warnMessageTextColor;
+        }
+
+        &.ui-messages-error {
+            background-color: $errorMessageBgColor;
+            border-color: $errorMessageBorderColor;
+            color: $errorMessageTextColor;
+        }
+
+        &.ui-messages-success {
+            background-color: $successMessageBgColor;
+            border-color: $successMessageBorderColor;
+            color: $successMessageTextColor;
+        }
+
+        .ui-messages-close {
+            text-decoration: none;
+            color: $messageIconColor;
+            right: .25em;
+        }
+    }
+
+    .ui-messages .ui-messages-icon {
+        background: none;
+        color: $messageIconColor;
+        margin-top: -2px;
+
+        &.pi-info-circle {
+            @include material-icon("info");
+            font-size: 1.75em;
+        }
+
+        &.pi-exclamation-triangle {
+            @include material-icon("warning");
+            font-size: 1.75em;
+        }
+
+        &.pi-times {
+            @include material-icon("error_outline");
+            font-size: 1.75em;
+        }
+
+        &.pi-check {
+            @include material-icon("check_circle");
+            font-size: 1.75em;
+        }
+    }
+
+    .ui-message {
+
+        &.ui-message-info {
+            background-color: $infoMessageBgColor;
+            border-color: $infoMessageBorderColor;
+            color: $infoMessageTextColor;
+        }
+
+        &.ui-message-warn {
+            background-color: $warnMessageBgColor;
+            border-color: $warnMessageBorderColor;
+            color: $warnMessageTextColor;
+        }
+
+        &.ui-message-error {
+            background-color: $errorMessageBgColor;
+            border-color: $errorMessageBorderColor;
+            color: $errorMessageTextColor;
+        }
+
+        &.ui-message-success {
+            background-color: $successMessageBgColor;
+            border-color: $successMessageBorderColor;
+            color: $successMessageTextColor;
+        }
+
+        .ui-message-close {
+            text-decoration: none;
+            color: $messageIconColor;
+            right: .25em;
+        }
+    }
+
+    .ui-message .ui-message-icon {
+        background: none;
+        color: $messageIconColor;
+        margin-top: -2px;
+
+        &.pi-info-circle {
+            @include material-icon("info");
+            font-size: 1.75em;
+        }
+
+        &.pi-exclamation-triangle {
+            @include material-icon("warning");
+            font-size: 1.75em;
+        }
+
+        &.pi-times {
+            @include material-icon("error_outline");
+            font-size: 1.75em;
+        }
+
+        &.pi-check {
+            @include material-icon("check_circle");
+            font-size: 1.75em;
+        }
+    }
+
+    .ui-growl {
+        top: 90px;
+
+        >.ui-growl-item-container {
+            opacity: 1;
+
+            &.ui-growl-message-info {
+                background-color: $infoMessageBgColor;
+            }
+
+            &.ui-growl-message-warn {
+                background-color: $warnMessageBgColor;
+            }
+
+            &.ui-growl-message-error {
+                background-color: $errorMessageBgColor;
+            }
+
+            &.ui-growl-message-success {
+                background-color: $successMessageBgColor;
+            }
+
+            &.ui-shadow {
+                @include overlay-content-shadow();
+            }
+        }
+
+        .ui-growl-item {
+            .ui-growl-image {
+                background: none;
+                color: $messageIconColor;
+                font-size: 1.75em;
+
+                &.pi-info-circle {
+                    @include material-icon("info");
+                    font-size: 1.75em;
+                }
+
+                &.pi-exclamation-triangle {
+                    @include material-icon("warning");
+                    font-size: 1.75em;
+                }
+
+                &.pi-times {
+                    @include material-icon("error_outline");
+                    font-size: 1.75em;
+                }
+
+                &.pi-check {
+                    @include material-icon("check_circle");
+                    font-size: 1.75em;
+                }
+            }
+
+            .ui-growl-message {
+                color: $messageIconColor;
+            }
+
+            .ui-growl-icon-close {
+                @include material-icon("close");
+                font-size: 24px;
+                color: $messageIconColor;
+            }
+        }
+    }
+
+    .ui-toast {
+        .ui-toast-message {
+            @include overlay-content-shadow();
+
+            &.ui-toast-message-info {
+                background-color: $infoMessageBgColor;
+                border: 0 none;
+                color: $infoMessageTextColor;
+
+                .ui-toast-close-icon {
+                    color: $infoMessageTextColor;
+                }
+            }
+
+            &.ui-toast-message-success {
+                background-color: $successMessageBgColor;
+                border: 0 none;
+                color: $successMessageTextColor;
+
+                .ui-toast-close-icon {
+                    color: $successMessageTextColor;
+                }
+            }
+
+            &.ui-toast-message-warn {
+                background-color: $warnMessageBgColor;
+                border: 0 none;
+                color: $warnMessageTextColor;
+
+                .ui-toast-close-icon {
+                    color: $warnMessageTextColor;
+                }
+            }
+
+            &.ui-toast-message-error {
+                background-color: $errorMessageBgColor;
+                border: 0 none;
+                color: $errorMessageTextColor;
+
+                .ui-toast-close-icon {
+                    color: $errorMessageTextColor;
+                }
+            }
+        }
+    }
+
+    .ui-toast .ui-toast-icon {
+        &.pi-info-circle {
+            @include material-icon("info");
+            font-size: 1.75em;
+        }
+
+        &.pi-exclamation-triangle {
+            @include material-icon("warning");
+            font-size: 1.75em;
+        }
+
+        &.pi-times {
+            @include material-icon("error_outline");
+            font-size: 1.75em;
+        }
+
+        &.pi-check {
+            @include material-icon("check_circle");
+            font-size: 1.75em;
+        }
+    }
+}
+
+// _common.scss
+
+body {
+
+    .ui-widget,
+    .ui-widget .ui-widget {
+        font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+            'Roboto', sans-serif;
+        text-decoration: none;
+    }
+
+    .ui-widget-content {
+        background-color: $contentBgColor;
+        font-size: $contentFontSize;
+        border: 1px solid $dividerColor;
+
+        .pi {
+            color: $contentIconColor;
+        }
+    }
+
+    .ui-widget-header {
+        background-color: $headerBgColor;
+        color: $headerTextColor;
+        font-size: $headerFontSize;
+        border: 1px solid $primaryColor;
+
+        .pi {
+            color: $headerIconColor;
+        }
+    }
+
+    .ui-state-active,
+    .ui-state-highlight {
+        background-color: $accentColor;
+        color: $accentTextColor;
+
+        .pi {
+            color: $accentTextColor;
+        }
+    }
+
+    .ui-widget:disabled,
+    .ui-state-disabled {
+        opacity: 0.35;
+        filter: Alpha(Opacity=35);
+        background-image: none;
+        cursor: auto !important;
+    }
+
+    .ui-corner-all {
+        @include border-radius($borderRadius);
+    }
+
+    .ui-corner-top {
+        @include border-radius-top($borderRadius);
+    }
+
+    .ui-corner-bottom {
+        @include border-radius-bottom($borderRadius);
+    }
+
+    .ui-corner-left {
+        @include border-radius-left($borderRadius);
+    }
+
+    .ui-corner-right {
+        @include border-radius-right($borderRadius);
+    }
+
+    .ui-widget-overlay {
+        background-color: $lighterOverlayBgColor;
+    }
+}
+
+/* Add your customizations of the theme here */
+// For some reason this wasn't included in the theme icon import
+.pi {
+    &.pi-chevron-up {
+        @include icon-override('keyboard_arrow_up');
+    }
+}
+
+/* Workaround for PrimeNG Flexgrid not handling sizes properly when setting fixed col-widths */
+* {
+    -webkit-box-sizing: border-box;
+}
+
+.sb-privateEquity-link {
+    color: #22606c;
+}
+
+.sb-mx-auto {
+    margin: auto;
+}
+
+.sb-text-center {
+    text-align: center
+}

@@ -1,0 +1,88 @@
+@import '~src/styles/abstracts/variables';
+@import '~src/styles/abstracts/mixins';
+
+.sb-linechart-toolbar {
+  display: flex;
+  justify-content: space-between;
+  .mat-form-field-flex > .mat-form-field-infix { 
+    padding: 0.4em 0px;
+  }
+  .mat-form-field-label-wrapper { 
+    top: -1.5em; 
+  }
+
+  .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    transform: translateY(-1.1em) scale(.75);
+    width: 133.33333%;
+  }
+}
+
+.sb-linechart-daterange-select-dropdown {
+  display: none;
+
+  @include respond-to('tiny') {
+    display: inherit;
+    flex: auto;
+    margin-left: 1em;
+  }
+}
+
+.sb-linechart-range-picker {
+  display: flex;
+
+  & .mat-button-toggle-group {
+    & .mat-button-toggle {
+      & .mat-button-toggle-label-content {
+        line-height: 2em;
+      }
+    }
+
+    @include respond-to('tiny') {
+      display: none;
+    }
+  }
+}
+
+.sb-custom-daterange-toggle {
+  height: 2em;
+  display: inline-flex;
+  flex-direction: row;
+  margin-top: 1em;
+  > span {
+    line-height: 28px;
+  }
+  
+  @include respond-to('tiny') {
+    display: none;
+  }
+}
+
+.sb-linechart-date-picker {
+  margin-right: 0.5em;
+  width: 7em;
+
+  @include respond-to('tiny') {
+    display: none;
+  }
+}
+
+.sb-date-range-wrapper {
+  display: flex;
+}
+
+.sb-compare-toggle-wrapper {
+  max-width: 30%;
+  margin-top: 0.5em;
+  @include respond-to('tiny') {
+    margin-top: 0;
+    margin-left: 0.5em;
+    max-width: 100%;
+  }
+}
+
+// Mat Button Group
+.mat-button-toggle-standalone.mat-button-toggle-appearance-standard,
+.mat-button-toggle-group-appearance-standard {
+  height: 2em;
+  top: 1em;
+}

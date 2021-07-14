@@ -1,0 +1,14 @@
+// Better to use colors from $sbChartColors instead of highcharts variable?
+@for $i from 1 through length($colors) {
+  $color: nth($colors, $i);
+  .pie-table-button-color-#{$i - 1} {
+    color: $color;
+    vertical-align: text-top;
+  }
+}
+
+// Custom styling for div in pie chart legend item
+.sb-highcharts-pie-series-item {
+  width: 200px;
+  cursor: pointer;
+}

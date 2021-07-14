@@ -1,0 +1,11 @@
+<app-sb-messages [messages]="msgs"></app-sb-messages>
+<h1>{{title}}</h1>
+<form [formGroup]="form" (ngSubmit)="submit(model)"  class="ui-g ui-fluid form-group">
+  <div class="ui-g-12 ui-lg-12" >
+    <formly-form [model]="model" [fields]="fields"  [options]="options" [form]="form">
+    </formly-form>
+  </div>
+  <div>
+      <button pButton type="submit" label="Submit" style="width: 100px"></button>
+  </div>
+</form>

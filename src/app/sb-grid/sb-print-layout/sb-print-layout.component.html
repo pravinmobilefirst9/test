@@ -1,0 +1,69 @@
+<div class="sb-grid-wrapper sb-print-layout sb-p-col-landscape-print" #insideElement>
+    <div class="p-justify-center dashboard card" *ngIf="grid && grid.panelLayouts">
+        <div>
+            <button mat-raised-button style="float: right; margin: 25px 30px 40px;" class="ui-button-secondary flat sb-fit-content-button sb-print-preview-btn"
+                (click)="btnPrint($event)">
+                <i class="fa ui-icon-print" aria-hidden="true"></i>
+                Print
+            </button>
+            <button mat-raised-button style="float: left; margin: 25px 30px 40px;" class="sb-panel-header-button sb-preview-cancel-btn ui-button-secondary flat sb-fit-content-button"
+                (click)="cancelPrintPreview()">
+                <i class="fas fa-arrow-circle-left"></i>
+                Go back
+            </button>
+            <!-- <button mat-button type="button" class="sb-panel-header-button sb-preview-cancel-btn" (click)="cancelPrintPreview()">Cancel</button> -->
+        </div>
+        <div class="sb-print-form sb-print-formVal-selected" style="padding: 0 40px;" [innerHTML]="FormattedPrintFormData"></div>
+        <div *ngFor="let panelLayout of grid.panelLayouts" [class]="getLayoutClass(panelLayout)" class="main-div">
+            <div *ngIf="hasPanelLayouts(panelLayout)">
+                <!-- Insert tab groups if any...  -->
+                <!-- Check if this panel has children who should be in a specific tab group -->
+                <div *ngFor="let pl of panelLayout.panelLayouts; index as i" [ngClass]="getLayoutClass(pl)">
+                    <ng-container *ngIf="hasTabbedPanels(pl)" >
+                        <mat-tab-group (selectedTabChange)="handleTabChange($event)">
+                            <mat-tab *ngFor="let pane of pl.tabbedPanels; let tabIndex = index"
+                                label={{pane.tabHeader}}>
+                                <app-sb-panel [panelId]="pane.panelId" [tabId]="tabIndex">
+                                </app-sb-panel>
+                            </mat-tab>
+                        </mat-tab-group>
+                    </ng-container>
+                    <ng-container *ngIf="hasTabbedPanels(pl) == false">
+                        <app-sb-panel [panelId]="pl.panelId"></app-sb-panel>
+                    </ng-container>
+                </div>
+            </div>
+            <div *ngIf="hasPanelLayouts(panelLayout)">
+                <!-- Insert tab groups if any...  -->
+                <!-- Check if this panel has children who should be in a specific tab group -->
+                <div *ngFor="let pl of panelLayout.panelLayouts; index as i" [ngClass]="getLayoutClass(pl)">
+                    <ng-container *ngIf="hasTabbedPanels(pl)">
+                        <mat-tab-group (selectedTabChange)="handleTabChange($event)">
+                            <mat-tab *ngFor="let pane of pl.tabbedPanels; let tabIndex = index"
+                                label={{pane.tabHeader}}>
+                                <app-sb-panel [panelId]="pane.panelId" [tabId]="tabIndex"></app-sb-panel>
+                            </mat-tab>
+                        </mat-tab-group>
+                    </ng-container>
+                    <ng-container *ngIf="hasTabbedPanels(pl) == false">
+                        <app-sb-panel [panelId]="pl.panelId"></app-sb-panel>
+                    </ng-container>
+                </div>
+            </div>
+            <div *ngIf="hasPanelLayouts(panelLayout) == false">
+                <ng-container *ngIf="hasTabbedPanels(panelLayout)">
+                    <mat-tab-group (selectedTabChange)="handleTabChange($event)">
+                        <mat-tab *ngFor="let pane of panelLayout.tabbedPanels; let tabIndex = index"
+                            label={{pane.tabHeader}}>
+                            <app-sb-panel [panelId]="pane.panelId" [tabId]="tabIndex"></app-sb-panel>
+                        </mat-tab>
+                    </mat-tab-group>
+
+                </ng-container>
+                <ng-container *ngIf="hasTabbedPanels(panelLayout) == false">
+                    <app-sb-panel [panelId]="panelLayout.panelId"></app-sb-panel>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>

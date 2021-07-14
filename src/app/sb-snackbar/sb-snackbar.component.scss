@@ -1,0 +1,25 @@
+.success-msg {
+    color: limegreen !important;
+}
+
+.error-msg {
+    color: red !important;
+}
+
+.warn-msg {
+    color: orange !important;
+}
+
+.sb-snackbar {
+    display: inline-flex;
+}
+
+.sb-snackbar h2 {
+    margin-bottom: 5px !important;
+    font-weight: bold !important;
+}
+
+.snackbar-icon {
+    font-size: 3em;
+    margin: auto 15px;
+}

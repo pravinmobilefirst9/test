@@ -1,0 +1,9 @@
+<ng-container *ngFor="let location of locationEnums; let i = index">
+  <div class="sb-advanced-cell" [ngStyle]="getTextAlign(location)">
+    <ng-container *ngFor="let value of getValues(location.location)">
+      <span [ngClass]="value.prefixCssClasses">{{value.prefix}}</span>
+      <span [ngClass]="value.cssClasses" [ngStyle]="value.inlineCss">{{ value.text }}</span>
+      <span [ngClass]="value.suffixCssClasses">{{value.suffix}}</span>
+    </ng-container>
+  </div>
+</ng-container>

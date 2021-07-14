@@ -1,0 +1,20 @@
+/* Add your variable customizations of theme here */
+$headerTextColor: #40464e;
+$headerBgColor: white;
+$inputListItemFilterTextColor: #40464e;
+$inputListItemCheckboxBorderColor: #40464e;
+$headerIconColor: #40464e;
+$fontFamily: $sbFontFamily;
+/* Ink */
+$swibiPrimaryLightColor: rgb(234, 245, 255);
+$swibiAccentColor: #637381;
+$swibiPrimaryColor: #212B35;
+$swibiPrimarySemiDarkColor: rgb(49, 65, 80);
+$swibiPrimaryDarkColor: rgb(60, 77, 94);
+$swibiLogoPath: "../images/swimbird-logo.png";
+/* Add your variable customizations of layout here */
+
+$primaryColor: $swibiPrimaryColor;
+$primaryDarkColor: $swibiPrimaryDarkColor;
+// $primaryLightColor: $swibiPrimaryLightColor;
+$accentColor: $swibiAccentColor;

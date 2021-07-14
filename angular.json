@@ -1,0 +1,200 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "ultima-cli": {
+      "root": "",
+      "sourceRoot": "src",
+      "projectType": "application",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "aot": true,
+            "outputPath": "dist",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "tsConfig": "src/tsconfig.app.json",
+            "polyfills": "src/polyfills.ts",
+            "assets": [
+              "src/assets",
+              "src/upload.php"
+            ],
+            "styles": [
+              "node_modules/flag-icon-css/css/flag-icon.min.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "node_modules/fullcalendar/dist/fullcalendar.min.css",
+              "node_modules/quill/dist/quill.snow.css",
+              "node_modules/jsuites/dist/jsuites.css",
+              "node_modules/jexcel/dist/jexcel.css",
+              "node_modules/jexcel/src/css/jexcel.datatables.css",
+              "src/styles/themes/layout-swimbird.scss",
+              "src/styles/styles.scss"
+            ],
+            "scripts": [
+              "node_modules/chart.js/dist/Chart.js",
+              "node_modules/fullcalendar/dist/fullcalendar.js",
+              "node_modules/quill/dist/quill.js",
+              "node_modules/jsuites/dist/jsuites.js",
+              "node_modules/jexcel/dist/jexcel.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                },
+                {
+                  "replace": "src/assets/config/appconfig.json",
+                  "with": "src/app-config/prd/appconfig.json"
+                }
+              ]
+            },
+            "dev": {
+              "assets": [
+                "src/assets",
+                {
+                  "glob": "**/*",
+                  "input": "../sb-layout/sb-layout-service/src/main/resources/static/config/",
+                  "output": "./assets/mock-data/layout/"
+                }
+              ],
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.ts"
+                },
+                {
+                  "replace": "src/assets/config/appconfig.json",
+                  "with": "src/app-config/dev/appconfig.json"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ultima-cli:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ultima-cli:build:production"
+            },
+            "dev": {
+              "browserTarget": "ultima-cli:build:dev"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ultima-cli:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.spec.json",
+            "karmaConfig": "src/karma.conf.js",
+            "scripts": [
+              "node_modules/chart.js/dist/Chart.js",
+              "node_modules/fullcalendar/dist/fullcalendar.js",
+              "node_modules/quill/dist/quill.js"
+            ],
+            "styles": [
+              "node_modules/fullcalendar/dist/fullcalendar.min.css",
+              "node_modules/quill/dist/quill.snow.css",
+              "src/assets/layout/css/layout-swimbird.scss",
+              "src/styles.scss"
+            ],
+            "assets": [
+              "src/assets",
+              "src/upload.php",
+              {
+                "glob": "appconfig.json",
+                "input": "src/app-config/dev/",
+                "output": "/assets/config/"
+              }
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "src/tsconfig.app.json",
+              "src/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ultima-cli-e2e": {
+      "root": "e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "ultima-cli:serve"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ultima-cli",
+  "schematics": {
+    "@schematics/angular:component": {
+      "prefix": "app",
+      "style": "scss"
+    },
+    "@schematics/angular:directive": {
+      "prefix": "app"
+    }
+  },
+  "cli": {
+    "analytics": false
+  }
+}

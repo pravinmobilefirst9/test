@@ -1,0 +1,23 @@
+.mat-dialog-title {
+    border-bottom: 1px solid gray;
+    font-size: 2em !important;
+    font-weight: bold !important;
+    padding-bottom: 10px;
+}
+
+.sb-confirmation-content {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.sb-confirmation-key {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.sb-confirmation-value {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: gray;
+    padding-left: 10px;
+}

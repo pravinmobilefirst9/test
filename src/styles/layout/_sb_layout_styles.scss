@@ -1,0 +1,335 @@
+/* KEPT ALL THE STYLES RELATED TO LAYOUTS */
+
+.splash-screen-layout {
+    .splash-screen {
+        background-color: #f4f5f9;
+        background-image: url('src/assets/images/swimbird-back.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    .swimbird-icon {
+        width: 152px;
+        height: 162px;
+        
+        
+         
+        //@include theme(test_theme_dark);
+
+        //& < app-root.dark-theme
+        //{
+            //background: url('/assets/dark-theme/logo.png') top left no-repeat;
+        //}
+
+        @if('.splash-screen-layout123'){
+
+            background: url('/assets/splash-screen-layout/logo.png') top left no-repeat;
+
+        }
+        @else if ('.splash-screen-layout')
+        {
+            background: url('/assets/test_theme_dark/logo.png') top left no-repeat;
+        }
+        @else
+        {
+            background: url('/assets/default-theme/logo.png') top left no-repeat;
+        }
+
+        //@at-root .dark-theme#{&} {
+               
+          //  background: url('/assets/'+$themeIconPath+'/logo.png') top left no-repeat;
+        // }
+
+        //dark-theme &
+        //{
+        //    background: url('/assets/'+$themeIconPath+'/logo.png') top left no-repeat;
+        //} 
+
+        //@include variant('.is-active') {
+        //    background: url('/assets/'+$themeIconPath+'/logo.png') top left no-repeat;
+        //}
+
+        //@at-root .dark-theme#{&} {
+        //  background: url('/assets/'+$themeIconPath+'/logo.png') top left no-repeat;
+        //}
+
+         
+         
+        background-size: contain;
+        display: block;
+        margin-left: -40px;
+    }
+
+    .splash-loader-container {
+        margin-left: -37px;
+        margin-top: -122px;
+    }
+
+    .splash-loader {
+        margin: 0 auto;
+        width: 80px;
+        height: 100px;
+        display: inline-block;
+        position: absolute !important;
+        // left: 50%;
+    }
+}
+
+app-sb-panel> :first-child,
+.ui-tabview {
+    box-shadow: 0px 1px 4px 1px #332b2b47;
+    -webkit-box-shadow: 0px 1px 4px 1px #332b2b47;
+    -moz-box-shadow: 0px 1px 4px 1px #332b2b47;
+    border-radius: 5px;
+}
+
+.ui-tabview-panels .card {
+    box-shadow: none;
+}
+
+.masthead-content {
+    color: white;
+    margin-left: 20px;
+}
+
+.sb-login-body {
+    background-image: url('src/assets/images/swimbird-back.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.sb-login-panel {
+    background-image: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.92) 100%);
+    box-shadow: 1px 2px 14px 5px rgba(70, 65, 65, 0.35);
+    border-radius: 35px;
+    min-height: 415px;
+    margin: 100px auto;
+    padding: 25px 0px;
+
+    & .logo {
+        width: 271px;
+        min-height: 47px;
+        background: url($swibiLogoPath) top left no-repeat;
+        background-size: 198px 54px;
+        background-position: 23px 1px;
+        text-align: center;
+    }
+
+    & .ui-inputtext {
+        color: #2B325A;
+        background-image: linear-gradient(to bottom, white, white), linear-gradient(to bottom, #bdbdbd, #bdbdbd);
+
+        & .ui-float-label {
+            color: #2B325A;
+        }
+    }
+
+    & .ui-inputtext:focus {
+        background-size: 0% 1px, 100% 1px;
+    }
+
+    & .md-inputfield {
+        &>label {
+            color: #2B325A;
+        }
+
+        textarea:focus~label,
+        textarea.ui-state-filled~label,
+        input:focus~label,
+        input.ui-state-filled~label,
+        .ui-inputwrapper-focus~label,
+        .ui-inputwrapper-filled~label {
+            color: #2B325A;
+        }
+    }
+
+    & .ui-button {
+        color: #fff;
+        border-color: #5d5f64;
+        border-width: 2px;
+        border-radius: 25px;
+
+        &.sign-in-button {
+            background: #50979c;
+        }
+
+        &:enabled:not(:focus):hover {
+            background: rgba(255, 255, 255, 1);
+            color: #50979c;
+        }
+
+        &:disabled:not(:focus) {
+            color: rgba(255, 255, 255, 1);
+            background: #50979c;
+            opacity: 1;
+        }
+
+        &:focus {
+            background: white;
+            color: #50979c;
+        }
+
+        &.secondary {
+            background: #d05378;
+
+            &:enabled:not(:focus):hover {
+                background: rgba(255, 255, 255, 1);
+                color: #50979c;
+
+                .ui-button-text {
+                    text-decoration: none;
+                }
+            }
+
+            &:focus {
+                background: white;
+            }
+        }
+    }
+
+    .ui-messages {
+        &.ui-messages-error {
+            background-color: #f7dedeb8;
+            color: #e62a10;
+
+            & .ui-messages-icon {
+                color: #e62a10;
+                margin: 0.2em;
+                font-size: 2.5em;
+            }
+
+            & .ui-messages-close {
+                color: $primaryColor;
+                top: 1em;
+            }
+        }
+    }
+}
+
+.sb-logout-btn {
+    transition: box-shadow 0.4s !important;
+    // box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.13);
+    border: 1px solid #FFFFFF;
+    color: #222b35 !important;
+    border-radius: 50%;
+    width: 38px !important;
+    height: 38px !important;
+    margin-top: -6px;
+
+    &:hover {
+        box-shadow: 1px 2px 13px #cc3939;
+        color: #b94949 !important;
+    }
+}
+
+.sb-standalone-form {
+
+    // how to include these as mixins?
+    //@include shadow-box;
+    //@include ui-shadow-5;
+    & .ui-panel .ui-panel-titlebar {
+        background-image: linear-gradient(to right, $primaryColor, $primaryDarkColor);
+        color: $primaryLightColor;
+        height: 60px;
+        font-size: 2em;
+        font-weight: lighter;
+        display: flex;
+        justify-content: center;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+
+        & .ui-panel-title {
+            margin-left: 0.5em;
+        }
+    }
+}
+
+body .ui-button.ui-button-icon-only {
+    &.sb-panel-header-button {
+        font-size: 0.8em;
+        background: transparent;
+        color: $primaryLightColor;
+        width: inherit;
+        height: inherit;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    &:enabled:not(:focus):hover {
+        background: transparent;
+    }
+
+    &>.pi {
+        color: #a9a9a9;
+    }
+}
+
+body .ui-button {
+    &.sb-form-submit-button {
+        height: 2.7em;
+        background-color: $primaryDarkColor;
+        border: 1px solid $primaryDarkColor;
+        //border-radius: 250px;
+        width: 100px;
+        color: $primaryLightColor;
+        margin-right: 2em;
+        font-weight: bolder;
+
+        &:hover {
+            background-color: $primaryColor;
+        }
+
+        &:enabled:not(:focus):hover {
+            background-color: $primaryColor;
+        }
+    }
+
+    &.sb-form-cancel-button {
+        height: 2.7em;
+        background-color: white;
+        border: 1px solid $primaryDarkColor;
+        //border-radius: 250px;
+        width: 100px;
+        color: $primaryDarkColor;
+        font-weight: bolder;
+
+        &:hover {
+            background-color: $primaryLightColor;
+        }
+
+        &:enabled:not(:focus):hover {
+            background-color: $primaryLightColor;
+        }
+    }
+}
+
+.ui-panel-content {
+    & .p-grid {
+        margin: 0;
+    }
+}
+
+.sb-layout-and-footer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    min-height: 100%;
+}
+
+.sb-mat-btn-bg {
+    background-color: $sbPickRedBg;
+    color: $secondary;
+}
+
+.sb-form-group-header {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.sb-search-filter-bar .mat-button-toggle-group {
+    height: 3.2em;
+    border-radius: 9px;
+}

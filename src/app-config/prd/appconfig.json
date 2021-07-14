@@ -1,0 +1,17 @@
+{
+  "gatewayBaseUrl": "GATEWAY_BASE_URL_REPLACE",
+  "formConfigBaseUrl": "FORM_CONFIG_BASE_URL_REPLACE",
+  "widgetDataBaseUrl": "WIDGET_DATA_BASE_URL_REPLACE",
+  "mockDataBaseUrl": "MOCK_DATA_BASE_URL_REPLACE",
+  "layoutConfigurationBaseUrl": "LAYOUT_CONFIGURATION_BASE_URL_REPLACE",
+  "propertiesConfigurationBaseUrl": "GATEWAY_BASE_URL_REPLACE/properties",
+  "environment": "ENVIRONMENT_REPLACE",
+  "bypassLogin": BYPASS_LOGIN_REPLACE,
+  "cssTheme": "CSS_THEME_REPLACE",
+  "appTitle": "APP_TITLE_REPLACE",
+  "basicAuthenticationHeader": "Basic c3dpbWJpcmQtY2xpZW50Om15LXNlY3JldA==",
+  "buildVersion": "INSERT_BUILD_NUMBER_HERE",
+  "idleTimeBeforeWarningPopupInSeconds": 600,
+  "timeoutBeforeLogoutAfterWarningInSeconds": 60,
+  "baseCurrency": "SEK"
+}

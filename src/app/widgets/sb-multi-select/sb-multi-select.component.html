@@ -1,0 +1,16 @@
+<div *ngIf="isLoading">
+  <mat-spinner class="sb-mx-auto" color="accent" diameter="30" id={{context.widgetId}}></mat-spinner>
+  <p class="sb-text-center" style="color: lightgray"> Loading... </p>
+</div>
+<div>
+  <mat-form-field class="mat-form-field-full-width">
+    <mat-select [multiple]="true" [(ngModel)]="selectedMultiSelectOptions" (selectionChange)="onChange($event)">
+      <mat-select-trigger>
+        {{getDisplayText(dataOptions)}}
+      </mat-select-trigger>
+      <mat-option *ngFor="let option of dataOptions" [value]="option.value">
+        {{option.label}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

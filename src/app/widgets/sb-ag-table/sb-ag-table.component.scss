@@ -1,0 +1,95 @@
+:host ::ng-deep button {
+  margin-right: .25em;
+}
+
+body .ui-button.ui-button-text-icon-left {
+  padding-left: 1.5em !important;
+}
+
+body .ui-tabview {
+  box-shadow: none !important;
+}
+
+.no-data {
+    text-align: center;
+}
+
+.no-data-text {
+    font-size: 1em;
+    color: lightgray;
+    margin-bottom: 0;
+}
+
+  .column-checkbox {
+    width:250px;
+    margin-bottom:10px;
+    height: auto;
+    overflow-y: auto;
+    min-height: auto;
+    max-height: 300px;
+  }
+
+  //drag and drop
+
+  .box-list {
+    margin-top: 30px;
+    border: dashed #22606c 1px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* when cdkDropListOrientation="horizontal" comment out flex properties below: */
+    /* flex-direction: row; */
+    padding: .5em 0;
+    height: auto;
+    min-height: auto;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  .box-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  .drag-box {
+    background-color: white;
+    box-shadow: 0px 1px 1px 1px grey;
+    color: #22606c;
+    cursor: move;
+    display: flex;
+      box-sizing: border-box;
+      flex-grow: 1;
+      justify-content: center;
+    margin: .25em;
+    padding: .5em;
+    width: 90%;
+  }
+
+  .cdk-drag {
+    /* this is the animation that fires for the drag */
+      transition: transform 150ms ease;
+  }
+
+  .cdk-drag-animating {
+    /* this is the animation that fires for the drop */
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  .cdk-drag-placeholder {
+    /* setting opacity to zero makes a blank space between list items during drag preview */
+    opacity: .5;
+  }
+
+  .cdk-drag-preview {
+    background-color: #22606c;
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0 3px 14px 2px rgba(0, 0, 0, 0.12);
+    opacity: .7;
+  }
+
+  body .ui-tabview .ui-tabview-nav > li.ui-state-active {
+    background-color: #50979c !important;
+    border-radius: 20px !important;
+  }

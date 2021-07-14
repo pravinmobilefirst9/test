@@ -1,0 +1,31 @@
+<mat-card [ngClass]="isStandaloneForm ? 'ui-shadow-box ui-shadow-2' : 'card card-w-title'">
+  <mat-accordion>
+    <mat-expansion-panel [hideToggle]="!enableToggling" [expanded]="!collapse" [ngClass]="getPanelClasses()" [disabled]="!collapse">
+      <mat-expansion-panel-header class="panel-header">
+        <mat-panel-title class="panel-header-title">
+          <mat-card-header>
+            <div class="sb-panel-header" style="width: 100%">
+              <span class="ui-panel-title">{{title}}</span>
+              <div *ngIf="enablePrinting && !printLayout" class="sb-header-toolbar">
+                <!-- <button pButton icon="fa ui-icon-print" label="Print" class="ui-button-secondary flat sb-fit-content-button"
+                  (click)="btnPrint($event)"></button> -->
+                <button mat-button icon="fa ui-icon-print" class="ui-button-secondary flat sb-fit-content-button"
+                  (click)="btnPrint($event)">
+                  <i class="fa ui-icon-print" aria-hidden="true"></i>
+                  Print Preview
+                </button>
+              </div>
+              <div *ngIf="isStandaloneForm" class="sb-header-toolbar">
+                <button pButton type="button" class="sb-panel-header-button" pTooltip="Cancel" icon="pi pi-times"
+                  (click)="formCancel($event)"></button>
+              </div>
+            </div>
+          </mat-card-header>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="p-grid" style="width: 100%;min-height: 100px;position: relative;">
+        <ng-template appSbPanel></ng-template>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</mat-card>

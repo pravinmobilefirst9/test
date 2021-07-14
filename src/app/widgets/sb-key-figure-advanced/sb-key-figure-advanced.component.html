@@ -1,0 +1,63 @@
+<div *ngIf="isLoading">
+  <mat-spinner class="sb-mx-auto" color="accent" diameter="30" id={{context.widgetId}}></mat-spinner>
+  <p class="sb-text-center" style="color: lightgray"> Loading... </p>
+</div>
+<!-- Horisontal key figure layout -->
+<div *ngIf="horisontalLayout()" class="sb-horizontal-key-figure-advanced-wrapper">
+  <div *ngFor="let element of dataElements">
+    <div class="p-col">
+      <div [ngClass]="element.labelClass" [ngStyle]="element.labelInlineStyle">
+        {{element.key}}
+      </div>
+      <span *ngFor="let elementValue of element.values; let i = index" [ngClass]="elementValue.valueClass"
+        [ngStyle]="elementValue.valueInlineStyle">
+        <span *ngIf="isObject(elementValue.value)">
+          <app-sb-advanced-cell [context]="context" [value]="elementValue.value"
+            [columnConfiguration]="getColumnConfiguration()" [defaultAlignment]="getDefaultAlignment(i)">
+          </app-sb-advanced-cell>
+        </span>
+        <span *ngIf="!isObject(elementValue.value)">
+          {{elementValue.value}}
+        </span>
+      </span>
+    </div>
+  </div>
+</div>
+<!-- Table key figure layout -->
+<div *ngIf="verticalLayout()" class="sb-key-figure-advanced-wrapper">
+  <div *ngIf="context.columnHeaders" class="sb-key-figure-advanced-item">
+    <span *ngFor="let column of context.columnHeaders" class="sb-key-figure-cell-header">
+      <span>{{column.header}}</span>
+    </span>
+  </div>
+  <div *ngFor="let element of dataElements; let i = index; trackBy: trackByFunction"
+    [ngClass]="{'sb-key-figure-advanced-item': true, 'routing-enabled': context.routingConfig, 'sb-first': i === 0 }"
+    (click)="onClick($event, context.routingConfig, element)">
+    <span [ngClass]="element.labelClass" [ngStyle]="element.labelInlineStyle">
+      <span [ngClass]="getBulletCssClasses(element.key, element, i)">
+        {{abbreviate(element.key)}}
+      </span>
+    </span>
+    <div *ngFor="let elementValue of element.values; let i = index; trackBy: trackByFunction"
+      [ngClass]="elementValue.valueClass" [ngStyle]="elementValue.valueInlineStyle">
+      <app-sb-advanced-cell [context]="context" [value]="elementValue.value"
+        [columnConfiguration]="getColumnConfiguration()" [defaultAlignment]="getDefaultAlignment(i)">
+      </app-sb-advanced-cell>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="tableLayout()" class="sb-key-figure-advanced-wrapper">
+  <div *ngIf="context.columnHeaders" class="sb-key-figure-advanced-item">
+    <span *ngFor="let column of context.columnHeaders" class="sb-key-figure-cell-header">
+      <span>{{column.header}}</span>
+    </span>
+  </div>
+  <div *ngFor="let element of dataElements; let i = index; trackBy: trackByFunction">
+    <div *ngFor="let elementValue of element.values; let i = index; trackBy: trackByFunction"
+      class="sb-key-figure-advanced-item sb-key-figure-table-item">
+      <div class="key-figure-cell-value">{{ elementValue.label }}</div>
+      <div [ngClass]="elementValue.valueClass">{{ elementValue.value }}</div>
+    </div>
+  </div>
+</div>

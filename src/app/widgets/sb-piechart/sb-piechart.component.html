@@ -1,0 +1,13 @@
+<div *ngIf="isLoading">
+  <mat-spinner class="sb-mx-auto" color="accent" diameter="30" id={{context.widgetId}}></mat-spinner>
+  <p class="sb-text-center" style="color: lightgray"> Loading... </p>
+</div>
+<highcharts-chart
+  [Highcharts]="Highcharts"
+  [options]="chartOptions"
+  [callbackFunction]="chartCallback"
+  [(update)]="updateFlag"
+  [oneToOne]="oneToOneFlag"
+  [runOutsideAngular]="runOutsideAngular"
+>
+</highcharts-chart>

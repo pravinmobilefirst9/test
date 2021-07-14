@@ -1,0 +1,33 @@
+$positiveValueIndicatorColor: #00af00;
+$negativeValueIndicatorColor: #ff1900;
+$sbFontFamily: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+  'Roboto', sans-serif;
+$sbChartColors: #1c3175 #176BA0 #19AADE #6DF0D2 #C7F9EE
+rgb(233, 129, 203) #DB4CB2 #AF4BCE #7D3AC1 #29066B; // Highcharts can only handle 10 colors -  else append these: #820401 #DE542C #EE9A3A #E7E34E
+$sb-bp-small: 640px;
+$sb-bp-medium: 768px;
+$sb-bp-large: 1024px;
+$primeng-menu-breakpoint: 1024px;
+$sb-bp-huge: 1200px;
+$sb-bp-portrait-print: 670px;
+$sb-bp-landscape-print: 1130px;
+$breakpoints: (
+  'tiny': (
+    max-width: $sb-bp-small
+  ),
+  'small': (
+    min-width: $sb-bp-small
+  ),
+  'medium': (
+    min-width: $sb-bp-medium
+  ),
+  'large': (
+    min-width: $sb-bp-large
+  ),
+  'huge': (
+    min-width: $sb-bp-huge
+  ),
+  'primeng-menu': (
+    min-width: $primeng-menu-breakpoint
+  )
+);

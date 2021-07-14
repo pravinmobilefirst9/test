@@ -1,0 +1,7 @@
+<div class="sb-snackbar" [ngClass]="getMessageIconsAndColor().color">
+    <span class="material-icons snackbar-icon">{{getMessageIconsAndColor().icon}}</span>
+    <div>
+        <h2>{{data.summary}}</h2>
+        <span>{{data.detail}}</span>
+    </div>
+</div>

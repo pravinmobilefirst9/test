@@ -1,0 +1,19 @@
+<div [ngClass]="printLayout ? '' : 'sb-layout-and-footer-container'">
+  <ng-container *ngIf="disconnected">
+    <app-connection-sb-overlay></app-connection-sb-overlay>
+  </ng-container>
+  <div *ngIf="authService.isAuthenticated() else login" class="layout-wrapper"
+    [ngClass]="{'layout-compact':layoutCompact}" (click)="onLayoutClick()">
+
+    <div #layoutContainer class="layout-container" style="height: 100%;">
+      <p-confirmDialog></p-confirmDialog>
+      <sb-menu></sb-menu>
+      <div class="layout-mask"></div>
+    </div>
+  </div>
+  <div></div>
+
+</div>
+<ng-template #login>
+  <router-outlet></router-outlet>
+</ng-template>

@@ -1,0 +1,678 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+// Mat toggle group mixin
+@mixin mat-button-toggle-group($theme) {
+    $background: map-get($theme, primary);
+    $foreground: map-get($theme, foreground);
+
+    .mat-button-toggle {
+        background-color: mat-color($background);
+        color: mat-color($foreground, text);
+    }
+}
+
+// Mat card group mixin
+@mixin mat-card($theme) {
+    $background: map-get($theme, primary);
+    $foreground: map-get($theme, foreground);
+
+    .mat-card {
+        background-color: mat-color($background);
+        color: mat-color($foreground, text);
+
+        & .mat-expansion-panel {
+            background-color: mat-color($background);
+            color: mat-color($foreground, text);
+        }
+    }
+
+    .card {
+        background-color: mat-color($background);
+        & h1 {
+            color: mat-color($foreground, text);
+        }
+    }
+
+    .ui-corner-top {
+        background-color: mat-color($background) !important;
+    }
+
+    .ui-corner-bottom {
+        background-color: mat-color($background) !important;
+    }
+
+    .ui-fileupload-row {
+        color: mat-color($foreground, text) !important;
+    }
+}
+
+// Mat calender group mixin
+@mixin mat-calendar($theme) {
+    $background: map-get($theme, primary);
+    $foreground: map-get($theme, foreground);
+    $accent: map-get($theme, accent);
+
+    .mat-calendar {
+        background-color: mat-color($background);
+        color: mat-color($foreground, text);
+    }
+
+    .mat-button-toggle-group {
+        background-color: mat-color($background);
+        color: mat-color($foreground, text);
+    }
+
+    .mat-calendar-body-selected {
+        background-color: mat-color($accent);
+    }
+}
+
+// mat-select-panel
+@mixin mat-select($theme) {
+    $primary: map-get($theme, primary);
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+
+    .mat-option {
+        background-color: mat-color($primary);
+        color: mat-color($foreground, text);
+        
+        &.mat-selected .mat-option-text {
+            color: mat-color($foreground, text);
+        }
+
+        &.mat-selected .mat-option-pseudo-checkbox {
+            border-color: mat-color($foreground, text);
+            background-color: mat-color($background, circle);
+        }
+    }
+
+    .mat-pseudo-checkbox::after {
+        color: mat-color($foreground, text);
+    }
+
+    .mat-option {
+        .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+            color: mat-color($foreground, text);
+        }
+    }
+}
+
+// Highchart mixin
+@mixin highcharts-background($theme) {
+    $background: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $foreground: map-get($theme, foreground);
+    $bg: map-get($theme, background);
+
+    .mat-tab-group {
+        background-color: mat-color($background);
+        box-shadow: none;
+        &:hover {
+            box-shadow: none;
+        }
+        &.mat-primary .mat-ink-bar {
+            background-color: mat-color($accent);;
+        }
+
+        & .ag-row {
+            background-color: mat-color($background);
+        }
+    }
+
+    .table-pie-table .ag-row {
+        background-color: mat-color($background);
+    }
+
+    .highcharts-background {
+        fill: mat-color($background);
+    }
+
+    .highcharts-grid-line {
+        stroke: mat-color($foreground, divider);
+    }
+
+    .key-figure-default-value,
+    .key-figure-cell-value {
+        color: mat-color($foreground, text);
+    }
+    .key-figure-default-value {
+        &.cell-positive {
+            color: mat-color($bg, positive);
+        }
+        &.cell-negative{
+            color: mat-color($bg, negative);
+        }
+    }
+    // for theme
+    .highcharts-graph {
+        stroke: #4C9DD1;
+    }
+
+    .highcharts-area {
+        filter: invert(62%) sepia(57%) saturate(3860%) hue-rotate(175deg) brightness(85%) contrast(91%);
+    }
+}
+
+// Mat expansion panel mixin
+@mixin mat-expansion-panel-theme($theme) {
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+
+    .mat-expansion-panel {
+        @include _mat-theme-overridable-elevation(2, $theme);
+        background: mat-color($background, card);
+        color: mat-color($foreground, text);
+    }
+
+    .mat-action-row {
+        border-top-color: mat-color($foreground, divider);
+    }
+
+    .mat-expansion-panel {
+
+        & .mat-expansion-panel-header.cdk-keyboard-focused,
+        & .mat-expansion-panel-header.cdk-program-focused,
+        &:not(.mat-expanded) .mat-expansion-panel-header:hover {
+            &:not([aria-disabled='true']) {
+                background: mat-color($background, hover);
+            }
+        }
+    }
+
+    // Disable the hover on touch devices since it can appear like it is stuck. We can't use
+    // `@media (hover)` above, because the desktop support browser support isn't great.
+    @media (hover: none) {
+        .mat-expansion-panel:not(.mat-expanded):not([aria-disabled='true']) .mat-expansion-panel-header:hover {
+            background: mat-color($background, card);
+        }
+    }
+
+    .mat-expansion-panel-header-title {
+        color: mat-color($foreground, text);
+    }
+
+    .mat-expansion-panel-header-description,
+    .mat-expansion-indicator::after {
+        color: mat-color($foreground, secondary-text);
+    }
+
+    .mat-expansion-panel-header[aria-disabled='true'] {
+        color: mat-color($foreground, disabled-button);
+
+        .mat-expansion-panel-header-title,
+        .mat-expansion-panel-header-description {
+            color: mat-color($foreground, text);
+        }
+    }
+}
+
+// Nav bar menu mixin
+@mixin sub-menu-links($theme) {
+    $warn: map-get($theme, warn);
+    $accent: map-get($theme, accent);
+    $background: map-get($theme, primary);
+    $bg: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+
+    .mega-menu-list-container {
+        background-color: mat-color($bg, dialog);
+        border: 1px solid mat-color($bg, dialog);
+        box-shadow: -1px 6px 5px 0px #190f0f47;
+        .nav-column li a {
+            &:hover {
+                color: mat-color($accent, text);
+            }
+
+            &.sub-menu-list-items-selected {
+                color: mat-color($accent);
+            }
+
+            color: mat-color($foreground, text);
+        }
+    }
+
+    // .mega-menu-list-container {
+    //     background-color: mat-color($bg, dialog);
+    //     border: 1px solid mat-color($bg, dialog);
+    //     box-shadow: -1px 6px 5px 0px #190f0f47;
+    // }
+
+    .nav-column h3 {
+        color: mat-color($foreground, text);
+    }
+
+    .subMenuLinks:hover {
+        color: mat-color($accent, text);
+    }
+
+    // .mega-menu-list-style a {
+    //     color: mat-color($foreground, text);
+    // }
+
+    .mega-menu-list-style a {
+        color: mat-color($foreground, text);
+
+        &.sub-menu-list-items-selected {
+            color: mat-color($accent);
+        }
+    }
+
+    .menu-items-selected {
+        border-bottom: 3px solid mat-color($accent);
+        color: mat-color($accent);
+    }
+
+    .menu-items-style {
+        &:hover {
+            border-color: mat-color($accent);
+        }
+    }
+
+    .sb-mat-btn-bg {
+        background-color: mat-color($accent);
+    }
+
+    .mat-menu-item.sub-menu-list-items-selected,
+    .mat-child-menu.sub-menu-list-items-selected,
+    .subMenuLinks {
+        &:hover {
+            color: mat-color($accent);
+        }
+    }
+
+    .mat-child-menu.sub-menu-list-items-selected {
+        color: mat-color($accent);
+    }
+
+    .mat-toolbar {
+        border-bottom-color: mat-color($foreground, divider) !important;
+    }
+
+    .swibiLogo{
+        background: url('/assets/images/nordic-logo.svg') top left no-repeat !important;
+    }
+
+    .swimbird-icon{
+        background: url('/assets/images/nordic-angels.svg') bottom left no-repeat !important;
+        margin-left: 0;
+        zoom: 0.7
+    }
+}
+
+@mixin sidenav($theme){
+    $background: map-get($theme, background);
+    $accent:map-get($theme,accent);
+    .mat-child-menu:hover {
+        background: mat-color($background, dialog);
+        color:mat-color($accent);
+    }
+}
+
+@mixin header($theme) {
+    $primary: map-get($theme, primary);
+    $foreground: map-get($theme, foreground);
+
+    .spacer-menus-content {
+        // color: mat-color($foreground, text)
+        color: mat-color($primary, default-contrast);
+    }
+
+    .mat-list-item-content .mat-icon {
+        // color: mat-color($foreground, text)
+        color: mat-color($primary, default-contrast);
+    }
+
+    .spacer-menus-icons.arrow-btn {
+        color: mat-color($primary, default-contrast);
+    }
+
+    .spacer-menus {
+        &:hover {
+
+            .spacer-menus-icons,
+            .spacer-menus-content {
+                color: mat-color($foreground, text) !important;
+            }
+        }
+    }
+}
+
+// Ag grid mixin
+@mixin ag-grid-theme($theme) {
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+
+    .cell-standard-value,
+    .key-figure-default-label {
+        color: mat-color($foreground, text);
+    }
+
+    .sb-key-figure-advanced-item {
+        &.sb-first {
+            border-color: mat-color($foreground, divider);
+        }
+
+        &.routing-enabled {
+            &:hover {
+                background-color: mat-color($background, hover);
+            }    
+        }
+        border-color: mat-color($foreground, divider);
+    }
+    
+    .cell-secondary-value {
+        color: mat-color($foreground, text);
+    }
+
+    .ag-theme-material {
+        & .ag-header {
+            color: mat-color($foreground, text);
+            background: mat-color($primary);
+        }
+
+        & .ag-header-cell-label .ag-header-cell-text,
+        & .ag-paging-panel {
+            color: mat-color($foreground, text) !important;
+            opacity: .6;    
+        }
+
+        & .ag-row-hover {
+            background-color: mat-color($background, hover);
+        }
+
+        & .ag-row-selected {
+            background-color: mat-color($background, selected);
+        }
+
+        & .ag-header-cell:first-of-type,
+        & .ag-header-cell:not(.ag-column-resizing)+.ag-header-cell {
+            &:hover {
+                background-color: mat-color(map-get($theme, primary));
+            }    
+        }
+
+        & .ag-tab-header .ag-tab.ag-tab-selected {
+            border-color: mat-color($accent);
+        }
+
+        & .ag-menu-option-active {
+            background-color: mat-color($background, hover);
+        }
+
+        // For search filter
+        & .ag-filter input[type="text"]::placeholder{
+            color: mat-color($foreground,text);
+        }
+        & .ag-filter input[type="text"]{
+            color: mat-color($foreground,text)   
+        }
+        
+        & .ag-status-bar{
+            border:1px solid mat-color($foreground, divider);
+            background:none;
+        }
+    
+        //ag grid border
+        & .ag-row {
+            border-color: mat-color($foreground, divider);
+        }
+        //filer menu background
+        & .ag-menu {
+            background-color: mat-color($background, dialog);
+            border: 1px solid mat-color($background, dialog);
+            box-shadow: 0 0 3px 1px  #190f0f47;
+        }
+
+        & .ag-filter input[type="text"],
+        &:focus{
+            border-bottom: 2px solid mat-color($accent) ;
+        }
+
+        & .ag-primary-cols-filter,
+        &:focus {
+            border-bottom: 2px solid mat-color($accent);
+        }
+
+        & .ag-row-footer{
+            border-top: 1px mat-color($background, light-divider)  solid !important;     
+        }
+
+        & .ag-header {
+            border-color: mat-color($background, light-divider)
+        }
+    
+        color: mat-color($foreground, text);
+        background: mat-color($primary);
+        
+    }
+
+    .ag-tab-header {
+        background-color: mat-color(map-get($theme, primary));
+    }
+
+    .ag-menu {
+        background-color: mat-color(map-get($theme, primary));
+    }
+
+    .ag-row-footer {
+        background-color: mat-color($primary);
+    }
+
+    .cell-neutral {
+        color: mat-color($foreground, text) !important;
+    }
+
+    .sb-privateEquity-link {
+        color: mat-color($accent) !important;
+    }
+
+    .ag-tab-header{
+        background-color: mat-color($background, dialog);
+    }
+
+    .table-pie-table .ag-row-footer {
+        background-color: mat-color($background, footer);
+    }
+
+    .ag-row-footer {
+        background-color: mat-color($background, footer);
+    }
+}
+
+@mixin swip-form($theme) {
+    $background: map-get($theme, primary);
+    $foreground: map-get($theme, foreground);
+
+    app-card-wrapper .card-w-title {
+        background-color: mat-color($background);
+    }
+
+    .mat-input-element {
+        caret-color: mat-color($foreground);
+        color: mat-color($foreground, text);
+    }
+}
+
+
+// Toggle button Mixin
+@mixin toggle-button($theme) {
+    $accent: map-get($theme, accent);
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+    $mat-grey-bg: mat-palette($mat-grey, 500);
+
+    .checkboxTwo {
+        background: mat-color($mat-grey-bg);
+
+        & label {
+            background: mat-color($background, hover)
+        }
+        
+        & input[type='checkbox']:checked + label{
+            background: mat-color($accent)
+        }    
+    }
+}
+
+// Logout mat-menu mixin
+@mixin log-out($theme) {
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+
+    .topbar-item-name {
+        color: mat-color($foreground, text);
+    }
+
+    .mat-menu-content p mat-icon {
+        color: mat-color($foreground, text);
+    }
+
+    .closeDialogBtn {
+        background-color: mat-color($background, hover);
+    }
+}
+
+// Filter option mixin
+@mixin Name-for-template($theme) {
+    $background: map-get($theme, primary);
+    $foreground: map-get($theme, foreground);
+
+    .sb-save-filter-wrapper {
+        & input {
+            caret-color: mat-color($foreground, text);
+            &:focus {
+                border-bottom: 1px solid mat-color($foreground, text);
+            }
+        }
+    
+        & input[type="text"] {
+            color: mat-color($foreground, text);
+        }    
+    }
+}
+
+@mixin mat-input($theme) {
+    $background: map-get($theme, primary);
+    $bg: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+
+    .mat-input-element {
+        caret-color: mat-color($foreground, text)
+    }
+
+    .mat-form-field {
+        &.mat-focused .mat-form-field-label {
+            color: mat-color($foreground, text) !important;
+        }
+        &.mat-form-field-invalid {
+            
+            & .mat-form-field-label {
+                color: mat-color($bg, error);
+            }
+
+            .mat-form-field-ripple {
+                background-color: mat-color($bg, error);
+            }
+        }
+
+        &.mat-form-field-invalid .mat-input-element::placeholder{
+            color: mat-color(map-get($theme, warn));
+        }
+    
+    }
+
+    .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+        color: mat-color($foreground, text) !important;
+    }
+
+    .mat-error {
+        color: mat-color($bg, error);
+    }
+
+    .mat-form-field-invalid .mat-input-element {
+        caret-color: mat-color($bg, error);
+    }
+
+    .md-inputfield .ui-message.ui-messages-error{
+        color: mat-color(map-get($theme, warn)) !important;
+    }
+
+    app-sb-messages .error-bg {
+        background-color: mat-color($bg, error);
+        color: mat-color($foreground, text);
+    }
+    
+    // For login component 
+    .not-theme-component {
+        .mat-form-field-label {
+            color: mat-color($bg, selected);
+        }
+    
+        .mat-input-element {
+            color: black;
+        }
+    
+        .mat-form-field-appearance-legacy .mat-form-field-underline {
+            background-color: mat-color($bg, selected);
+        }
+    
+        .mat-form-field.mat-focused .mat-form-field-label {
+            color: mat-color($bg, selected) !important;
+        }
+    
+        .mat-raised-button[disabled][disabled] {
+            background-color: #50979c;
+        }
+    }
+}
+
+@mixin ag-icon-color($theme){
+    $icons: aggregation arrows asc checkbox-checked-readonly checkbox-checked checkbox-indeterminate-readonly checkbox-indeterminate checkbox-unchecked-readonly checkbox-unchecked column columns contracted copy cut desc expanded eye-slash eye filter group indeterminate left loading menu minus none not-allowed paste pin pivot plus right small-left small-right small-up small-down tick cross tree-open tree-closed;
+    $pagination : btFirst btPrevious btNext btLast;
+    @each $icon in $icons {
+        .ag-theme-material button[ref="btFirst"],
+        .ag-theme-material button[ref="btPrevious"],
+        .ag-theme-material button[ref="btNext"],
+        .ag-theme-material button[ref="btLast"],
+        .ag-theme-material .ag-icon-#{$icon} {
+            filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(213deg) brightness(106%) contrast(101%);
+        }
+    }
+}
+
+@mixin custom-theme($theme) {
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+    $accent: map-get($theme, accent);
+    $primary: map-get($theme, primary);
+
+    @include mat-select($theme);
+    @include mat-card($theme);
+    @include mat-calendar($theme);
+    @include mat-input($theme);
+    @include mat-button-toggle-group($theme);
+    @include mat-expansion-panel-theme($theme);
+    @include highcharts-background($theme);
+    @include sub-menu-links($theme);
+    @include sidenav($theme);
+    @include ag-grid-theme($theme);
+    @include header($theme);
+    @include swip-form($theme);
+    @include toggle-button($theme);
+    @include log-out($theme);
+    @include Name-for-template($theme);
+    @include ag-icon-color($theme);
+    // custom classes styles
+
+    .sb-circle {
+        background-color: mat-color($background, circle);
+    }
+
+    .class-readonly {
+        background-color: mat-color($background, hover) !important;
+    }
+}

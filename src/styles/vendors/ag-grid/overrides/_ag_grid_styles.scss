@@ -1,0 +1,234 @@
+@media print {
+  .sb-ag-table-button-bar {
+    display: none !important;
+  }
+
+  .sb-ag-table-wrapper {
+    // Todo - remove primeng ui-grid-row from sb-ag-table
+    .ui-grid-row {
+      display: none;
+    }
+    .ag-theme-material {
+
+      .ag-group-contracted,
+      .ag-group-expanded {
+        display: none;
+      }
+
+      .ag-ltr {
+        .ag-cell-focus {
+          // In case the user selected a cell (blue outline) we'll remove that on print
+          border: inherit;
+        }
+      }
+    }
+  }
+
+  // Todo - this part can be removed if updating primeflex to latest version
+  .ag-root-wrapper,
+  .ag-root-wrapper-body,
+  .ag-root,
+  .ag-body-viewport,
+  .ag-center-cols-container,
+  .ag-center-cols-viewport,
+  .ag-center-cols-clipper,
+  .ag-body-horizontal-scroll-viewport,
+  .ag-virtual-list-viewport {
+    // 100% height elements with overflow hidden cause printing issues in IE and Edge
+    height: auto !important;
+    overflow: visible !important;
+    // flex elements cause printing issues in Firefox
+    // https://bugzilla.mozilla.org/show_bug.cgi?id=939897
+    display: block !important;
+  }
+}
+
+.sb-ag-table-button-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 5px;
+
+  &>button {
+    border-radius: inherit;
+  }
+
+  & .ui-button.ui-button-icon-only {
+    border-radius: inherit;
+  }
+}
+
+.ag-root-wrapper.ag-layout-normal {
+  height: 50vh;
+}
+
+.ag-theme-material .ag-header-cell-label .ag-header-cell-text {
+  font-weight: bold !important;
+  color: #22606c !important;
+}
+
+.ag-theme-material {
+  &.sb-ag-grid-condensed {
+    .ag-header-cell {
+      line-height: 15px;
+      font-size: 10px;
+      font-weight: 600;
+    }
+
+    .ag-cell {
+      line-height: 20px !important;
+      font-size: 10px !important;
+      font-weight: 600;
+    }
+
+    .ag-header-cell-label {
+      .ag-header-cell-text {
+        text-overflow: clip;
+        overflow: visible;
+        white-space: normal;
+      }
+    }
+
+    .ag-group-expanded {
+      &>span {
+        background-size: inherit;
+        height: inherit;
+        background-position: inherit;
+      }
+
+      .ag-icon-contracted,
+      .ag-icon-expanded {
+        &:empty {
+          height: 10px;
+        }
+      }
+    }
+
+    .ag-group-contracted {
+      &>span {
+        background-size: inherit;
+        height: inherit;
+        background-position: inherit;
+      }
+
+      .ag-icon-contracted,
+      .ag-icon-expanded {
+        &:empty {
+          height: 14px;
+        }
+      }
+    }
+
+    .ag-group-value,
+    .ag-group-child-count,
+    .ag-group-checkbox {
+      background-size: inherit;
+      height: inherit;
+      background-position: inherit;
+    }
+  }
+
+  .ag-header-cell-label:only-child {
+    // Default behavior is calc(100%-18px) to leave space for the menu placeholder.
+    // In case it's not there we want the label to expand to the size of the entire header div.
+    width: 100%;
+  }
+
+  .ag-row {
+    &:hover {
+      font-weight: 600;
+    }
+
+    &.ag-row-last {
+      // For some reason they are adding an additional border that only covers the last row
+      // Looks bad when columns are not spanning across the entire grid view
+      border-bottom: 0;
+    }
+  }
+
+  .ag-primary-cols-header-panel {
+    // For some reason the header for column filters had the border crossing in the center of the text
+    border: none;
+    margin-bottom: 10px;
+  }
+
+  .ag-menu {
+    // Tweak to make header menu visible when container is smaller than menu
+    max-height: none;
+    box-shadow: 0 0 3px 1px #d3d3d3;
+    // box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .ag-cell {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .ag-header {
+    border-color: $primaryColor;
+  }
+
+  .ag-header-cell,
+  .ag-header-group-cell {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  // Setting the footer row to bold for AG-grids
+  .ag-row-footer {
+    font-weight: 600;
+    border-top: 1px $primaryColor solid;
+    border-bottom: 1px $primaryColor solid;
+    background-color: #f7f7f7; // Todo - add variable for this
+    // &.ag-row-last {
+    //   font-weight: 600;
+    //   border-top: 2px $primaryColor solid;
+    // }
+  }
+
+  .ag-ltr {
+
+    // The default Ag-grid setting is to set 42px left-margin on leaf totals which causes text to be hidden due to small column widths
+    .ag-row-group-leaf-indent {
+      margin-left: 0;
+    }
+  }
+
+  .ag-row-group {
+    .ag-cell {
+      overflow: visible;
+      text-overflow: initial;
+      white-space: nowrap;
+    }
+  }
+}
+
+
+.ag-theme-material .ag-paging-panel {
+  align-items: center;
+  border-top: none !important;
+  color: #22606c;
+  font-weight: bold;
+  display: flex;
+  height: 28px;
+  justify-content: flex-end;
+  padding: 0 12px;
+  margin-top: 10px;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ebebeb;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #6d6d6d;
+}

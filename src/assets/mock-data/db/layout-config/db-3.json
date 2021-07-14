@@ -1,0 +1,2540 @@
+{
+  "grids": [
+    {
+      "panelLayouts": [
+        {
+          "width": 8,
+          "panelLayouts": [
+            {
+              "width": 4,
+              "panelId": "gauge-goal"
+            },
+            {
+              "width": 4,
+              "panelId": "gauge-comparison"
+            },
+            {
+              "width": 4,
+              "panelId": "gauge-risk"
+            },
+            {
+              "width": 6,
+              "panelId": "1"
+            },
+            {
+              "width": 6,
+              "panelId": "3"
+            },
+            {
+              "width": 4,
+              "panelId": "7"
+            },
+            {
+              "width": 4,
+              "panelId": "8"
+            },
+            {
+              "width": 4,
+              "panelId": "9"
+            },
+            {
+              "width": 12,
+              "panelId": "2"
+            }
+          ]
+        },
+        {
+          "width": 4,
+          "panelLayouts": [
+            {
+              "width": 12,
+              "panelId": "account-performance-overview"
+            },
+            {
+              "width": 12,
+              "panelId": "pie-chart-panel-with-drilldown"
+            }
+          ]
+        }
+      ],
+      "gridPath": "dashboard-1"
+    },
+    {
+      "panelLayouts": [
+        {
+          "width": 4,
+          "panelId": "1"
+        },
+        {
+          "width": 4,
+          "panelId": "3"
+        },
+        {
+          "width": 4,
+          "panelId": "3"
+        },
+        {
+          "width": 12,
+          "panelId": "2"
+        }
+      ],
+      "gridPath": "dashboard-2"
+    },
+    {
+      "panelLayouts": [
+        {
+          "widthSm": 12,
+          "widthMd": 12,
+          "widthLg": 6,
+          "widthXl": 6,
+          "panelId": "5"
+        },
+        {
+          "widthSm": 12,
+          "widthMd": 12,
+          "widthLg": 6,
+          "widthXl": 6,
+          "divider": false,
+          "tabbedPanels": [
+            {
+              "panelId": "pie-chart-panel-with-drilldown",
+              "tabHeader": "Concentration"
+            },
+            {
+              "panelId": "5",
+              "tabHeader": "Limit Exposure"
+            },
+            {
+              "panelId": "account-performance-overview",
+              "tabHeader": "Risk"
+            }
+          ]
+        }
+      ],
+      "gridPath": "dashboard-3"
+    },
+    {
+      "panelLayouts": [
+        {
+          "width": 12,
+          "panelId": "key-figure-advanced-panel"
+        },
+        {
+          "panelId": "key-figure-table-panel"
+        },
+        {
+          "panelId": "key-figure-table-panel2"
+        },
+        {
+          "width": 4,
+          "panelId": "pie-chart-panel-with-drilldown"
+        },
+        {
+          "width": 12,
+          "panelId": "position-panel"
+        }
+      ],
+      "gridPath": "dashboard-4"
+    },
+    {
+      "panelLayouts": [
+        {
+          "widthSm": 12,
+          "widthMd": 6,
+          "widthLg": 4,
+          "panelId": "key-figure-table-panel"
+        },
+        {
+          "widthSm": 12,
+          "widthMd": 6,
+          "widthLg": 4,
+          "panelId": "key-figure-table-panel2"
+        },
+        {
+          "widthSm": 12,
+          "widthMd": 6,
+          "widthLg": 4,
+          "panelId": "my-accounts-widget-panel"
+        },
+        {
+          "width": 12,
+          "panelId": "key-figure-advanced-panel"
+        }
+      ],
+      "gridPath": "dashboard-5"
+    },
+    {
+      "panelLayouts": [
+        {
+          "widthSm": 12,
+          "widthMd": 12,
+          "widthLg": 4,
+          "widthXl": 4,
+          "panelLayouts": [
+            {
+              "width": 12,
+              "panelId": "my-accounts-widget-panel"
+            },
+            {
+              "width": 12,
+              "panelId": "my-liabilities-widget-panel"
+            }
+          ]
+        },
+        {
+          "widthSm": 12,
+          "widthMd": 12,
+          "widthLg": 6,
+          "widthXl": 6,
+          "panelLayouts": [
+            {
+              "width": 12,
+              "panelId": "account-performance-overview"
+            },
+            {
+              "width": 12,
+              "tabbedPanels": [
+                {
+                  "panelId": "asset-allocation-table-pie-no-header",
+                  "tabHeader": "Assets"
+                },
+                {
+                  "panelId": "account-allocation-table-pie-no-header",
+                  "tabHeader": "Accounts"
+                },
+                {
+                  "panelId": "sector-allocation-table-pie-no-header",
+                  "tabHeader": "Sector"
+                }
+              ]
+            },
+            {
+              "width": 12,
+              "panelId": "best-worst-performers-panel"
+            }
+          ]
+        }
+      ],
+      "gridPath": "dashboard-6"
+    },
+    {
+      "panelLayouts": [
+        {
+          "widthSm": 12,
+          "widthMd": 12,
+          "widthLg": 8,
+          "widthXl": 8,
+          "panelLayouts": [
+            {
+              "widthSm": 12,
+              "widthMd": 12,
+              "widthLg": 12,
+              "widthXl": 12,
+              "panelId": "key-figure-panel-borudan"
+            },
+            {
+              "widthSm": 12,
+              "widthMd": 12,
+              "widthLg": 12,
+              "widthXl": 12,
+              "panelId": "line-chart-panel"
+            },
+            {
+              "widthSm": 12,
+              "widthMd": 12,
+              "widthLg": 12,
+              "widthXl": 12,
+              "panelId": "position-panel-borudan"
+            }
+          ]
+        },
+        {
+          "widthSm": 12,
+          "widthMd": 12,
+          "widthLg": 4,
+          "widthXl": 4,
+          "panelLayouts": [
+            {
+              "widthSm": 12,
+              "widthMd": 6,
+              "widthLg": 12,
+              "widthXl": 12,
+              "panelId": "best-performers-panel"
+            },
+            {
+              "widthSm": 12,
+              "widthMd": 6,
+              "widthLg": 12,
+              "widthXl": 12,
+              "panelId": "worst-performers-panel"
+            },
+            {
+              "widthSm": 12,
+              "widthMd": 12,
+              "widthLg": 12,
+              "widthXl": 12,
+              "panelId": "5"
+            }
+          ]
+        },
+        {
+          "widthSm": 12,
+          "widthMd": 12,
+          "widthLg": 12,
+          "widthXl": 12,
+          "panelLayouts": []
+        }
+      ],
+      "gridPath": "dashboard-7"
+    },
+    {
+      "panelLayouts": [
+        {
+          "widthSm": 12,
+          "widthMd": 12,
+          "widthLg": 6,
+          "widthXl": 6,
+          "panelId": "holdings-overview-panel"
+        },
+        {
+          "widthSm": 12,
+          "widthMd": 12,
+          "widthLg": 4,
+          "widthXl": 4,
+          "panelLayouts": [
+            {
+              "widthSm": 12,
+              "widthMd": 12,
+              "widthLg": 12,
+              "widthXl": 12,
+              "panelId": "holding-key-figure-overview-panel"
+            },
+            {
+              "widthSm": 12,
+              "widthMd": 12,
+              "widthLg": 12,
+              "widthXl": 12,
+              "panelId": "portfolio-performance-overview-table-panel"
+            }
+          ]
+        },
+        {
+          "widthSm": 12,
+          "widthMd": 12,
+          "widthLg": 10,
+          "widthXl": 10,
+          "panelId": "transactions-equities-panel"
+        },
+        {
+          "widthSm": 12,
+          "widthMd": 12,
+          "widthLg": 10,
+          "widthXl": 10,
+          "panelId": "transactions-funds-panel"
+        }
+      ],
+      "gridPath": "portfolio-summary"
+    },
+    {
+      "panelLayouts": [
+        {
+          "width": 12,
+          "panelId": "stocks-table-panel"
+        }
+      ],
+      "gridPath": "dashboard-9"
+    },
+    {
+      "panelLayouts": [
+        {
+          "width": 12,
+          "panelId": "masthead"
+        },
+        {
+          "widthSm": 12,
+          "widthMd": 12,
+          "widthLg": 4,
+          "widthXl": 4,
+          "panelId": "key-figure-performance-table-panel"
+        },
+        {
+          "widthSm": 12,
+          "widthMd": 12,
+          "widthLg": 8,
+          "widthXl": 8,
+          "panelId": "line-chart-panel"
+        },
+        {
+          "widthSm": 12,
+          "widthMd": 12,
+          "widthLg": 12,
+          "widthXl": 12,
+          "panelId": "5"
+        },
+        {
+          "width": 12,
+          "panelId": "position-panel"
+        }
+      ],
+      "gridPath": "dashboard-10"
+    },
+    {
+      "panelLayouts": [
+        {
+          "width": 12,
+          "panelId": "Organisations"
+        }
+      ],
+      "gridPath": "dashboard-11"
+    },
+    {
+      "panelLayouts": [
+        {
+          "width": 12,
+          "panelId": "Persons"
+        }
+      ],
+      "gridPath": "dashboard-12"
+    },
+    {
+      "panelLayouts": [
+        {
+          "width": 12,
+          "panelId": "Logins"
+        }
+      ],
+      "gridPath": "dashboard-13"
+    },
+    {
+      "panelLayouts": [
+        {
+          "width": 12,
+          "panelId": "Issuers"
+        }
+      ],
+      "gridPath": "dashboard-14"
+    },
+    {
+      "panelLayouts": [
+        {
+          "width": 12,
+          "panelId": "Accounts"
+        }
+      ],
+      "gridPath": "dashboard-15"
+    },
+    {
+      "panelLayouts": [
+        {
+          "width": 12,
+          "panelId": "list-transactions"
+        }
+      ],
+      "gridPath": "view-transactions"
+    }
+  ],
+  "panels": [
+    {
+      "panelId": "1",
+      "widgetIds": [
+        "1"
+      ],
+      "hidePanelHeader": true
+    },
+    {
+      "panelId": "2",
+      "widgetIds": [
+        "2"
+      ],
+      "hidePanelHeader": true
+    },
+    {
+      "panelId": "3",
+      "widgetIds": [
+        "3"
+      ],
+      "hidePanelHeader": true
+    },
+    {
+      "panelId": "key-figure-panel",
+      "widgetIds": [
+        "key-figure-account-widget"
+      ],
+      "hidePanelHeader": true
+    },
+    {
+      "panelId": "key-figure-panel-borudan",
+      "widgetIds": [
+        "key-figure-borudan-widget"
+      ],
+      "hidePanelHeader": true
+    },
+    {
+      "panelId": "account-performance-overview",
+      "widgetIds": [
+        "key-figure-account-widget",
+        "account-performance-chart"
+      ],
+      "headerText": "Performance",
+      "divider": false,
+      "disableCollapseBelowBreakpoint": false
+    },
+    {
+      "panelId": "holdings-overview-panel",
+      "widgetIds": [
+        "",
+        "account-performance-chart"
+      ],
+      "widgetLayouts": [
+        {
+          "widthSm": 12,
+          "widthMd": 12,
+          "widthLg": 12,
+          "widthXl": 12,
+          "widgetId": "my-accounts-widget"
+        },
+        {
+          "widthSm": 12,
+          "widthMd": 12,
+          "widthLg": 12,
+          "widthXl": 12,
+          "widgetId": "account-performance-chart"
+        }
+      ],
+      "disableCollapseBelowBreakpoint": true,
+      "divider": false,
+      "hidePanelHeader": true
+    },
+    {
+      "panelId": "holding-key-figure-overview-panel",
+      "widgetLayouts": [
+        {
+          "widthSm": 12,
+          "widthMd": 12,
+          "widthLg": 12,
+          "widthXl": 12,
+          "widgetId": "key-figure-account-vertical-widget"
+        }
+      ],
+      "disableCollapseBelowBreakpoint": true,
+      "hidePanelHeader": true
+    },
+    {
+      "panelId": "line-chart-panel",
+      "widgetIds": [
+        "account-performance-chart"
+      ],
+      "divider": false,
+      "headerText": "Performance"
+    },
+    {
+      "panelId": "5",
+      "widgetIds": [
+        "5"
+      ],
+      "headerText": "Asset Allocation"
+    },
+    {
+      "panelId": "asset-allocation-table-pie-no-header",
+      "widgetIds": [
+        "5"
+      ],
+      "divider": false
+    },
+    {
+      "panelId": "account-allocation-table-pie-no-header",
+      "widgetIds": [
+        "accounts-table-pie"
+      ],
+      "divider": false
+    },
+    {
+      "panelId": "sector-allocation-table-pie-no-header",
+      "widgetIds": [
+        "sector-table-pie"
+      ],
+      "divider": false
+    },
+    {
+      "panelId": "6",
+      "widgetIds": [
+        "6"
+      ],
+      "hidePanelHeader": true
+    },
+    {
+      "panelId": "7",
+      "widgetIds": [
+        "7"
+      ],
+      "hidePanelHeader": true
+    },
+    {
+      "panelId": "8",
+      "widgetIds": [
+        "8"
+      ],
+      "hidePanelHeader": true
+    },
+    {
+      "panelId": "9",
+      "widgetIds": [
+        "9"
+      ],
+      "hidePanelHeader": true
+    },
+    {
+      "panelId": "10",
+      "widgetIds": [
+        "10"
+      ],
+      "hidePanelHeader": true
+    },
+    {
+      "panelId": "pie-chart-panel-with-drilldown",
+      "widgetIds": [
+        "pie-chart-drilldown"
+      ],
+      "headerText": "Asset Allocation"
+    },
+    {
+      "panelId": "pie-chart-panel-with-drilldown-no-header",
+      "widgetIds": [
+        "pie-chart-drilldown"
+      ],
+      "divider": false
+    },
+    {
+      "panelId": "gauge-goal",
+      "widgetIds": [
+        "gauge-goal"
+      ],
+      "hidePanelHeader": true
+    },
+    {
+      "panelId": "gauge-comparison",
+      "widgetIds": [
+        "gauge-comparison"
+      ],
+      "hidePanelHeader": true
+    },
+    {
+      "panelId": "gauge-risk",
+      "widgetIds": [
+        "gauge-risk"
+      ],
+      "hidePanelHeader": true
+    },
+    {
+      "panelId": "position-panel",
+      "widgetIds": [
+        "position-table-widget"
+      ],
+      "hidePanelHeader": true
+    },
+    {
+      "panelId": "position-panel-borudan",
+      "widgetIds": [
+        "position-table-borudan-widget"
+      ],
+      "hidePanelHeader": true
+    },
+    {
+      "panelId": "portfolio-performance-overview-table-panel",
+      "widgetIds": [
+        "portfolio-performance-overview-table-widget"
+      ],
+      "hidePanelHeader": true,
+      "disableCollapseBelowBreakpoint": true
+    },
+    {
+      "panelId": "key-figure-advanced-panel",
+      "widgetIds": [
+        "key-figure-borudan-widget"
+      ],
+      "hidePanelHeader": true
+    },
+    {
+      "panelId": "key-figure-table-panel",
+      "widgetIds": [
+        "key-figure-table-widget"
+      ],
+      "hidePanelHeader": true
+    },
+    {
+      "panelId": "key-figure-table-panel2",
+      "widgetIds": [
+        "key-figure-table-widget2"
+      ],
+      "hidePanelHeader": true
+    },
+    {
+      "panelId": "my-accounts-widget-panel",
+      "widgetIds": [
+        "account-selection-widget",
+        "my-accounts-widget"
+      ],
+      "divider": false,
+      "headerText": "Accounts"
+    },
+    {
+      "panelId": "my-liabilities-widget-panel",
+      "widgetIds": [
+        "my-liabilities-widget"
+      ],
+      "divider": false,
+      "headerText": "Loans"
+    },
+    {
+      "panelId": "best-worst-performers-panel",
+      "widgetIds": [
+        "winners-widget",
+        "losers-widget"
+      ],
+      "headerText": "Best and Worst Performers",
+      "divider": false,
+      "widgetLayouts": [
+        {
+          "widthSm": 12,
+          "widthMd": 12,
+          "widthLg": 6,
+          "widthXl": 6,
+          "widgetId": "winners-widget"
+        },
+        {
+          "widthSm": 12,
+          "widthMd": 12,
+          "widthLg": 6,
+          "widthXl": 6,
+          "widgetId": "losers-widget"
+        }
+      ]
+    },
+    {
+      "panelId": "best-performers-panel",
+      "widgetIds": [
+        "winners-widget"
+      ],
+      "headerText": "Best Performers",
+      "divider": false
+    },
+    {
+      "panelId": "worst-performers-panel",
+      "widgetIds": [
+        "losers-widget"
+      ],
+      "headerText": "Worst Performers",
+      "divider": false
+    },
+    {
+      "panelId": "transactions-demo-panel",
+      "widgetIds": [
+        "transactions-demo-table"
+      ],
+      "headerText": "Sample Transactions"
+    },
+    {
+      "panelId": "transactions-equities-panel",
+      "widgetIds": [
+        "transactions-equity-table"
+      ],
+      "headerText": "Equity"
+    },
+    {
+      "panelId": "transactions-funds-panel",
+      "widgetIds": [
+        "transactions-fund-table"
+      ],
+      "headerText": "Funds"
+    },
+    {
+      "panelId": "stocks-table-panel",
+      "widgetIds": [
+        "stocks-table"
+      ],
+      "headerText": "Svenska aktier",
+      "disableCollapseBelowBreakpoint": true
+    },
+    {
+      "panelId": "key-figure-performance-table-panel",
+      "widgetIds": [
+        "key-figure-performance-table-widget"
+      ],
+      "hidePanelHeader": true
+    },
+    {
+      "panelId": "masthead",
+      "widgetIds": [
+        "key-figure-borudan-widget"
+      ],
+      "hidePanelHeader": true
+    },
+    {
+      "panelId": "Logins",
+      "widgetIds": [
+        "list-logins"
+      ]
+    },
+    {
+      "panelId": "Organisations",
+      "widgetIds": [
+        "list-organisations"
+      ]
+    },
+    {
+      "panelId": "Persons",
+      "widgetIds": [
+        "list-persons"
+      ]
+    },
+    {
+      "panelId": "Issuers",
+      "widgetIds": [
+        "list-issuers"
+      ]
+    },
+    {
+      "panelId": "Accounts",
+      "widgetIds": [
+        "list-accounts"
+      ]
+    },
+    {
+      "panelId": "list-transactions",
+      "widgetIds": [
+        "account-selection-widget",
+        "list-transactions"
+      ]
+    }
+  ],
+  "widgets": [
+    {
+      "widgetDefinitions": [
+        {
+          "widgetId": "1",
+          "widgetType": "KeyFigureBasic"
+        },
+        {
+          "widgetId": "2",
+          "widgetType": "DataTable"
+        },
+        {
+          "widgetId": "3",
+          "widgetType": "KeyFigureBasic"
+        },
+        {
+          "widgetId": "account-performance-chart",
+          "widgetType": "LineChart"
+        },
+        {
+          "widgetId": "5",
+          "widgetType": "PieChartTable"
+        },
+        {
+          "widgetId": "accounts-table-pie",
+          "widgetType": "PieChartTable"
+        },
+        {
+          "widgetId": "sector-table-pie",
+          "widgetType": "PieChartTable"
+        },
+        {
+          "widgetId": "6",
+          "widgetType": "Gauge"
+        },
+        {
+          "widgetId": "7",
+          "widgetType": "ColoredIconBox"
+        },
+        {
+          "widgetId": "8",
+          "widgetType": "ColoredIconBox"
+        },
+        {
+          "widgetId": "9",
+          "widgetType": "ColoredIconBox"
+        },
+        {
+          "widgetId": "10",
+          "widgetType": "AgDataTable"
+        },
+        {
+          "widgetId": "pie-chart-drilldown",
+          "widgetType": "PieChart"
+        },
+        {
+          "widgetId": "gauge-goal",
+          "widgetType": "Gauge"
+        },
+        {
+          "widgetId": "gauge-comparison",
+          "widgetType": "Gauge"
+        },
+        {
+          "widgetId": "gauge-risk",
+          "widgetType": "Gauge"
+        },
+        {
+          "widgetId": "position-table-widget",
+          "widgetType": "AgDataTable"
+        },
+        {
+          "widgetId": "position-table-borudan-widget",
+          "widgetType": "AgDataTable"
+        },
+        {
+          "widgetId": "portfolio-performance-overview-table-widget",
+          "widgetType": "AgDataTable"
+        },
+        {
+          "widgetId": "key-figure-advanced-widget",
+          "widgetType": "KeyFigureAdvanced"
+        },
+        {
+          "widgetId": "key-figure-table-widget",
+          "widgetType": "KeyFigureAdvanced"
+        },
+        {
+          "widgetId": "key-figure-table-widget2",
+          "widgetType": "KeyFigureAdvanced"
+        },
+        {
+          "widgetId": "my-accounts-widget",
+          "widgetType": "KeyFigureAdvanced"
+        },
+        {
+          "widgetId": "my-liabilities-widget",
+          "widgetType": "KeyFigureAdvanced"
+        },
+        {
+          "widgetId": "winners-widget",
+          "widgetType": "KeyFigureAdvanced"
+        },
+        {
+          "widgetId": "losers-widget",
+          "widgetType": "KeyFigureAdvanced"
+        },
+        {
+          "widgetId": "key-figure-account-widget",
+          "widgetType": "KeyFigureAdvanced"
+        },
+        {
+          "widgetId": "key-figure-account-vertical-widget",
+          "widgetType": "KeyFigureAdvanced"
+        },
+        {
+          "widgetId": "account-selection-widget",
+          "widgetType": "MultiSelect"
+        },
+        {
+          "widgetId": "key-figure-borudan-widget",
+          "widgetType": "KeyFigureAdvanced"
+        },
+        {
+          "widgetId": "transactions-demo-table",
+          "widgetType": "AgDataTable"
+        },
+        {
+          "widgetId": "transactions-equity-table",
+          "widgetType": "AgDataTable"
+        },
+        {
+          "widgetId": "transactions-fund-table",
+          "widgetType": "AgDataTable"
+        },
+        {
+          "widgetId": "stocks-table",
+          "widgetType": "AgDataTable"
+        },
+        {
+          "widgetId": "key-figure-performance-table-widget",
+          "widgetType": "KeyFigureAdvanced"
+        },
+        {
+          "widgetId": "list-organisations",
+          "widgetType": "AgDataTable"
+        },
+        {
+          "widgetId": "list-persons",
+          "widgetType": "AgDataTable"
+        },
+        {
+          "widgetId": "list-logins",
+          "widgetType": "AgDataTable"
+        },
+        {
+          "widgetId": "list-issuers",
+          "widgetType": "AgDataTable"
+        },
+        {
+          "widgetId": "list-accounts",
+          "widgetType": "AgDataTable"
+        },
+        {
+          "widgetId": "list-transactions",
+          "widgetType": "AgDataTable"
+        }
+      ],
+      "widgetContexts": [
+        {
+          "widgetId": "1",
+          "path": {
+            "resource": "key-figure-sample-1.json"
+          },
+          "fields": []
+        },
+        {
+          "widgetId": "2",
+          "path": {
+            "resource": "data-table-sample-2.json"
+          },
+          "fields": [
+            {
+              "fieldLabel": "ID",
+              "fieldName": "id"
+            },
+            {
+              "fieldLabel": "Security",
+              "fieldName": "security_description"
+            },
+            {
+              "fieldLabel": "Market Value",
+              "fieldName": "market_value_base_currency"
+            },
+            {
+              "fieldLabel": "Volume",
+              "fieldName": "quantity"
+            }
+          ],
+          "columnConfig": [
+            {
+              "fieldName": "id",
+              "filterType": "Input"
+            },
+            {
+              "fieldName": "market_value_base_currency",
+              "filterType": "Slider"
+            },
+            {
+              "fieldName": "quantity",
+              "filterType": "Dropdown",
+              "sortable": true
+            },
+            {
+              "fieldName": "security_description",
+              "filterType": "MultiSelect"
+            }
+          ]
+        },
+        {
+          "widgetId": "3",
+          "path": {
+            "resource": "key-figure-sample-3.json"
+          },
+          "fields": []
+        },
+        {
+          "widgetId": "account-performance-chart",
+          "path": {
+            "resource": "linechart/chart-sample-2.json"
+          },
+          "fields": [],
+          "rangeSelector": {
+            "rangeSelectorRanges": [
+              {
+                "label": "1W",
+                "value": {
+                  "unit": "week",
+                  "range": 1
+                }
+              },
+              {
+                "label": "1M",
+                "value": {
+                  "unit": "month",
+                  "range": 1
+                }
+              },
+              {
+                "label": "3M",
+                "value": {
+                  "unit": "month",
+                  "range": 3
+                }
+              },
+              {
+                "label": "1Y",
+                "value": {
+                  "unit": "year",
+                  "range": 1
+                }
+              },
+              {
+                "label": "YTD",
+                "value": {
+                  "unit": "ytd",
+                  "range": 1
+                }
+              },
+              {
+                "label": "All",
+                "value": {
+                  "unit": "all",
+                  "range": 1
+                }
+              }
+            ],
+            "rangeSelectorDefaultValue": {
+              "unit": "all",
+              "range": 1
+            }
+          },
+          "compare": "percent",
+          "comparisonPath": {
+            "resource": "linechart/chart-benchmark-sample-1.json"
+          },
+          "availableCompareValuesPath": {
+            "resource": "linechart/chart-available-benchmarks-sample-1.json"
+          },
+          "chartOptions": {
+            "title": {
+              "text": ""
+            },
+            "yAxis": {
+              "title": {
+                "text": ""
+              }
+            }
+          }
+        },
+        {
+          "widgetId": "5",
+          "path": {
+            "resource": "pie-chart-drilldown-sample-asset_allocation.json"
+          },
+          "fields": [],
+          "donut": true,
+          "rootSeriesName": "asset_allocation_dkk",
+          "columnConfig": [
+            {
+              "field": "groupColumn",
+              "rowGroup": true,
+              "hide": true,
+              "suppressSizeToFit": true
+            },
+            {
+              "field": "roundBullet",
+              "type": [
+                "roundBullet"
+              ],
+              "resizable": false,
+              "suppressSizeToFit": true,
+              "width": 35
+            },
+            {
+              "field": "label",
+              "resizable": true
+            },
+            {
+              "field": "percentValue",
+              "type": [
+                "numericColumn",
+                "percentage"
+              ],
+              "aggFunc": "sum",
+              "resizable": true
+            },
+            {
+              "field": "numericValue",
+              "type": [
+                "numericColumn",
+                "amount"
+              ],
+              "aggFunc": "sum",
+              "resizable": true
+            }
+          ]
+        },
+        {
+          "widgetId": "accounts-table-pie",
+          "path": {
+            "resource": "pie-chart-drilldown-sample-accounts.json"
+          },
+          "fields": [],
+          "donut": true,
+          "rootSeriesName": "accounts",
+          "columnConfig": [
+            {
+              "field": "groupColumn",
+              "rowGroup": true,
+              "hide": true,
+              "suppressSizeToFit": true
+            },
+            {
+              "field": "roundBullet",
+              "type": [
+                "roundBullet"
+              ],
+              "resizable": false,
+              "suppressSizeToFit": true,
+              "width": 35
+            },
+            {
+              "field": "label",
+              "resizable": true
+            },
+            {
+              "field": "percentValue",
+              "type": [
+                "numericColumn",
+                "percentage"
+              ],
+              "aggFunc": "sum",
+              "resizable": true
+            },
+            {
+              "field": "numericValue",
+              "type": [
+                "numericColumn",
+                "amount"
+              ],
+              "aggFunc": "sum",
+              "resizable": true
+            }
+          ]
+        },
+        {
+          "widgetId": "sector-table-pie",
+          "path": {
+            "resource": "pie-chart-drilldown-sample-geography.json"
+          },
+          "fields": [],
+          "donut": true,
+          "rootSeriesName": "geography",
+          "columnConfig": [
+            {
+              "field": "groupColumn",
+              "rowGroup": true,
+              "hide": true,
+              "suppressSizeToFit": true
+            },
+            {
+              "field": "roundBullet",
+              "type": [
+                "roundBullet"
+              ],
+              "resizable": false,
+              "suppressSizeToFit": true,
+              "width": 35
+            },
+            {
+              "field": "label",
+              "resizable": true
+            },
+            {
+              "field": "percentValue",
+              "type": [
+                "numericColumn",
+                "percentage"
+              ],
+              "aggFunc": "sum",
+              "resizable": true
+            },
+            {
+              "field": "numericValue",
+              "type": [
+                "numericColumn",
+                "amount"
+              ],
+              "aggFunc": "sum",
+              "resizable": true
+            }
+          ]
+        },
+        {
+          "widgetId": "gauge-goal",
+          "path": {
+            "resource": "gauge-sample-1.json"
+          },
+          "fields": [],
+          "title": "Concentration",
+          "min": 0,
+          "max": 100
+        },
+        {
+          "widgetId": "gauge-comparison",
+          "path": {
+            "resource": "gauge-sample-2.json"
+          },
+          "fields": [],
+          "title": "Limit Exposure",
+          "min": 0,
+          "max": 500
+        },
+        {
+          "widgetId": "gauge-risk",
+          "path": {
+            "resource": "gauge-sample-3.json"
+          },
+          "urlPath": "gauge-sample-3.json",
+          "fields": [],
+          "title": "Risk",
+          "min": 0,
+          "max": 2000
+        },
+        {
+          "widgetId": "7",
+          "path": {
+            "resource": "value-sample-1.json"
+          },
+          "fields": [],
+          "icon": "done",
+          "title": "Dividend",
+          "colorTheme": 1
+        },
+        {
+          "widgetId": "8",
+          "path": {
+            "resource": "value-sample-2.json"
+          },
+          "fields": [],
+          "icon": "trending_up",
+          "title": "NDA",
+          "colorTheme": 2
+        },
+        {
+          "widgetId": "9",
+          "path": {
+            "resource": "value-sample-3.json"
+          },
+          "fields": [],
+          "icon": "trending_down",
+          "title": "SWB",
+          "colorTheme": 3
+        },
+        {
+          "widgetId": "10",
+          "path": {
+            "resource": "data-table-sample-2.json"
+          },
+          "paging": true,
+          "fields": [
+            {
+              "fieldLabel": "ID",
+              "fieldName": "id"
+            },
+            {
+              "fieldLabel": "Security",
+              "fieldName": "security_description"
+            },
+            {
+              "fieldLabel": "Market Value",
+              "fieldName": "market_value_base_currency"
+            },
+            {
+              "fieldLabel": "Volume",
+              "fieldName": "quantity"
+            }
+          ],
+          "columnConfig": [
+            {
+              "fieldName": "id",
+              "filterType": "Input"
+            },
+            {
+              "fieldName": "market_value_base_currency",
+              "filterType": "Slider"
+            },
+            {
+              "fieldName": "quantity",
+              "filterType": "Dropdown",
+              "sortable": true
+            },
+            {
+              "fieldName": "security_description",
+              "filterType": "MultiSelect"
+            }
+          ]
+        },
+        {
+          "widgetId": "pie-chart-drilldown",
+          "path": {
+            "resource": "pie-chart-drilldown-sample-3.json"
+          },
+          "fields": [],
+          "rootSeriesName": "asset_allocation_eur"
+        },
+        {
+          "widgetId": "position-table-widget",
+          "path": {
+            "resource": "portfolio/portfolio-sample-mock-1.json"
+          },
+          "defaultColumnConfig": {
+            "enableValue": true,
+            "enableRowGroup": true,
+            "enablePivot": true,
+            "sortable": true,
+            "filter": true,
+            "resizable": true
+          },
+          "columnConfig": [
+            {
+              "headerName": "",
+              "field": "country-code",
+              "type": [
+                "flagIcon"
+              ],
+              "resizable": false,
+              "width": 80,
+              "filter": false
+            },
+            {
+              "headerName": "Today",
+              "field": "today",
+              "type": [
+                "percentage",
+                "numericColumn"
+              ],
+              "filter": false
+            },
+            {
+              "headerName": "Position Date",
+              "field": "position-data",
+              "type": [
+                "shortDate"
+              ],
+              "filter": "agDateColumnFilter"
+            },
+            {
+              "headerName": "Movement",
+              "field": "icon",
+              "type": [
+                "materialIcon",
+                "red_green"
+              ]
+            },
+            {
+              "headerName": "Portfolio",
+              "field": "portfolio",
+              "cellClass": [
+                "cell-bold"
+              ]
+            },
+            {
+              "headerName": "Instrument Type",
+              "field": "instrument-type"
+            },
+            {
+              "headerName": "Position Name",
+              "field": "position-name"
+            },
+            {
+              "headerName": "Currency",
+              "field": "currency"
+            },
+            {
+              "headerName": "Position Id",
+              "field": "position-id"
+            },
+            {
+              "headerName": "Nominal amount (JPG)",
+              "field": "nominal-amount-jpg",
+              "type": [
+                "numericColumn",
+                "amount"
+              ],
+              "filter": "agNumberColumnFilter"
+            },
+            {
+              "headerName": "Nominal amount (Fund Admin)",
+              "field": "nominal-amount-fund-admin",
+              "type": [
+                "numericColumn",
+                "amount"
+              ]
+            },
+            {
+              "headerName": "Diff",
+              "field": "diff",
+              "type": [
+                "numericColumn",
+                "amount"
+              ]
+            },
+            {
+              "headerName": "Resolved",
+              "field": "resolved",
+              "type": [
+                "checkbox"
+              ]
+            }
+          ]
+        },
+        {
+          "widgetId": "position-table-borudan-widget",
+          "path": {
+            "resource": "portfolio/portfolio-sample-borudan-mock-1.json"
+          },
+          "defaultColumnConfig": {
+            "enableValue": true,
+            "enableRowGroup": true,
+            "enablePivot": true,
+            "sortable": true,
+            "filter": true,
+            "resizable": true
+          },
+          "columnConfig": [
+            {
+              "headerName": "Portfolio",
+              "field": "portfolio",
+              "cellClass": [
+                "cell-bold"
+              ]
+            },
+            {
+              "headerName": "Position Date",
+              "field": "position-data",
+              "type": [
+                "shortDate"
+              ],
+              "filter": "agDateColumnFilter"
+            },
+            {
+              "headerName": "Position Name",
+              "field": "position-name"
+            },
+            {
+              "headerName": "Nominal amount",
+              "field": "nominal-amount-jpg",
+              "type": [
+                "numericColumn",
+                "amount"
+              ],
+              "filter": "agNumberColumnFilter"
+            },
+            {
+              "headerName": "Currency",
+              "field": "currency"
+            },
+            {
+              "headerName": "Movement",
+              "field": "icon",
+              "type": [
+                "materialIcon",
+                "red_green"
+              ]
+            },
+            {
+              "headerName": "Instrument Type",
+              "field": "instrument-type"
+            }
+          ]
+        },
+        {
+          "widgetId": "portfolio-performance-overview-table-widget",
+          "path": {
+            "resource": "portfolio/portfolio-performance-overview-1.json"
+          },
+          "sizeColumnsToFit": true,
+          "defaultColumnConfig": {
+            "enableValue": true,
+            "enableRowGroup": false,
+            "enablePivot": false,
+            "sortable": false,
+            "filter": false,
+            "resizable": false
+          },
+          "columnConfig": [
+            {
+              "headerName": "Period",
+              "field": "period",
+              "cellClass": [
+                "cell-bold"
+              ]
+            },
+            {
+              "headerName": "%",
+              "field": "yield(%)",
+              "type": [
+                "percentage",
+                "numericColumn"
+              ]
+            },
+            {
+              "headerName": "Yield",
+              "field": "yield",
+              "type": [
+                "amount",
+                "numericColumn"
+              ]
+            }
+          ]
+        },
+        {
+          "widgetId": "t",
+          "path": {
+            "resource": "key-figure/advanced-sample-mock-1.json"
+          },
+          "layout": "horisontal",
+          "columnFormatting": {
+            "Utv idag%": [
+              "percentage"
+            ],
+            "Utv idag": [
+              "currency",
+              "amount"
+            ]
+          }
+        },
+        {
+          "widgetId": "key-figure-table-widget",
+          "path": {
+            "resource": "key-figure/advanced-sample-mock-2.json"
+          },
+          "layout": "vertical",
+          "columnFormatting": {
+            "Belåningsgrad": [
+              "percentage"
+            ]
+          }
+        },
+        {
+          "widgetId": "key-figure-table-widget2",
+          "path": {
+            "resource": "key-figure/advanced-sample-mock-3.json"
+          },
+          "layout": "vertical",
+          "columnHeaders": [
+            {
+              "header": "Nyckeltal"
+            },
+            {
+              "header": "Värde"
+            },
+            {
+              "header": "Limit"
+            }
+          ],
+          "columnFormatting": {}
+        },
+        {
+          "widgetId": "my-accounts-widget",
+          "path": {
+            "hostEnum": "MockDataBaseUrl",
+            "resource": "accounts"
+          },
+          "layout": "vertical",
+          "bullets": "true",
+          "columnAlignment": [
+            "left",
+            "right"
+          ],
+          "filterListeners": [{
+            "topic": "AccountSelected",
+            "targetField": "accountNo"
+          }],
+          "bulletColors": {
+            "NDA": "sb-blue",
+            "AZA": "sb-red",
+            "NN": "sb-orange",
+            "SEB": "sb-green"
+          },
+          "routingConfig": {
+            "url": "sb-grid/portfolio-summary"
+          },
+          "columnConfiguration": [
+            {
+              "field": "accountAlias",
+              "position": "top_left",
+              "cssClasses": [
+                "cell-standard-value"
+              ]
+            },
+            {
+              "field": "acountIssuer",
+              "position": "bottom_left",
+              "cssClasses": [
+                "cell-secondary-value"
+              ]
+            },
+            {
+              "field": "clearingNo",
+              "position": "bottom_left",
+              "cssClasses": [
+                "cell-secondary-value"
+              ]
+            },
+            {
+              "field": "accountNo",
+              "position": "bottom_left",
+              "cssClasses": [
+                "cell-secondary-value"
+              ]
+            },
+            {
+              "field": "balance",
+              "position": "top_left",
+              "cssClasses": [
+                "cell-standard-value"
+              ]
+            },
+            {
+              "field": "currency",
+              "position": "top_left",
+              "cssClasses": [
+                "cell-secondary-value"
+              ]
+            },
+            {
+              "field": "changeToday",
+              "position": "bottom_left",
+              "prefix": "Today",
+              "cssClasses": [
+                "cell-secondary-value"
+              ],
+              "type": [
+                "percentage"
+              ]
+            }
+          ]
+        },
+        {
+          "widgetId": "my-liabilities-widget",
+          "path": {
+            "hostEnum": "MockDataBaseUrl",
+            "resource": "liabilities"
+          },
+          "layout": "vertical",
+          "bullets": "true",
+          "columnAlignment": [
+            "left",
+            "right"
+          ],
+          "bulletColors": {
+            "NDA": "sb-blue",
+            "AZA": "sb-red",
+            "NN": "sb-orange",
+            "SEB": "sb-green"
+          },
+          "routingConfig": {
+            "url": "sb-grid/portfolio-summary"
+          },
+          "columnConfiguration": [
+            {
+              "field": "accountAlias",
+              "position": "top_left",
+              "cssClasses": [
+                "cell-standard-value"
+              ]
+            },
+            {
+              "field": "clearingNo",
+              "position": "bottom_left",
+              "cssClasses": [
+                "cell-secondary-value"
+              ]
+            },
+            {
+              "field": "accountNo",
+              "position": "bottom_left",
+              "cssClasses": [
+                "cell-secondary-value"
+              ]
+            },
+            {
+              "field": "balance",
+              "position": "top_left",
+              "cssClasses": [
+                "cell-standard-value"
+              ]
+            },
+            {
+              "field": "currency",
+              "position": "top_left",
+              "cssClasses": [
+                "cell-secondary-value"
+              ]
+            },
+            {
+              "field": "changeToday",
+              "position": "bottom_left",
+              "prefix": "Today",
+              "cssClasses": [
+                "cell-secondary-value"
+              ],
+              "type": [
+                "percentage"
+              ]
+            }
+          ]
+        },
+        {
+          "widgetId": "winners-widget",
+          "path": {
+            "resource": "key-figure/winners-mock2.json"
+          },
+          "layout": "vertical",
+          "bullets": true,
+          "columnAlignment": [
+            "left",
+            "right"
+          ],
+          "columnConfiguration": [
+            {
+              "field": "symbol",
+              "position": "top_left",
+              "cssClasses": [
+                "cell-standard-value"
+              ]
+            },
+            {
+              "field": "price",
+              "position": "top_right",
+              "cssClasses": [
+                "cell-standard-value"
+              ]
+            },
+            {
+              "field": "currency",
+              "position": "top_right",
+              "cssClasses": [
+                "cell-secondary-value"
+              ]
+            },
+            {
+              "field": "name",
+              "position": "bottom_left",
+              "cssClasses": [
+                "cell-secondary-value"
+              ]
+            },
+            {
+              "field": "changeToday",
+              "position": "bottom_left",
+              "cssClasses": [
+                "cell-secondary-value"
+              ],
+              "type": [
+                "percentage"
+              ]
+            }
+          ]
+        },
+        {
+          "widgetId": "losers-widget",
+          "path": {
+            "resource": "key-figure/losers-mock2.json"
+          },
+          "layout": "vertical",
+          "bullets": true,
+          "columnAlignment": [
+            "left",
+            "right"
+          ],
+          "columnConfiguration": [
+            {
+              "field": "symbol",
+              "position": "top_left",
+              "cssClasses": [
+                "cell-standard-value"
+              ]
+            },
+            {
+              "field": "price",
+              "position": "top_right",
+              "cssClasses": [
+                "cell-standard-value"
+              ]
+            },
+            {
+              "field": "currency",
+              "position": "top_right",
+              "cssClasses": [
+                "cell-secondary-value"
+              ]
+            },
+            {
+              "field": "name",
+              "position": "bottom_left",
+              "cssClasses": [
+                "cell-secondary-value"
+              ]
+            },
+            {
+              "field": "changeToday",
+              "position": "bottom_left",
+              "cssClasses": [
+                "cell-secondary-value"
+              ],
+              "type": [
+                "percentage"
+              ]
+            }
+          ]
+        },
+        {
+          "widgetId": "key-figure-account-widget",
+          "path": {
+            "resource": "key-figure/performance-values.json"
+          },
+          "layout": "horisontal",
+          "columnFormatting": {
+            "Today": [
+              "percentage"
+            ],
+            "Month to Date": [
+              "percentage"
+            ],
+            "Year to Date": [
+              "percentage"
+            ],
+            "Market Value": [
+              "currency"
+            ]
+          }
+        },
+        {
+          "widgetId": "key-figure-account-vertical-widget",
+          "path": {
+            "resource": "key-figure/performance-values.json"
+          },
+          "layout": "vertical",
+          "columnFormatting": {
+            "Today": [
+              "percentage"
+            ],
+            "Month to Date": [
+              "percentage"
+            ],
+            "Year to Date": [
+              "percentage"
+            ],
+            "Market Value": [
+              "currency"
+            ]
+          }
+        },
+        {
+          "widgetId": "account-selection-widget",
+          "path": {
+            "resource": "multi-select/accounts-mock-1.json"
+          },
+          "label": "Select accounts",
+          "placeHolder": "Search account",
+          "source": "account-selection-multi-select",
+          "topic": "AccountSelected",
+          "allSelectedByDefault": "true"
+        },
+        {
+          "widgetId": "key-figure-borudan-widget",
+          "path": {
+            "resource": "key-figure/borudan-key-figures-mock1.json"
+          },
+          "layout": "horisontal",
+          "labelInlineStyle": {
+            "font-size": "20px",
+            "padding-bottom": "10px"
+          },
+          "valueInlineStyle": {
+            "font-size": "26px"
+          }
+        },
+        {
+          "widgetId": "transactions-demo-table",
+          "path": {
+            "hostEnum": "GatewayBaseUrl",
+            "resource": "transactions/byAccountIdAAndInstrumentId"
+          },
+          "defaultColumnConfig": {
+            "enableValue": true,
+            "enableRowGroup": false,
+            "enablePivot": false,
+            "sortable": true,
+            "filter": true,
+            "resizable": true
+          },
+          "columnConfig": [
+            {
+              "headerName": "ID",
+              "field": "transactionId"
+            },
+            {
+              "headerName": "Account A",
+              "field": "accountA.accountClientAlias"
+            },
+            {
+              "headerName": "Account B",
+              "field": "accountB.accountClientAlias"
+            },
+            {
+              "headerName": "Description",
+              "field": "transactionInfo"
+            },
+            {
+              "headerName": "Status",
+              "field": "transactionStatus"
+            },
+            {
+              "headerName": "Type",
+              "field": "transactionType"
+            },
+            {
+              "headerName": "TX date",
+              "field": "transactionDate"
+            },
+            {
+              "headerName": "TX time",
+              "field": "transactionTime"
+            },
+            {
+              "headerName": "Settlement Date",
+              "field": "settlementDate"
+            },
+            {
+              "headerName": "Qty",
+              "field": "quantity",
+              "type": [
+                "numericColumn"
+              ]
+            },
+            {
+              "headerName": "Currency",
+              "field": "transactionCurrency"
+            },
+            {
+              "headerName": "TX Price",
+              "field": "transactionPrice",
+              "type": [
+                "numericColumn"
+              ]
+            }
+          ]
+        },
+        {
+          "widgetId": "list-transactions",
+          "path": {
+            "hostEnum": "GatewayBaseUrl"
+          },
+          "paginated": true,
+          "defaultColumnConfig": {
+            "enableValue": true,
+            "sortable": true,
+            "filter": true,
+            "resizable": true
+          },
+          "filterListeners": [{
+            "topic": "AccountSelected",
+            "sourceField": "",
+            "targetField": "string",
+            "resourceURL": {
+              "hostEnum": "MockDataBaseUrl",
+              "resource": "transactions"
+            },
+            "queryParameters": [
+              {
+                "sourcePath": "value",
+                "queryParamName": "q"
+              }
+            ]
+          }],
+          "columnConfig": [
+            {
+              "headerName": "Swip ID",
+              "field": "transactionId"
+            },
+            {
+              "headerName": "Source ID",
+              "field": "sourceTransactionId"
+            },
+            {
+              "headerName": "Instrument name",
+              "field": "instrument.instrumentData.name"
+            },
+            {
+              "headerName": "ISIN",
+              "field": "instrument.instrumentData.isin"
+            },
+            {
+              "headerName": "Status",
+              "field": "transactionStatus"
+            },
+            {
+              "headerName": "Source",
+              "field": "sourceContext"
+            },
+            {
+              "headerName": "Imported At",
+              "field": "importedAt"
+            },
+            {
+              "headerName": "Account A",
+              "field": "accountA.accountClientAlias"
+            },
+            {
+              "headerName": "Account B",
+              "field": "accountB.accountClientAlias"
+            },
+            {
+              "headerName": "TX Date",
+              "field": "transactionDateTime"
+            },
+            {
+              "headerName": "Settlement Date",
+              "field": "settlementDate"
+            },
+            {
+              "headerName": "Qty",
+              "field": "nominal",
+              "type": [
+                "numericColumn"
+              ]
+            },
+            {
+              "headerName": "Price",
+              "field": "transactionPrice",
+              "type": [
+                "numericColumn"
+              ]
+            },
+            {
+              "headerName": "CCY",
+              "field": "transactionCurrency"
+            }
+          ]
+        },
+        {
+          "widgetId": "transactions-equity-table",
+          "path": {
+            "hostEnum": "MockDataBaseUrl",
+            "resource": "equitypositions"
+          },
+          "defaultColumnConfig": {
+            "enableValue": true,
+            "enableRowGroup": false,
+            "enablePivot": false,
+            "sortable": true,
+            "filter": true,
+            "resizable": true
+          },
+          "columnConfig": [
+            {
+              "headerName": "Equity",
+              "field": "equity"
+            },
+            {
+              "headerName": "% Today",
+              "field": "performance.today",
+              "type": [
+                "percentage"
+              ]
+            },
+            {
+              "headerName": "Latest",
+              "field": "performance.latest",
+              "type": [
+                "numericColumn"
+              ]
+            },
+            {
+              "headerName": "Average Price",
+              "field": "price",
+              "type": [
+                "numericColumn"
+              ]
+            },
+            {
+              "headerName": "Qty",
+              "field": "quantity",
+              "type": [
+                "quantity",
+                "numericColumn"
+              ]
+            },
+            {
+              "headerName": "Value",
+              "field": "value",
+              "type": [
+                "numericColumn"
+              ]
+            },
+            {
+              "headerName": "% Performance",
+              "field": "performance.pct",
+              "type": [
+                "percentage",
+                "numericColumn"
+              ]
+            },
+            {
+              "headerName": "Performance",
+              "field": "performance.total",
+              "type": [
+                "numericColumn"
+              ]
+            }
+          ]
+        },
+        {
+          "widgetId": "transactions-fund-table",
+          "path": {
+            "hostEnum": "MockDataBaseUrl",
+            "resource": "fundpositions"
+          },
+          "defaultColumnConfig": {
+            "enableValue": true,
+            "enableRowGroup": false,
+            "enablePivot": false,
+            "sortable": true,
+            "filter": true,
+            "resizable": true
+          },
+          "columnConfig": [
+            {
+              "headerName": "Funds",
+              "field": "fund"
+            },
+            {
+              "headerName": "% Today",
+              "field": "performance.today",
+              "type": [
+                "percentage",
+                "numericColumn"
+              ]
+            },
+            {
+              "headerName": "Latest",
+              "field": "performance.latest",
+              "type": [
+                "numericColumn"
+              ]
+            },
+            {
+              "headerName": "Average Price",
+              "field": "price",
+              "type": [
+                "numericColumn"
+              ]
+            },
+            {
+              "headerName": "Qty",
+              "field": "quantity",
+              "type": [
+                "quantity",
+                "numericColumn"
+              ]
+            },
+            {
+              "headerName": "Value",
+              "field": "value",
+              "type": [
+                "numericColumn"
+              ]
+            },
+            {
+              "headerName": "% Performance",
+              "field": "performance.pct",
+              "type": [
+                "percentage",
+                "numericColumn"
+              ]
+            },
+            {
+              "headerName": "Performance",
+              "field": "performance.total",
+              "type": [
+                "numericColumn"
+              ]
+            }
+          ]
+        },
+        {
+          "widgetId": "stocks-table",
+          "path": {
+            "resource": "db/swedishstocks.json"
+          },
+          "defaultColumnConfig": {
+            "enableValue": true,
+            "enableRowGroup": true,
+            "enablePivot": true,
+            "sortable": true,
+            "filter": true,
+            "resizable": true
+          },
+          "columnConfig": [
+            {
+              "headerName": "Bolagsnamn",
+              "field": "Bolagsnamn"
+            },
+            {
+              "headerName": "Lista",
+              "field": "Info__1"
+            },
+            {
+              "headerName": "Sektor",
+              "field": "Info__2"
+            },
+            {
+              "headerName": "Branch",
+              "field": "Info__3"
+            },
+            {
+              "headerName": "ISIN",
+              "field": "Info__4"
+            },
+            {
+              "headerName": "Ticker",
+              "field": "Info__5"
+            },
+            {
+              "headerName": "Kursutveck 1år",
+              "field": "Kursutveck."
+            },
+            {
+              "headerName": "Direktav.",
+              "field": "Direktav."
+            },
+            {
+              "headerName": "P/E",
+              "field": "P/E"
+            },
+            {
+              "headerName": "P/S",
+              "field": "P/S"
+            },
+            {
+              "headerName": "P/B",
+              "field": "P/B"
+            }
+          ]
+        },
+        {
+          "widgetId": "key-figure-performance-table-widget",
+          "urlPath": "/assets/mock-data/key-figure/advanced-sample-mock-4.json",
+          "layout": "vertical",
+          "columnFormatting": {
+            "Belåningsgrad": [
+              "percentage"
+            ]
+          }
+        },
+        {
+          "widgetId": "list-organisations",
+          "path": {
+            "hostEnum": "GatewayBaseUrl",
+            "resource": "owners?legalType=ORGANISATION"
+          },
+          "defaultColumnConfig": {
+            "enableValue": true,
+            "sortable": true,
+            "filter": true,
+            "resizable": true
+          },
+          "paginated": true,
+          "buttons": [
+            {
+              "label": "Add Organisation",
+              "targetURL": "/dynamic-form/add-owner-organisation-form"
+            }
+          ],
+          "doubleClick": {
+            "targetURL": "dynamic-form/add-owner-organisation-form",
+            "idField": "ownerId"
+          },
+          "columnConfig": [
+            {
+              "headerName": "Active",
+              "field": "active",
+              "type": "checkbox"
+            },
+            {
+              "headerName": "E-mail",
+              "field": "userInfo.email"
+            },
+            {
+              "headerName": "Short name",
+              "field": "userInfo.shortName"
+            },
+            {
+              "headerName": "Long name",
+              "field": "userInfo.longName"
+            },
+            {
+              "headerName": "Country of Domicile",
+              "field": "userInfo.countryOfDomicile"
+            }
+          ]
+        },
+        {
+          "widgetId": "list-persons",
+          "path": {
+            "hostEnum": "GatewayBaseUrl",
+            "resource": "owners?legalType=PERSON"
+          },
+          "paginated": true,
+          "defaultColumnConfig": {
+            "enableValue": true,
+            "sortable": true,
+            "filter": true,
+            "resizable": true
+          },
+          "buttons": [
+            {
+              "label": "Add Person",
+              "targetURL": "/dynamic-form/add-owner-person-form"
+            }
+          ],
+          "doubleClick": {
+            "targetURL": "dynamic-form/add-owner-person-form",
+            "idField": "ownerId"
+          },
+          "columnConfig": [
+            {
+              "headerName": "Active",
+              "field": "active",
+              "type": "checkbox"
+            },
+            {
+              "headerName": "E-mail",
+              "field": "userInfo.email"
+            },
+            {
+              "headerName": "First name",
+              "field": "userInfo.firstName"
+            },
+            {
+              "headerName": "Last name",
+              "field": "userInfo.lastName"
+            },
+            {
+              "headerName": "Country of Domicile",
+              "field": "userInfo.countryOfDomicile"
+            }
+          ]
+        },
+        {
+          "widgetId": "list-logins",
+          "path": {
+            "hostEnum": "GatewayBaseUrl",
+            "resource": "users"
+          },
+          "paginated": true,
+          "defaultColumnConfig": {
+            "enableValue": true,
+            "sortable": true,
+            "filter": true,
+            "resizable": true
+          },
+          "buttons": [
+            {
+              "label": "Add Login",
+              "targetURL": "/dynamic-form/add-user-form"
+            }
+          ],
+          "doubleClick": {
+            "targetURL": "dynamic-form/add-user-form",
+            "idField": "id"
+          },
+          "columnConfig": [
+            {
+              "headerName": "Enabled",
+              "field": "enabled",
+              "type": "checkbox"
+            },
+            {
+              "headerName": "Email",
+              "field": "email"
+            },
+            {
+              "headerName": "Roles",
+              "field": "roles"
+            }
+          ]
+        },
+        {
+          "widgetId": "list-issuers",
+          "path": {
+            "hostEnum": "GatewayBaseUrl",
+            "resource": "account-issuers"
+          },
+          "paginated": true,
+          "defaultColumnConfig": {
+            "enableValue": true,
+            "sortable": true,
+            "filter": true,
+            "resizable": true
+          },
+          "buttons": [
+            {
+              "label": "Add Issuer",
+              "targetURL": "/sb-grid/account-issuer-administration"
+            }
+          ],
+          "doubleClick": {
+            "targetURL": "sb-grid/account-issuer-administration",
+            "idField": "accountIssuerId"
+          },
+          "columnConfig": [
+            {
+              "headerName": "Short name",
+              "field": "accountIssuerShortName"
+            },
+            {
+              "headerName": "Long name",
+              "field": "accountIssuerLongName",
+              "width": 400,
+              "resizable": true
+            }
+          ]
+        },
+        {
+          "widgetId": "list-accounts",
+          "path": {
+            "hostEnum": "GatewayBaseUrl",
+            "resource": "accounts"
+          },
+          "defaultColumnConfig": {
+            "enableValue": true,
+            "sortable": true,
+            "filter": true,
+            "resizable": true
+          },
+          "paginated": true,
+          "buttons": [
+            {
+              "label": "Add Account",
+              "targetURL": "/dynamic-form/add-account-form"
+            }
+          ],
+          "doubleClick": {
+            "targetURL": "dynamic-form/add-account-form",
+            "idField": "accountId"
+          },
+          "columnConfig": [
+            {
+              "headerName": "Account number",
+              "field": "accountNumber"
+            },
+            {
+              "headerName": "Short name",
+              "field": "accountShortName",
+              "width": 400,
+              "resizable": true
+            },
+            {
+              "headerName": "Long name",
+              "field": "accountLongName",
+              "width": 400,
+              "resizable": true
+            },
+            {
+              "headerName": "Alias",
+              "field": "accountClientAlias",
+              "width": 400,
+              "resizable": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

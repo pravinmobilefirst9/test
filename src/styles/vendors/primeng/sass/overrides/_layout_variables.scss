@@ -1,0 +1,64 @@
+
+
+/* Teal */
+$swibiPrimaryLightColor: #E0F5F5;
+$swibiAccentColor: #00848E;
+$swibiPrimaryColor: #003135;
+$swibiPrimarySemiDarkColor: #014247;
+$swibiPrimaryDarkColor: #015057;
+$swibiLogoPath: "../images/logo2x.png";
+
+/* Slack*/
+$swibiPrimaryLightColor: rgb(177, 158, 178);
+$swibiAccentColor: rgb(92, 50, 92);
+$swibiPrimaryColor: rgb(31, 0, 32);
+$swibiPrimarySemiDarkColor: rgb(40,5,40);
+$swibiPrimaryDarkColor: rgb(63, 14, 64);
+$swibiLogoPath: "../images/logo2x.png";
+
+/* Blue*/
+$swibiPrimaryLightColor: #EBF5FA;
+$swibiAccentColor: rgb(22, 115, 165);
+$swibiPrimaryColor: #001429;
+$swibiPrimarySemiDarkColor: rgb(5, 45, 80);
+$swibiPrimaryDarkColor: rgb(7, 65, 116);
+$swibiLogoPath: "../images/logo2x.png";
+
+/* Ink */
+$swibiPrimaryLightColor: rgb(234, 245, 255);
+$swibiAccentColor: #637381;
+$swibiPrimaryColor: #212B35;
+$swibiPrimarySemiDarkColor: rgb(49, 65, 80);
+$swibiPrimaryDarkColor: rgb(60, 77, 94);
+$swibiLogoPath: "../images/swimbird-logo.png";
+$swimbirdIconPath: "../images/swimbird-big-logo.png";
+
+/* Rashmi's try */
+// $swibiPrimaryColor: #134f79;
+// $swibiPrimaryLightColor: rgb(234, 245, 255);
+// $swibiAccentColor: #632A7E;
+// $swibiPrimarySemiDarkColor: #D3B7D8;
+// $swibiPrimaryDarkColor: #A13E97;
+// $swibiLogoPath: "../images/swimbird-logo.png";
+
+/* Add your variable customizations of layout here */
+
+$primaryColor: $swibiPrimaryColor;
+$primaryDarkColor: $swibiPrimaryDarkColor;
+$primaryLightColor: $swibiPrimaryLightColor;
+$accentColor: $swibiAccentColor;
+
+
+/* Topbar */
+$topbarButtonColor: $primaryLightColor;
+$topbarButtonHoverColor: $swibiPrimarySemiDarkColor;
+$horizontalLayoutMenuItemHoverBgColor: $swibiPrimarySemiDarkColor;
+/*$textColor: $primaryDarkColor;*/
+$activeMenuItemBadgeTextColor: #ffffff;
+$horizontalLayoutMenuItemTextColor: $primaryLightColor;
+$topbarSearchBorderColor:$primaryLightColor;
+$topbarSearchColor:$primaryLightColor;
+$topbarIconColor:$primaryLightColor;
+$topbarIconHoverColor:#ffffff;
+$topbarMenuBgColor:$primaryLightColor;
+// $topbarSubmenuBgColor:$primaryLightColor;

@@ -1,0 +1,7 @@
+<div class="message-bg" [ngClass]="getMessageIconsAndColor(message).color" *ngFor="let message of messages">
+    <span class="material-icons message-icon">{{getMessageIconsAndColor(message).icon}}</span>
+    <div>
+        <h4>{{message?.summary}}</h4>
+        <span>{{message?.detail}}</span>
+    </div>
+</div>

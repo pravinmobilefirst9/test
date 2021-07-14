@@ -1,0 +1,147 @@
+<app-sb-messages [messages]="msgs"></app-sb-messages>
+<div class="sb-ag-table-wrapper">
+  <div *ngIf="isLoading">
+    <mat-spinner class="sb-mx-auto" color="accent" diameter="30" id={{context.widgetId}}></mat-spinner>
+    <p class="sb-text-center" style="color: lightgray"> Loading... </p>
+  </div>
+
+  <!-- Buttons above table -->
+  <div class="ui-grid-row" style="text-align: end;" *ngIf="displayDropDownButton() || context.enableUserTabs">
+    <ng-container *ngIf="context.enableUserTabs">
+      <button pButton class="dropbtn" (click)="toggleViewRightPanel('create', null)" icon="fa fa-plus-square"></button>
+    </ng-container>
+    <ng-container *ngTemplateOutlet="buttonsFragment"></ng-container>
+  </div>
+
+  <!-- Placeholder when there is no data present -->
+  <div class="no-data" *ngIf="rowData.length == 0">
+    <p class="no-data-text">No Data Available</p>
+  </div>
+
+  <!-- Custom user tabs enabled -->
+  <p-tabView (onChange)="onTabChange($event)" *ngIf="rowData.length > 0 && context && context.enableUserTabs">
+    <p-tabPanel header="Original View" [selected]="true">
+      <ng-container *ngTemplateOutlet="tableFragment"></ng-container>
+    </p-tabPanel>
+    <p-tabPanel *ngFor="let view of tabViews" header="{{view.view_name}}">
+      <div class="ui-grid-row" *ngIf="rowData.length > 0" style="text-align: end;">
+        <button pButton class="dropbtn" (click)="toggleViewRightPanel('update', view.id)" icon="fa fa-table">
+        </button>
+        <button pButton class="dropbtn" (click)="deleteView(view.id)" icon="fa fa-trash"></button>
+      </div>
+      <ng-container *ngTemplateOutlet="tableFragment"></ng-container>
+    </p-tabPanel>
+  </p-tabView>
+
+  <!-- Custom user tabs disabled -->
+  <div *ngIf="rowData.length > 0 && context && !context.enableUserTabs">
+    <ng-container *ngTemplateOutlet="tableFragment"></ng-container>
+  </div>
+
+  <!-- Redirect link (should probably be located somewhere else) -->
+  <p *ngIf="context && context.redirectOptions" style="padding: 7px; color: #22606c; font-weight: bold;">
+    <a class="sb-privateEquity-link" [routerLink]="['/' + context.redirectOptions.routingConfig.url]"
+      routerLinkActive="router-link-active">{{context.redirectOptions.redirectText}} <i class="fa fa-arrow-right"
+        aria-hidden="true"></i></a>
+  </p>
+
+</div>
+
+<!-- Sidebar do arrange columns a custom tab view -->
+<!-- <p-sidebar [(visible)]="displayTableViewPanel" position="right" autoZIndex="false" [modal]="false">
+  <div style="text-align: center;">
+    <h1 style="font-weight: bold; color: #22606c;">{{rightPanelView == 'create'? 'Create New View': 'Update View'}}</h1>
+  </div>
+  <div style="margin-top: 30px;">
+    <span class="ui-float-label">
+      <input id="float-input" type="text" size="30" pInputText [(ngModel)]="view_name">
+      <label for="float-input">View Name</label>
+    </span>
+  </div>
+  <div style="margin-top: 30px;">
+    <span>Select Header to Show or Hide:</span>
+    <div *ngIf="context" class="p-grid column-checkbox" cdkDropList cdkDropListOrientation="vertical"
+      (cdkDropListDropped)="drop($event)">
+      <div *ngFor="let header of rightPanelView == 'create' ? originalColumnList: context.columnConfig" class="p-col-12"
+        cdkDrag style="cursor: move;">
+        <i class="fas fa-grip-vertical" style="padding-right: 5px; font-size: 10px; color: grey;"
+          aria-hidden="true"></i>
+        <p-checkbox name="group1" value="{{header.headerName}}" label="{{header.headerName}}"
+          inputId="{{header.headerName.toLowerCase()}}" [(ngModel)]="selectedColumns"></p-checkbox>
+      </div>
+    </div>
+  </div>
+  <div style="text-align: center; margin-top: 30px;">
+    <button style="width: 200px; border-radius: 15px; background-color: #22606c;" pButton type="button"
+      label="{{rightPanelView == 'create'? 'Create View': 'Update View'}}" class="ui-button-rounded"
+      (click)="rightPanelView == 'create' ? createView(): updateView()"></button>
+  </div>
+</p-sidebar> -->
+
+<!-- Reusable markup fragments -->
+<ng-template #tableFragment>
+    <ag-grid-angular *ngIf="rowData.length > 0" #agGrid class="ag-theme-material" [animateRows]="true" [rowData]="rowData"
+      [columnDefs]="columnDefs" [editType]="editType" [defaultColDef]="defaultColDef" [headerHeight]="28"
+      [sideBar]="sideBar" [columnTypes]="columnTypes" [pagination]="paginated" [suppressNoRowsOverlay]="true"
+      [paginationAutoPageSize]="false" [paginationPageSize]="pageSize" (gridReady)="onGridReady($event)"
+      (rowDoubleClicked)='onRowDoubleClicked($event)' (modelUpdated)="onModelUpdated()"
+      (rowSelected)="onRowSelected($event)" [gridOptions]="gridOptions" [getContextMenuItems]="getContextMenuItems"
+      [getMainMenuItems]="getMainMenuItems" (rowClicked)='onRowClicked()' [enterMovesDownAfterEdit]="true"
+      [groupRowAggNodes]="groupAddGroupNodesFunc" [ngClass]="isCondensed ? 'sb-ag-grid-condensed' : ''">
+    </ag-grid-angular>
+</ng-template>
+
+<ng-template #buttonsFragment>
+  <!-- Custom buttons -->
+  <div class="dropdown" *ngIf="displayDropDownButton()">
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" xPosition="before">
+      <ng-container *ngIf="buttons">
+        <button *ngFor="let button of buttons" mat-menu-item (click)="buttonClicked(button.targetURL)">
+          <mat-icon>{{button.icon}}</mat-icon>
+          <span>{{button.label}}</span>
+        </button>
+      </ng-container>
+      <!-- Todo - Reintroduce when table states are working -->
+      <!-- <button mat-menu-item (click)="resetTableState()">
+        <mat-icon>refresh</mat-icon>
+        <span>Reset Table State</span>
+      </button> -->
+      <ng-template [ngIf]="showAdvancedToolbar">
+        <button mat-menu-item (click)="onCondensed($event)">
+          <mat-icon>view_compact</mat-icon>
+          <span>View Compact</span>
+        </button>
+        <button mat-menu-item (click)="onAutoHeight($event)">
+          <mat-icon>unfold_more</mat-icon>
+          <!--unfold_less-->
+          <span>Auto Height</span>
+        </button>
+        <button mat-menu-item (click)="onAutoSizeAll($event)">
+          <mat-icon>settings_ethernet</mat-icon>
+          <span>Auto Size Column</span>
+        </button>
+        <button mat-menu-item (click)="onShrinkColumnsToFit($event)">
+          <mat-icon>straighten</mat-icon>
+          <span>Fit Column Size</span>
+        </button>
+        <button mat-menu-item (click)="onResetLayout($event)">
+          <mat-icon>undo</mat-icon>
+          <span>Reset Layout</span>
+        </button>
+      </ng-template>
+      <ng-template [ngIf]="!context.suppressExcelExport">
+        <button mat-menu-item (click)="exportExcel()">
+          <mat-icon>sim_card</mat-icon>
+          <span>Download Excel</span>
+        </button>
+        <button mat-menu-item (click)="exportCsv()">
+          <mat-icon>insert_drive_file</mat-icon>
+          <span>Download CSV</span>
+        </button>
+      </ng-template>
+    </mat-menu>
+  </div>
+</ng-template>

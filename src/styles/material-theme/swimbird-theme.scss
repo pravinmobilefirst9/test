@@ -1,0 +1,221 @@
+@import '~@angular/material/theming';
+@import '../themes/_mixins.scss';
+
+@include mat-core();
+
+$mat-dimgray: (
+    50 : #ededf0,
+    100 : #d3d1d9,
+    200 : #b6b2bf,
+    300 : #9993a5,
+    400 : #837c92,
+    500 : #6d657f,
+    600 : #655d77,
+    700 : #5a536c,
+    800 : #504962,
+    900 : #3e374f,
+    A100 : #bca4ff,
+    A200 : #9671ff,
+    A400 : #703eff,
+    A700 : #5e25ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$mat-brown: (
+    50 : #f2e1e7,
+    100 : #dfb4c3,
+    200 : #ca829b,
+    300 : #b55073,
+    400 : #a52b55,
+    500 : #950537,
+    600 : #8d0431,
+    700 : #82042a,
+    800 : #780323,
+    900 : #670116,
+    A100 : #ff96a4,
+    A200 : #ff6377,
+    A400 : #ff304b,
+    A700 : #ff1734,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$mat-cadetblue: (
+    50 : #e8f3f4,
+    100 : #c6e2e4,
+    200 : #a0cfd2,
+    300 : #7abcbf,
+    400 : #5eadb2,
+    500 : #419fa4,
+    600 : #3b979c,
+    700 : #328d92,
+    800 : #2a8389,
+    900 : #1c7278,
+    A100 : #b3faff,
+    A200 : #80f6ff,
+    A400 : #4df3ff,
+    A700 : #34f1ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$mat-dark-shade: (
+    50 : #14181A,
+    100 : #282c30,
+    200 : #282C30,
+    300 : #104561,
+    400 : #837c92,
+    500 : #6d657f,
+    600 : #655d77,
+    700 : #5a536c,
+    800 : #504962,
+    900 : #CD4040,
+    A100 : #bca4ff,
+    A200 : #40CDA0,
+    A400 : #703eff,
+    A700 : #5e25ff,
+    contrast: (50 : #fdf3f3,
+        100 : #f0e7e7,
+        200 : #9b9b9b,
+        300 : #a3a2a2,
+        400 : #000000,
+        500 : #000000,
+        600 : #ce9d9d,
+        700 : #690909,
+        800 : #4648d6,
+        900 : #c8d836,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+.light-theme {
+    $swimbird-theme-primary: mat-palette($mat-dimgray);
+    $swimbird-theme-accent: mat-palette($mat-brown, A200, A100, A400);
+    $swimbird-theme-warn: mat-palette($mat-red);
+
+    $swimbird-theme: mat-light-theme($swimbird-theme-primary, $swimbird-theme-accent, $swimbird-theme-warn);
+    --app-bar-color: rgba(0, 0, 0, 0.87);
+
+    @include mat-core-theme($swimbird-theme);
+    @include mat-button-theme($swimbird-theme);
+    @include mat-radio-theme($swimbird-theme);
+    @include mat-icon-theme($swimbird-theme);
+    @include mat-select-theme($swimbird-theme);
+    @include mat-tabs-theme($swimbird-theme);
+    @include mat-checkbox-theme($swimbird-theme);
+    @include mat-form-field-theme($swimbird-theme);
+    @include mat-datepicker-theme($swimbird-theme);
+}
+
+// Background palette for dark themes.
+$custom-dark-theme-background: (status-bar: black,
+    app-bar: map_get($mat-grey, 900),
+    background: #14181A,
+    // hover: rgba(white, 0.04), // TODO(kara): check style with Material Design UX
+    card: map_get($mat-grey, 800),
+    circle: #104561,
+    hover: #434b50,
+    selected: #3a3f42,
+    error: #CD4040,
+    positive: #00af00,
+    negative: #ff1900,
+    footer: #202325,
+    dark-divider: rgba(black,0.6),
+    light-divider: rgba(white,0.4),
+    dialog: map_get($mat-grey, 800),
+    disabled-button: rgba(white, 0.12),
+    raised-button: map-get($mat-grey, 800),
+    focused-button: $light-focused,
+    selected-button: map_get($mat-grey, 900),
+    selected-disabled-button: map_get($mat-grey, 800),
+    disabled-button-toggle: black,
+    unselected-chip: map_get($mat-grey, 700),
+    disabled-list-option: black,
+    tooltip: map_get($mat-grey, 700),
+);
+
+// Foreground palette for dark themes.
+$custom-dark-theme-foreground: (base: white,
+    divider: $light-dividers,
+    dividers: $light-dividers,
+    disabled: $light-disabled-text,
+    disabled-button: rgba(white, 0.3),
+    disabled-text: $light-disabled-text,
+    elevation: black,
+    hint-text: $light-disabled-text,
+    secondary-text: $light-secondary-text,
+    icon: white,
+    icons: white,
+    text: white,
+    slider-min: white,
+    slider-off: rgba(white, 0.3),
+    slider-off-active: rgba(white, 0.3),
+);
+
+// instead of creating a theme with mat-light-theme like a sane person, we will create our own theme-creating function that lets us apply our own foreground and background palettes.
+@function create-nordic-angels-theme($primary, $accent, $warn: mat-palette($mat-red)) {
+    @return (primary: $primary,
+        accent: $accent,
+        warn: $warn,
+        is-dark: true,
+        foreground: $custom-dark-theme-foreground,
+        background: $custom-dark-theme-background,
+    );
+}
+
+.dark-theme {
+    $swimbird-dark-theme-primary: mat-palette($mat-dark-shade, 100);
+    $swimbird-dark-theme-accent: mat-palette($mat-dark-shade, A200, A100, A400);
+    $swimbird-dark-theme-warn: mat-palette($mat-dark-shade, 900);
+
+    $swimbird-dark-theme: create-nordic-angels-theme($swimbird-dark-theme-primary, $swimbird-dark-theme-accent, $swimbird-dark-theme-warn);
+
+    @include angular-material-theme($swimbird-dark-theme);
+    @include custom-theme($swimbird-dark-theme);
+}

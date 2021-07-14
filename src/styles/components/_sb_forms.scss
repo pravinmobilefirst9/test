@@ -1,0 +1,12 @@
+@import '~src/styles/abstracts/mixins';
+
+.sb-card-wrapper-header {
+  padding-bottom: 10px;
+  border-bottom: solid 1px $primaryDarkColor;
+  margin-left: 10px !important;
+}
+.ui-button {
+  &.sb-fit-content-button {
+    @include intrinsic(width, fit-content);
+  }
+}

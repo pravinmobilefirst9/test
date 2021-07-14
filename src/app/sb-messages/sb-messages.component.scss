@@ -1,0 +1,35 @@
+.message-bg {
+    border-radius: 5px;
+    margin: 5px;
+    display: inline-flex;
+    width: 95%;
+}
+
+.message-bg div {
+    text-align: left;
+    padding: 5px 10px 5px 10px;
+}
+
+.message-bg h4 {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.message-bg > div span {
+    font-size: 0.95em;
+}
+
+.message-icon {
+    font-size: 3em;
+    margin: auto 15px;
+}
+
+.error-bg {
+    background-color: pink;
+    color: red;
+}
+
+.success-bg {
+    background-color: palegreen;
+    color: lightgreen;
+}

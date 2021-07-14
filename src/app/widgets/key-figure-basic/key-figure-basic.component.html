@@ -1,0 +1,11 @@
+<div class="card overview">
+  <div class="overview-content clearfix">
+    <div *ngIf="isLoading">
+      <mat-spinner class="sb-mx-auto" color="accent" diameter="30" id={{context.widgetId}}></mat-spinner>
+      <p class="sb-text-center" style="color: lightgray"> Loading... </p>
+    </div>
+    <span class="overview-title">{{ title }}</span>
+    <span class="overview-badge">{{ badge }}</span>
+    <span class="overview-detail">{{ detail }}</span>
+</div>
+</div>

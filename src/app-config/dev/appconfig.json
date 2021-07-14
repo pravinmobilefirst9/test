@@ -1,0 +1,15 @@
+{
+  "gatewayBaseUrl": "http://35.228.172.106:30971/sb-backend",
+  "formConfigBaseUrl": "http://35.228.172.106:30971/sb-backend",
+  "widgetDataBaseUrl": "http://35.228.172.106:30971/sb-backend",
+  "mockDataBaseUrl": "http://localhost:3000",
+  "layoutConfigurationBaseUrl": "http://35.228.172.106:30971/sb-backend/",
+  "propertiesConfigurationBaseUrl": "http://35.228.172.106:30971/sb-backend/properties",
+  "environment": "development",
+  "bypassLogin": false,
+  "basicAuthenticationHeader": "Basic c3dpbWJpcmQtY2xpZW50Om15LXNlY3JldA==",
+  "buildVersion": "DEV",
+  "baseCurrency": "SEK",
+  "cssTheme": "dark-theme",
+  "appTitle": "Portfolio Manager"
+}

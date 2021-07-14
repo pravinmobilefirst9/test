@@ -1,0 +1,74 @@
+.cursor-pointer {
+  cursor: pointer;
+}
+
+input[type='checkbox'] {
+  visibility: hidden;
+}
+
+.class-readonly {
+  background-color: #dddddd !important;
+}
+
+.sb-blue {
+  background-color: #0fbcf9 !important;
+}
+
+.sb-green {
+  background-color: #00af00 !important;
+}
+
+.sb-red {
+  background-color: #ff1900 !important;
+}
+
+.sb-orange {
+  background-color: orange !important;
+}
+
+.sb-yellow {
+  background-color: yellow !important;
+}
+
+.sb-turquoise {
+  background-color: turquoise !important;
+}
+
+.sb-purple {
+  background-color: purple !important;
+}
+
+.sb-darkblue {
+  background-color: darkblue !important;
+}
+
+.sb-brown {
+  background-color: saddlebrown !important;
+}
+
+.sb-gray {
+  background-color: lightgrey !important;
+}
+
+.card h2 {
+  font-size: 1.2em;
+  font-weight: 400;
+}
+
+.sb-card-wrapper-header {
+    padding-bottom: 10px;
+    border-bottom: none;
+    margin-left: 10px !important;
+}
+
+.ui-messages .ui-messages-summary {
+  display: block;
+  font-weight: bold;
+  text-align: left;
+}
+
+.ui-messages .ui-messages-detail {
+  display: block;
+  text-align: left;
+}
+

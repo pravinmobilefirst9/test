@@ -1,0 +1,22 @@
+[
+  {
+    "label": "OMX Stockholm 30",
+    "value": { "id": 1, "name": "OMXS30", "code": "OMXS30" }
+  },
+  {
+    "label": "DJ World Index",
+    "value": { "id": 2, "name": "DOWJONESWORLDINDEX", "code": "DJI" }
+  },
+  {
+    "label": "SIX30 Return Index",
+    "value": { "id": 3, "name": "SIXS30RI", "code": "SIX30" }
+  },
+  {
+    "label": "Nikkei",
+    "value": { "id": 4, "name": "Nikkei", "code": "Nikkei" }
+  },
+  {
+    "label": "Nasdaq",
+    "value": { "id": 5, "name": "Nasdaq", "code": "NSD" }
+  }
+]

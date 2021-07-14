@@ -1,0 +1,19 @@
+// Customize the look and feel of the grid with Sass variables
+// Up-to-date list of variables is available in the source code: https://github.com/ag-grid/ag-grid/blob/latest/src/styles/theme-fresh.scss
+
+$ag-mat-icons-path: '~ag-grid-community/src/styles/ag-theme-material/icons/';
+$ag-icons-path: '~ag-grid-community/src/styles/ag-theme-base/icons/';
+
+// Changes the font family
+$font-family: $sbFontFamily;
+$secondary-font-family: $sbFontFamily;
+
+// For some reason row heights have to be set in the code as well --> in the html files
+$header-height: 28px;
+$row-height: 34px;
+
+$header-foreground-color: $primaryColor;
+$secondary-font-weight: 400;
+$secondary-font-size: 1em;
+$foreground-color: $primaryDarkColor;
+$cell-horizontal-padding: 12px;

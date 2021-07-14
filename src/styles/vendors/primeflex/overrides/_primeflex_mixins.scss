@@ -1,0 +1,8 @@
+// Created a mixin identical to p-col-fixed to be able to use it in media query
+// since @extend is not allowed in media query --> have to use mixin.
+@mixin p-col-fixed {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  padding: $gutter;
+}

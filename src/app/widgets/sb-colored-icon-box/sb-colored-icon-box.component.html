@@ -1,0 +1,16 @@
+<div class="p-grid">
+  <div class="p-col-12">
+    <div *ngIf="isLoading">
+      <mat-spinner class="sb-mx-auto" color="accent" diameter="30" id={{context.widgetId}}></mat-spinner>
+      <p class="sb-text-center" style="color: lightgray"> Loading... </p>
+    </div>
+      <div [className]="'ui-g card colorbox colorbox-' + colorTheme">
+      <div class=" p-col-4">
+        <i class="material-icons">{{icon}}</i>
+      </div>
+      <div class="p-col-8">
+        <span class="colorbox-name">{{ title }}</span>
+        <span class="colorbox-count"> {{ value }}</span>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,75 @@
+/* Add your customizations of the theme here */
+// For some reason this wasn't included in the theme icon import
+.pi {
+  &.pi-chevron-up {
+    @include icon-override('keyboard_arrow_up');
+  }
+}
+
+// Workaround to make items in primeng dropdown expand wider than label/selector width
+.ui-dropdown-panel {
+  width: max-content;
+}
+// Workaround to be able to have dropdown items larger than label/selector width without expanding it
+.ui-dropdown .ui-dropdown-label.ui-inputtext {
+  text-overflow: ellipsis;
+}
+/* Workaround for PrimeNG Flexgrid not handling sizes properly when setting fixed col-widths */
+* {
+  -webkit-box-sizing: border-box;
+}
+
+body .ui-tabview.ui-tabview-top > .ui-tabview-nav {
+  border-bottom: none;
+  padding-left: 1.2em;
+  padding-top: 0.5em;
+  @include respond-to('tiny') {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 0;
+    font-size: 0.8em;
+    font-weight: 600;
+  }
+}
+body .ui-tabview .ui-tabview-panel {
+  padding: 0;
+}
+
+body .ui-tabview.ui-tabview-top > .ui-tabview-nav > li {
+  // Getting rid of the default blue border in chrome (and dotted in firefox) for selected li item
+  outline: none;
+  margin-right: 1em;
+  border-style: none !important;
+  // Note - we could set it globally according to:
+  // https://stackoverflow.com/questions/1457849/how-to-remove-the-border-highlight-on-an-input-text-element
+}
+
+body .ui-tabview .ui-tabview-nav > li.ui-state-active a {
+  font-weight: 600;
+  border-bottom: 2px solid #22606c !important;
+  color: #22606c !important;
+}
+
+body .ui-radiobutton {
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+body .ui-radiobutton-label {
+  cursor: pointer;
+  &.ui-label-active {
+    font-weight: bolder;
+  }
+}
+
+.ui-messages-error {
+  color: $inputErrorTextColor;
+  border: none;
+  font-size: 0.75em;
+}
+
+.ui-datepicker {
+  .ui-datepicker-header {
+    color: $accentTextColor;
+  }
+}

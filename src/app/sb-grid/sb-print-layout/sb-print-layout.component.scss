@@ -1,0 +1,150 @@
+@import '~src/styles/abstracts/mixins';
+
+
+.sb-grid-wrapper {
+    padding: 16px 16px 65px 16px;
+    /* display: inline-block; */
+    /* position: fixed; */
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* width: 200px; */
+    /* height: 100px; */
+    margin: auto;
+}
+
+.sb-grid-wrapper.sb-print-layout {
+
+    & .sb-header-toolbar {
+        display: none;
+    }
+    .form-group .sb-search-form-button-bar{
+        display:none !important;
+    }
+   
+    .sb-save-filter-wrapper{
+        display: none;
+    }
+
+    .p-grid {
+        display: block;
+    }
+
+    & .main-div:first-child .mat-card form {
+        display: none;
+    }
+
+    & .main-div:nth-child(3) {
+        display: none;
+    }
+
+    .main-div.sb-p-col-landscape-print {
+        width: auto;
+    }
+}
+
+/* KEPT ALL THE STYLES RELATED TO PRINT LAYOUTS */
+
+@media print {
+    body {
+        .layout-wrapper.layout-compact {
+            height: fit-content;
+            width: fit-content;
+        }
+    }
+    
+    // .sb-p-col-landscape-print {
+    //     width: 1135px;
+    // }
+
+    .sb-grid-wrapper.sb-print-layout {
+        .card {
+            box-shadow: none;
+        }
+    }
+
+    .p-grid {
+        display: block;
+    }
+
+    @page {
+        margin: 0;
+        size: A4 landscape;
+    }
+
+    .topbar,
+    .layout-menu,
+    .layout-breadcrumb,
+    .mat-toolbar,
+    .mat-toolbar-single-row,
+    .mat-toolbar-row,
+    .mat-toolbar.mat-primary,
+    .sb-print-preview-btn,
+    .sb-preview-cancel-btn {
+        display: none;
+    }
+
+    .layout-container {
+        overflow: visible;
+
+        .layout-rightpanel {
+            box-shadow: none !important;
+            -webkit-box-shadow: none !important;
+            -moz-box-shadow: none !important;
+        }
+
+        .layout-main {
+            padding-top: 0px !important;
+        }
+    }
+
+    .ui-panel-titlebar {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .card.card-w-title {
+        // Todo - this one is not great - should find another component to break after
+        break-after: page;
+    }
+
+    .sb-grid-wrapper {
+        padding: 0 !important;
+    }
+
+    .sb-footer-wrapper {
+        display: none;
+    }
+
+    .mat-card {
+        box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        -moz-box-shadow: none !important;
+        border: none !important;
+    }
+
+    app-sb-panel> :first-child,
+    .ui-tabview {
+        box-shadow: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        border: none;
+    }
+
+    .sb-widget-header {
+        margin: 4em 1em 1em 0.25em !important;
+    }
+
+    .sb-print-formVal-selected {
+        break-after: page !important;
+        page-break-after: always;
+        -webkit-column-break-inside: always;
+    }
+
+    .print-break {
+        break-after: page !important;
+        page-break-after: always !important;
+        height: 100%;
+    }
+}

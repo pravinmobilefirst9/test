@@ -1,0 +1,56 @@
+<div *ngIf="isLoading">
+  <mat-spinner class="sb-mx-auto" color="accent" diameter="30" id={{context.widgetId}}></mat-spinner>
+  <p class="sb-text-center" style="color: lightgray"> Loading... </p>
+</div>
+<div class="sb-linechart-toolbar">
+  <div *ngIf="context.rangeSelector" class='sb-linechart-range-picker'>
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style" [(selected)]="selectedDateRange">
+      <mat-button-toggle (change)="onDateRangeChange($event)" *ngFor="let dateRange of dateRangeValues"
+        [value]="dateRange.value">{{dateRange.label}}
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+    <mat-form-field class="sb-linechart-daterange-select-dropdown">
+      <mat-label>Selected Range</mat-label>
+      <mat-select [(value)]="selectedDateRange" (selectionChange)="onDateRangeClicked()"
+        [compareWith]="dateRangeComparator">
+        <mat-option *ngFor=" let dateRange of dateRangeValues" [value]="dateRange.value">
+          {{dateRange.label}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-stroked-button [matMenuTriggerFor]="menu" aria-label="Choose a custom range"
+      class="sb-custom-daterange-toggle">Custom</button>
+    <mat-menu #menu="matMenu">
+      <div mat-menu-item [disableRipple]="true" class="sb-date-range-wrapper">
+        <div class="sb-linechart-date-picker">
+          <mat-form-field appearance="legacy">
+            <input matInput [matDatepicker]="from" [(ngModel)]="fromDate" [max]="today"
+              (dateChange)="fromDateSelected($event)">
+            <mat-datepicker-toggle matSuffix [for]="from"></mat-datepicker-toggle>
+            <mat-datepicker #from></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="sb-linechart-date-picker">
+          <mat-form-field appearance="legacy">
+            <input matInput [matDatepicker]="to" [(ngModel)]="toDate" [max]="today"
+              (dateChange)="toDateSelected($event)">
+            <mat-datepicker-toggle matSuffix [for]="to"></mat-datepicker-toggle>
+            <mat-datepicker #to></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-menu>
+  </div>
+  <mat-form-field class="sb-compare-toggle-wrapper">
+    <mat-label>Benchmark</mat-label>
+    <mat-select [(value)]="compareToValue" (selectionChange)="onComparisonSeriesSelected()">
+      <mat-option>Benchmark</mat-option>
+      <mat-option *ngFor="let option of comparisons" [value]="option && option.value ? option.value : option">
+        {{option.label}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<highcharts-chart style="width: 100%; display: flex;" [Highcharts]="Highcharts" [constructorType]="chartConstructor"
+  [options]="chartOptions" [callbackFunction]="chartCallback" [(update)]="updateFlag" [oneToOne]="oneToOneFlag"
+  [runOutsideAngular]="runOutsideAngular" (chartInstance)="saveChartInstance($event)"></highcharts-chart>

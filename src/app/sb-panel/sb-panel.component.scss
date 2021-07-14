@@ -1,0 +1,107 @@
+@import '~src/styles/abstracts/variables';
+@import '~src/styles/abstracts/mixins';
+
+// .sb-panel-no-header > div > div:first-of-type {
+//   display: none !important;
+// }
+
+.sb-panel-no-divider > div > div:first-of-type {
+  border-bottom: none !important;
+}
+
+.sb-panel-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.sb-primeng-panel-header {
+  width: 100%;
+}
+.sb-primeng-empty-panel-header {
+  display: none;
+}
+
+// Getting rid of the extra whitespace introduced by adding card in tab panel content
+.mat-tab-body-content {
+  > app-sb-panel > mat-card {
+    padding: 0;
+    &.card.card-w-title {
+      padding-bottom: 0;
+    }
+  }
+}
+
+/* Add sb-something class before .ui-panel-titlebar and add that to p-panel to get this as a local scope instead*/
+body .ui-panel .ui-panel-titlebar {
+  border: 0 none;
+  padding: 0.225em 0.3em;
+  font-size: 1.4em;
+  font-weight: bolder;
+  // border-bottom: 1px solid #40464e;
+  margin-bottom: 0.5em;
+  display: flex;
+  align-content: space-between;
+
+  @include respond-to('tiny') {
+    border-bottom: none;
+    font-size: 1em;
+  }
+}
+
+body .ui-widget-header {
+  font-size: 1em;
+  border: 1px solid #575e6a;
+}
+
+body .ui-panel .ui-panel-content {
+  padding: 0;
+}
+
+body .ui-widget-content {
+  border: none;
+}
+
+.sb-widget-header {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin: 1em 1em 1em 0.25em;
+  display: flex;
+  justify-content: space-between;
+  .sb-header-info {
+    font-size: 0.8em;
+    font-weight: 600;
+  }
+}
+
+.sb-header-toolbar {
+  text-align: end;
+}
+@media print {
+  .sb-header-toolbar {
+    display: none;
+  }
+}
+
+
+// Material Css
+
+.mat-card-header {
+  font-size: 1.4em;
+  font-weight: bolder;
+  margin-bottom: 0.5em;
+  padding-left: 0.3em;
+  @include respond-to('tiny') {
+    font-size: 1em;
+  }
+}
+
+.mat-card-header-text {
+  margin: 0px !important;
+}
+
+.sb-panel-no-header { 
+  .mat-expansion-panel-header {
+    display: none;
+  }
+}

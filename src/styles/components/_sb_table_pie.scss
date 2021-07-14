@@ -1,0 +1,17 @@
+@import '~src/styles/abstracts/variables';
+@import '~src/styles/abstracts/mixins';
+
+.table-pie-chart-wrapper {
+  display: flex;
+  flex-direction: column;
+  & .highcharts-container:first-of-type {
+    height: auto;
+  }
+  @include respond-to('tiny') {
+    display: none;
+  }
+
+  & .highcharts-button.highcharts-drillup-button {
+    display: none
+  }
+}

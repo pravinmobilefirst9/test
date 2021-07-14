@@ -1,0 +1,11 @@
+{
+  "gatewayBaseUrl": "http://localhost:8080",
+  "formConfigBaseUrl": "http://localhost:4200/assets/form-config",
+  "widgetDataBaseUrl": "/assets/mock-data/",
+  "mockDataBaseUrl": "http://localhost:3001/",
+  "environment": "acceptance",
+  "layoutConfigurationBaseUrl": "/assets/mock-data/",
+  "bypassLogin": false,
+  "buildVersion": "BUILD_NUMBER_REPLACE",
+  "baseCurrency": "SEK"
+}

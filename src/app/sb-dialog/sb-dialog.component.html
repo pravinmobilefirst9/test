@@ -1,0 +1,32 @@
+<div *ngIf="data.type === 'file-upload'">
+    <h1 mat-dialog-title>{{data.title}}</h1>
+    <div class="file-upload--dialog-content">
+        <p><span class="file-upload-dialog-text">File Name:</span><span>{{data.details?.fileName}}</span></p>
+        <p><span class="file-upload-dialog-text">File Size:</span>{{data.details?.fileSizeInBytes}}
+            Bytes<span></span></p>
+        <p><span class="file-upload-dialog-text">Total No. of Records:</span><span
+                class="summary-dialog-value-info">{{data.details?.totalRecords}}</span></p>
+        <p><span class="file-upload-dialog-text">Record with Remarked Count:</span><span
+                class="summary-dialog-value-warning">{{data.details?.recordsWithRemarksCount}}</span></p>
+        <p><span class="file-upload-dialog-text">Record with Error Count:</span><span
+                class="summary-dialog-value-danger">{{data.details?.recordsWithErrorsCount}}</span></p>
+        <p><span class="file-upload-dialog-text">Saved Record Count:</span><span
+                class="summary-dialog-value-success">{{data.details?.savedRecordCount}}</span></p>
+        <p><span class="file-upload-dialog-text">Updated Record Count:</span><span
+                class="summary-dialog-value-info">{{data.details?.updatedRecordCount}}</span></p>
+        <p><span class="file-upload-dialog-text">Rejected Record Count:</span><span
+                class="summary-dialog-value-danger">{{data.details?.rejectedRecordCount}}</span></p>
+        <p><span class="file-upload-dialog-text">Uploaded By:</span><span
+                class="summary-dialog-value-info">{{data.details?.uploadedBy}}</span></p>
+        <p><span class="file-upload-dialog-text">Uploaded Date:</span><span>{{data.details?.uploadedDate}}</span></p>
+    </div>
+</div>
+
+<div *ngIf="data.type === 'overlay'">
+    <h1 mat-dialog-title>{{data.title}}</h1>
+    <p>{{data.details}}</p>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close>OK</button>
+</div>

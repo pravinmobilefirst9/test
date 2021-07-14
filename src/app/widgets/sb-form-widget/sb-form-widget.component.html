@@ -1,0 +1,53 @@
+<div *ngIf='isFilterForm()' class="sb-search-filter-bar">
+  <div class="sb-search-filter-button-wrapper" *ngFor="let fb of savedFilters">
+    <mat-button-toggle-group>
+      <button mat-flat-button *ngIf="activeFilterName !== fb.name"
+        (click)="filterButtonClicked($event)">{{fb.name}}</button>
+      <button mat-stroked-button *ngIf="activeFilterName === fb.name"
+        (click)="filterButtonClicked($event)">{{fb.name}}</button>
+      <button mat-flat-button class="drop-down-button" [matMenuTriggerFor]="dropdownMenuOne">
+        <mat-icon>arrow_drop_down</mat-icon>
+      </button>
+    </mat-button-toggle-group>
+
+    <mat-menu #dropdownMenuOne="matMenu">
+      <button (click)="updateFilter(false, fb.name)" mat-menu-item>Update</button>
+      <button (click)="deleteFilter(false, fb.name)" mat-menu-item>Delete</button>
+    </mat-menu>
+
+  </div>
+</div>
+<app-sb-messages [messages]="msgs"></app-sb-messages>
+<form [formGroup]="form" (ngSubmit)="submit(model)"
+  [ngClass]="!isFilterForm() ? 'ui-fluid form-group' : 'ui-g ui-fluid form-group'">
+  <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form" (modelChange)="modelChange(model)"
+    #formlyForm>
+  </formly-form>
+  <div *ngIf='!isFilterForm()' class="sb-form-button-bar">
+    <button mat-raised-button type="submit" color="accent"
+      class="sb-form-submit-button accent-button p-mr-5 sb-mat-btn-bg">{{defaultButtonLabel()}}</button>
+    <button mat-raised-button type="button" class="sb-form-cancel-button" (click)="onReset()">Reset</button>
+    <!--<button *ngIf="options" pButton type="button" (click)="onUpdateInitialValue()" label="Update Intial Values"></button>-->
+  </div>
+  <div *ngIf='isFilterForm() && !printLayout' class="sb-search-form-button-bar">
+    <div style="display: flex">
+      <button mat-raised-button icon="pi pi-search" type="submit"
+        class="ui-button-secondary sb-fit-content-button sb-mat-btn-bg">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        {{defaultButtonLabel()}}
+      </button>
+      <div class="sb-save-filter-wrapper">
+        <input type="text" #filterSaveTextBox size="20" pInputText [disabled]="filterSaveDisabled"
+          (keyup)="onFilterTextKeyUp($event.target.value)" placeholder="Name for template">
+        <button mat-raised-button [disabled]="filterSaveButtonDisabled" type="button" (click)="createFilter($event)"
+          title="Save Search as Filter" class="sb-fit-content-button p-ml-2">Save</button>
+      </div>
+    </div>
+  </div>
+</form>
+<ng-container *ngIf="debug && !isFilterForm()">
+  <pre>Form model: {{ model | json }}</pre>
+  <pre>Submit model: {{ getSubmitModel(model) | json }}</pre>
+</ng-container>
+<div *ngIf="isPrinting" class="sb-print-form" [innerHTML]="getPrettyPrintedFormValues()">
+</div>

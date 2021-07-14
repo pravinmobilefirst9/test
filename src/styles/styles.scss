@@ -1,0 +1,30 @@
+@import 'abstracts/mixins';
+@import 'abstracts/icons';
+@import 'abstracts/variables';
+
+// @import './vendors/primeng/primeng';
+@import './themes/theme-swimbird';
+@import './vendors/ag-grid/ag_grid';
+@import './vendors/highcharts/highcharts-swimbird';
+@import './vendors/primeflex/primeflex';
+
+// ***** Swimbird Layouts styles *******
+@import 'abstracts/sb_fonts';
+@import 'abstracts/sb_layout_variables';
+@import 'sb_main_styles';
+@import 'layout/sb_layout_styles';
+@import 'layout/sb_print_layout_styles';
+@import 'components/sb_material_ui';
+
+@import 'components/sb_key_figure';
+@import 'components/sb_ag_grid';
+@import 'components/sb_table_pie';
+@import 'components/sb_pie_chart';
+@import 'components/sb_forms';
+
+@import 'shame';
+
+@import './material-theme/swimbird-theme.scss';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

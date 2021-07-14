@@ -1,0 +1,165 @@
+@import '~src/styles/abstracts/variables';
+@import '~src/styles/abstracts/mixins';
+
+.cell-standard-value {
+  color: $primaryDarkColor;
+  white-space: nowrap;
+}
+
+.cell-secondary-value {
+  font-size: 0.8em;
+  color: $primaryColor;
+  font-weight: lighter;
+  white-space: nowrap;
+}
+
+.key-figure-default-label {
+  font-size: 1em;
+  color: $primaryDarkColor;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 0.4em;
+}
+
+.key-figure-default-value {
+  padding-left: 10px;
+  padding-right: 10px;
+  color: $primaryColor;
+  font-size: 1.5em;
+}
+
+.key-figure-cell-label {
+  display: table-cell;
+  font-size: 0.9em;
+  color: $primaryColor;
+  white-space: nowrap;
+  padding: 5px;
+  vertical-align: middle;
+}
+
+.key-figure-cell-value {
+  display: table-cell;
+  min-width: 100px;
+  width: 100%;
+  text-align: right;
+  font-size: 1.1em;
+  font-weight: 600;
+  white-space: nowrap;
+  color: $primaryColor;
+  padding: 8px 5px 5px 5px;
+  vertical-align: middle;
+}
+
+.sb-key-figure-cell-header {
+  display: table-cell;
+  min-width: 100px;
+  color: $primaryColor;
+  width: 100%;
+  white-space: nowrap;
+  border-bottom: 1px solid $primaryLightColor;
+  padding: 7px;
+  vertical-align: middle;
+}
+
+.cell-negative {
+  color: $negativeValueIndicatorColor;
+  &.cell-secondary-value {
+    font-weight: 600;
+    color: $negativeValueIndicatorColor;
+  }
+  &.cell-standard-value {
+    font-weight: 600;
+    color: $negativeValueIndicatorColor;
+  }
+  &.key-figure-default-value {
+    color: $negativeValueIndicatorColor;
+  }
+  &.key-figure-cell-value {
+    color: $negativeValueIndicatorColor;
+  }
+}
+
+.cell-positive {
+  color: $positiveValueIndicatorColor;
+  &.cell-secondary-value {
+    font-weight: 600;
+    color: $positiveValueIndicatorColor;
+  }
+  &.cell-standard-value {
+    font-weight: 600;
+    color: $positiveValueIndicatorColor;
+  }
+  &.key-figure-default-value {
+    color: $positiveValueIndicatorColor;
+  }
+  &.key-figure-cell-value {
+    color: $positiveValueIndicatorColor;
+  }
+}
+
+.sb-circle {
+  width: 32px;
+  height: 32px;
+  font-size: 1em;
+  border-radius: 50%;
+  background-color: #314150;// Todo - get from $primarySemiDarkColor; when it's coherent between layout and theme
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  color: white;
+  font-weight: 600;
+}
+
+
+@include respond-to('tiny') {
+  .key-figure-cell-label {
+    display: none;
+  }
+  .key-figure-cell-value {
+    padding: 0;
+  }
+  .cell-standard-value {
+    font-size: 0.8em;
+  }
+  .cell-secondary-value {
+    font-size: 0.7em;
+    font-weight: normal;
+  }
+}
+
+.sb-key-figure-advanced-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-right: 4px;
+}
+
+.sb-horizontal-key-figure-advanced-wrapper {
+	display: flex;
+  flex-wrap: wrap;
+}
+
+.sb-key-figure-advanced-item {
+  display: flex;
+  border-bottom: 1px solid $primaryLightColor;
+  &.routing-enabled {
+    &:hover {
+      background-color: #eeeeee;
+      cursor: pointer;
+    }
+  }
+  &.sb-first {
+    border-top: 1px solid $primaryLightColor;
+  }
+}
+
+.sb-key-figure-table-item {
+  justify-content: space-evenly;
+  & > .key-figure-cell-value {
+    white-space: inherit;
+    text-align: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    padding: 4px 5px 4px 5px;
+  }
+}

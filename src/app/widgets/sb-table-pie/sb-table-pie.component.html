@@ -1,0 +1,26 @@
+<div class="sb-table-pie-wrapper">
+  <div *ngIf="isLoading" class="p-col-12">
+    <mat-spinner class="sb-mx-auto" color="accent" diameter="30" id={{context.widgetId}}></mat-spinner>
+    <p class="sb-text-center" style="color: lightgray"> Loading... </p>
+  </div>
+    <div style="overflow: hidden; flex-grow: 1" class="table-pie-table">
+    <ag-grid-angular class="ag-theme-material" [domLayout]="domLayout" [style]="gridStyle" [rowData]="rowData"
+      [columnDefs]="columnDefs" [columnTypes]="columnTypes" [suppressCellSelection]="true" groupIncludeFooter="true"
+      groupDefaultExpanded="-1" groupSuppressRow="true" suppressAggFuncInHeader="true" headerHeight="0px"
+      [rowHeight]="34" style="width: 100%" (gridReady)="onGridReady($event)" (modelUpdated)="onModelUpdated()"
+      (cellMouseOver)="onCellMouseOver($event)" (cellMouseOut)="onCellMouseOut($event)"
+      (rowClicked)="onRowClicked($event)" suppressHorizontalScroll="true" [gridOptions]="gridOptions">
+    </ag-grid-angular>
+  </div>
+  <div>
+    <div class="table-pie-chart-wrapper">
+      <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions" [oneToOne]="oneToOneFlag"
+        [update]="updateFlag" (chartInstance)="saveChartInstance($event)">
+      </highcharts-chart>
+    </div>
+    <div *ngIf="showDrillUpButton" class="sb-custom-drillup-button-bar">
+      <button pButton type="button" (click)="drillUp()" label="Back" icon="pi pi-chevron-left"
+        class="ui-button-secondary sb-custom-drillup-button"></button>
+    </div>
+  </div>
+</div>

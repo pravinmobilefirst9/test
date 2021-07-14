@@ -1,0 +1,56 @@
+@import '~src/styles/abstracts/variables';
+@import '~src/styles/abstracts/mixins';
+
+.highcharts-tooltip-box {
+  fill-opacity: 1;
+}
+.highcharts-tooltip-box .highcharts-label-box {
+  fill-opacity: 1;
+}
+
+// Workaround to hide the completely redundant "Zoom" text in stockchart range selector
+.highcharts-range-selector-buttons > text:first-child {
+  display: none;
+}
+
+// Workaround to hide the completely redundant "From / To" text in stockchart date pickers
+.highcharts-range-label {
+  display: none;
+}
+.highcharts-range-label > text {
+  display: none;
+}
+.highcharts-range-label > rect {
+  display: none;
+}
+
+// Making pie chart series bold on hover - disabled due to custom styling of legends
+.highcharts-pie-series {
+  &:hover {
+    font-weight: 600;
+  }
+}
+
+.highcharts-button.highcharts-drillup-button {
+  cursor: pointer;
+  padding-right: 10px;
+  @include intrinsic(width, fit-content);
+}
+
+.highcharts-button-box {
+  fill: inherit;
+  width: 30px;
+  height: 30px;
+}
+
+.highcharts-button.highcharts-drillup-button.highcharts-button-hover {
+  fill: $primaryLightColor !important;
+}
+
+.highcharts-button.highcharts-drillup-button.highcharts-button-hover > text {
+  fill: #ffffff !important;
+}
+
+.highcharts-credits {
+  display: none;
+}

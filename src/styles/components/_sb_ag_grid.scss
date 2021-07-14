@@ -1,0 +1,67 @@
+/**
+* Checkbox Two
+*/
+
+.checkboxTwo {
+  width: 50px;
+  height: 20px;
+  background: #333;
+  margin: 0;
+  top: 30%;
+  border-radius: 60px;
+  position: absolute;
+}
+
+/**
+* Create the line for the circle to move across
+*/
+
+.checkboxTwo:before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 14px;
+  height: 2px;
+  width: 30px;
+  background: #111;
+}
+
+/**
+* Create the circle to click
+*/
+
+.checkboxTwo label {
+  display: block;
+  width: 22px;
+  height: 20px;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  z-index: 1;
+  left: 0px;
+  background: #ddd;
+}
+
+/**
+* Create the click event for the checkbox
+*/
+
+.checkboxTwo input[type='checkbox']:checked + label {
+  left: 28px;
+  background: #26ca28;
+}
+
+.flag-icon {
+  width: 4em;
+  line-height: 1.5em;
+}
+
+.cell-neutral {
+  color: $primaryDarkColor;
+}
+
+.cell-bold {
+  font-weight: bold !important;
+}
